@@ -6,5 +6,34 @@
 
 // Resets and Defaults
 @use 'normalize';
+@use 'reset';
 
-//Site Sections
+
+
+
+//Body
+@use 'body';
+
+
+//Sections
+
+
+//Navigation - Jes
+@use 'nav-home';
+@use 'menubar';
+@use 'hamburger';
+
+//Jade
+@use 'feature';
+
+//Alan
+@use 'seasonal-fav';
+@use 'goals';
+
+//Erimo
+@use 'featured-col';
+@use 'socials';
+@use 'signup';
+@use 'sitemap';
+@use 'footer';
+
