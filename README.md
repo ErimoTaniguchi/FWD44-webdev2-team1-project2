@@ -1,10 +1,18 @@
-# Movie Card Component Project
+Tentative deadline of  parts  on: July 3
+Regular checkin on: June 16, 24, 26
 
-## 🚀 Project Overview
-This project focuses on designing and developing a static movie card component based on the criteria specified by Gabbie, styled entirely using Sass (SCSS).
 
-## 📱 Responsive Design (Breakpoints)
-Following the mobile-first approach, the project is designed to support three core viewing modes:
-* **Mobile View:** Starts testing at `20em` (320px) as required.
-* **Media Queries:** Written exclusively using `rem` values for accessibility and scaling.
+CSS and html practices
 
+- Color values: should use #hex value
+- Code mobile first
+- Use rem for sizes
+- em for media queries
+- For naming convention make use of lowercase and separate with "-" eg. Classes, scss file names, variable names
+
+
+GitHub practices
+- Just work on staging-branch
+- Let the team know in the chat if you made changes to staging-branch
+- Always pull and fetch before working on your parts
+- Atleast 2 people reviews the code before merging with staging-branch
