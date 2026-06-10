@@ -15,8 +15,13 @@ $font-color:#1d1d1d;
 
 
 //Media Query Breakpoints
-$tablet-landscape:63.875em;
-$tablet-portrait: 47.875em;
-$phone-portrait:29.688em;
+$large:64em;
+$medium:48em;
+
+
+// Utility variables
+$link-hover-selector: '&:hover, &:focus, &:active';
+
+//Hover mixin
 
 
