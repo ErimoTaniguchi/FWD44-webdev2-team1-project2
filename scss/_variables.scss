@@ -1,21 +1,34 @@
 //Font
 
+
+// Font Sizes
+// added by Jade
+$heading-font-size-large: 4.4rem;
+$paragraph-font-size: 1.0625rem; //17px
+$heading-line-height: 1.2;
+$body-line-height: 1.5;
+
+
 // mono default font
 
 $font-family: "IBM Plex Mono", monospace;
+
+$font-stack-body: "Gopher Mono", "DM Sans", sans-serif;
+// font obtained from the original website https://plantladyjuice.co/ 
+// added by Jade
 
 //Colors
 $announcement-color:#3c863b;
 $section-1:#fbb500;
 $section-2:#f1eadd;
 $section-3:#ffaaca;
-$btn-color:#1d1d1d;
+$black-btn-color:#1d1d1d;
 $background-color: #ffffff;
 $border: #e1e1e1;
 
 //Text Colors
 $font-color: #1d1d1d;
-
+$black-btn-font-color: #ffffff; // added by Jade for text color on black buttons
 
 
 
@@ -23,10 +36,43 @@ $font-color: #1d1d1d;
 $large:64em;
 $medium:48em;
 
+//====================================================================
+// AI prompt: suggestion for mobible first variables use on _variables.scss for layout, spaceing
+// added by Jade
+
+// Layout Sizes
+$container-padding-mobile: 1rem;
+$container-padding-large: 4rem;
+
+$section-padding-mobile: 3rem 1rem;
+$section-padding-large: 3.5rem 3rem;
+
+// Spacing
+$space-small: 0.5rem;
+$space-medium: 1rem;
+$space-large: 2rem;
+
+
+// Border Radius
+$radius-pill: 999rem;
+$radius-small: 0.5rem;
+$radius-medium: 1rem;
+
+
+// End of AI suggestions
+//====================================================================
+
+// get the value from the original website https://plantladyjuice.co/
+// added by Jade for button padding
+$button-padding-large: .9375rem 2.875rem;
+$button-padding-regular: .6875rem 2.25rem;
+$button-padding-small: .5rem 1.625rem;
+$button-border-width: 1px;
 
 // Utility variables
 $link-hover-selector: '&:hover, &:focus, &:active';
 
 //Hover mixin
+
 
 

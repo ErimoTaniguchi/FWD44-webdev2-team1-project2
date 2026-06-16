@@ -1,1 +1,143 @@
 @use 'variables' as *;
+// for testing only, to be deleted later
+/*
+body {
+    outline: 10px solid red;
+}
+*/
+
+.jade-feature-section {
+     font-family: $font-stack-body;
+    // $font-stack-body: "Gopher Mono", "DM Sans", sans-serif;
+
+    .feature__title{
+        font-family: $font-stack-body;
+        // $font-stack-body: "Gopher Mono", "DM Sans", sans-serif;
+        font-weight: 700;
+    }
+
+ 
+
+    .feature {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        min-height: auto;
+        padding: $section-padding-mobile;
+        //$section-padding-mobile: 3rem 1rem;
+        gap: $space-large;
+        //$space-large: 2rem;
+    }
+
+    .feature--yellow {
+        background: $section-1;
+        //$section-1:#fbb500;
+
+    }
+
+    .feature--cream {
+        background: $section-2;
+        //$section-2:#f1eadd;
+
+    }
+
+    .feature--pink {
+        background: $section-3;
+        //$section-3:#ffaaca;
+    }
+
+    .feature__title {
+        font-size: 1.5rem;
+        line-height: 1.1;
+        margin-bottom: $space-medium;
+        //$space-medium: 1rem;
+    }
+
+    .feature__text {
+        font-family: $font-stack-body;
+        // $font-stack-body: "Gopher Mono", "DM Sans", sans-serif;
+        max-width: 26.875rem;
+        margin: 0 auto;
+        font-size: $paragraph-font-size;
+        //$paragraph-font-size: 0.875rem;
+        line-height: $body-line-height;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature__button {
+        font-family: $font-stack-body;
+        // $font-stack-body: "Gopher Mono", "DM Sans", sans-serif;
+        font-weight: 500;
+        background: $black-btn-color;
+        //$black-btn-color:#1d1d1d;
+        color: $black-btn-font-color;
+        //$black-btn-font-color: #ffffff; 
+        border-radius: $radius-pill; 
+        //$radius-pill: 999rem;
+        padding: $button-padding-small; 
+        //$button-padding-small: .5rem 1.625rem;
+        border: $button-border-width solid $black-btn-color;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+
+    .feature__image-placeholder {
+        width: 100%;
+        max-width: 40rem;
+        height: 35rem;
+        justify-self: center;
+        order: -1;
+        overflow: hidden;
+    }
+
+    .feature__image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @media (min-width: $large) {
+        .feature {
+            grid-template-columns: 1fr 1fr;
+            min-height: 24rem;
+            padding:$section-padding-large;
+            //$section-padding-large: 3.5rem 3rem;
+            gap: $space-large;
+            //$space-large: 2rem;
+        }
+          .feature__button {
+            padding: $button-padding-large; 
+            //$button-padding-large: .9375rem 2.875rem;
+       
+        }
+
+        .feature__title {
+            font-size: $heading-font-size-large;
+            //$heading-font-size-large: 4.4rem;
+            line-height: $heading-line-height;
+
+        }
+        .feature__text {
+            font-size: $paragraph-font-size; 
+            //$paragraph-font-size: 0.875rem;
+             max-width: 28rem;
+             line-height: $body-line-height;
+        }
+
+        .feature__image-placeholder {
+            width: 34rem;
+            height: 34rem;
+            order: initial;// to reset the order for desktop layout
+            overflow: visible;// to allow the image to overflow the container if needed
+            justify-self:end;// to align the image to the right of the container
+            align-self: center;// to vertically center the image within the container   
+        }
+
+        .feature__image-placeholder img {
+            width:100%;// to make the image fill the container width on desktop
+            height: 100%;
+            object-fit: contain;// to ensure the entire image is visible without cropping on larger screens
+        }
+    }
+}
