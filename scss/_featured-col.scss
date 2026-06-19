@@ -1,1 +1,6 @@
 @use 'variables' as *;
+
+
+.card__whole-link {
+    border: solid 1px $border;
+}

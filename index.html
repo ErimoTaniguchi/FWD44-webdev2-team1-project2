@@ -1,71 +1,121 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Plant Lady Juice Co | Home</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css" />
+
+    <!-- adding DM Sans and IBM Plex Mono from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
     <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
     <a class="screen-reader-text" href="#">Skip to content</a>
     <!-- Jes -->
     <header>
-        <!-- consult with gabbie -->
-        <h3>Local Farm Pickup Now Available | Pick up at the farm between 11AM - 7PM</h3>
-        <!-- ???? -->
+      <p>
+        Local Farm Pickup Now Available | Pick up at the farm between 11AM - 7PM
+      </p>
 
-        <h1>Plant Lady Juice Co.</h1>
-        <div>
-            <ul>
-                <li><input type="text" placeholder="Search for..."></li>
-                <li>Account</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-        <nav>
-            <!-- consult with gabbie -->
-            <h3>Menu</h3>
-            <!-- ??? -->
+      <h1><a href="#">Plant Lady Juice Co.</a></h1>
+      <div>
+        <ul>
+          <li>
+            <label for="search"></label>
+            <input type="text" placeholder="Search for..." />
+          </li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </div>
+      <nav>
+        <h2>Menu</h2>
 
+        <ul>
+          <li>
+            <a href="#">Sips</a>
             <ul>
-                <li>Sips</li>
-                <li>Cleanses</li>
-                <li>Apothecary</li>
-                <li>Services</li>
+              <li><a href="">Juices</a></li>
+              <li><a href="">Teas</a></li>
+              <li><a href="">Elixirs</a></li>
+              <li><a href="">Waters</a></li>
+            </ul>
+          </li>
+          <li><a href="">Cleanses</a></li>
+          <li><a href="">Apothecary</a></li>
+          <li><a href="">Services</a></li>
 
-                <!-- should only display on mobile and tablet -->
-                <li><a href="#"><img src="#" alt="instagram-logo"></a></li>
-                <li>Account</li>
-            </ul>
-            <ul>
-                <li>Juices</li>
-                <li>Teas</li>
-                <li>Elixirs</li>
-                <li>Waters</li>
-            </ul>
-        </nav>
-        <a href="#">Delivery + Shipping Guidelines</a>
+          <!-- should only display on mobile and tablet -->
+          <li>
+            <a href="#"><img src="#" alt="instagram-logo" /></a>
+          </li>
+          <li><a href="#">Account</a></li>
+        </ul>
+      </nav>
+      <a href="#">Delivery + Shipping Guidelines</a>
     </header>
     <!-- End of jes part -->
     <main>
-        <!-- Jade -->
-        <section>
+    <!-- Jade -->
+<!-- Jade -->
+
+    <section class="feature feature--yellow">
             <h2>Locally sourced in Atlanta, GA</h2>
-            <p>Plant Lady Juice Co. nurtures wellness from the ground up—growing ingredients in our garden and sourcing from local Georgia farmers. From cold-pressed juices to herbal remedies, our offerings are crafted with care.</p>
+
+            <p>
+                Plant Lady Juice Co. nurtures wellness from the ground up—growing
+                ingredients in our garden and sourcing from local Georgia farmers.
+                From cold-pressed juices to herbal remedies, our offerings are crafted
+                with care.
+            </p>
+
             <a href="#">Shop Now</a>
-        </section>
-        <section>
+
+        <img
+            src="images/card-01.webp"
+            alt="Locally sourced illustration"
+        >
+    </section>
+
+
+    <section class="feature feature--cream">
+
+        <img
+            src="images/card-02.webp"
+            alt="Deeply rooted illustration"
+        >
             <h2>Deeply Rooted <sup>TM</sup></h2>
-            <p>Roots are the lifeline of plants. Roots absorb vital nutrients which nourish our bodies. In the same respect, Plant Lady Juice Co. knows that staying deeply rooted harmonizes the journey to self-actualization.</p>
+
+            <p>
+                Roots are the lifeline of plants. Roots absorb vital nutrients which
+                nourish our bodies. In the same respect, Plant Lady Juice Co. knows
+                that staying deeply rooted harmonizes the journey to self-actualization.
+            </p>
+
             <a href="#">Our Story</a>
-        </section>
-        <section>
+    </section>
+    <section class="feature feature--pink">
             <h2>Where to Shop</h2>
-            <p>Order online for nationwide shipping or local delivery within the metro-Atlanta area.</p>
+
+            <p>
+                Order online for nationwide shipping or local delivery within the
+                metro-Atlanta area.
+            </p>
+
             <a href="#">Learn More</a>
-        </section>
-        <!-- end of jade part -->
+
+        <img
+            src="images/card-03.webp"
+            alt="Where to shop illustration"
+        >
+    </section>
+
+<!-- end of jade part -->
+    <!-- end of jade part -->
         <!-- Alan -->
         <section>
             <h3>Seasonal Favorites</h3>
@@ -114,52 +164,59 @@
             <h3>Featured collections</h3>
             <a href="#">View all collections</a>
 
-            <!-- consult with gabbie -->
-            <a href="#">
-                <article>
-                    <h4>Apothecary</h4>
-                    <img src="#" alt="apothecary">
-                </article>
-            </a>
+        <!-- consult with gabbie -->
+        <div class="css-slider-container">
+          <a class="card__whole-link" href="#">
             <article>
-                <h4>Cleanses</h4>
-                <img src="#" alt="cleanses">
+              <h3>Apothecary</h3>
+              <img src="images/apothecary.webp" alt="apothecary" />
             </article>
+          </a>
+          <a  class="card__whole-link" href="#">
             <article>
-                <h4>Support at any level</h4>
-                <img src="#" alt="support">
+              <h3>Cleanses</h3>
+              <img src="images/cleanses.webp" alt="cleanses" />
             </article>
-        </section>
+          </a>
+          <a class="card__whole-link" href="#">
+            <article>
+              <h3>Support at any level</h3>
+              <img src="images/support.webp" alt="support" />
+            </article>
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <section>
-            <h4>Plant Lady Juice Co.</h4>
-            <p>Deeply Rooted <sup>TM</sup></p>
-            <img src="#" alt="instagram logo">
-        </section>
-        <section>
-            <h4>Sign up for (juicy) news!</h4>
-            <input type="text" placeholder="Enter your email">
-        </section>
-        <nav>
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog Posts</a></li>
-                <li><a href="#">Ordering and Delivery</a></li>
-                <li><a href="#">FAQs</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Cancellation & Refund Policy</a></li>
-                <li><a href="#">Disclaimer</a></li>
-            </ul>
-        </nav>
-        <section>
-            <h4>Copyright &copy; 2026</h4>
-            <a href="#">Plant Lady Juice Co.</a>
-        </section>
+      <section>
+        <h2>Plant Lady Juice Co.</h2>
+        <p>Deeply Rooted &trade;</p>
+        <img src="#" alt="instagram logo" />
+      </section>
+      <section>
+        <h2>Sign up for (juicy) news!</h2>
+        <label for="email"></label>
+        <input type="text" placeholder="Enter your email" />
+      </section>
+      <nav>
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog Posts</a></li>
+          <li><a href="#">Ordering and Delivery</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cancellation & Refund Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </nav>
+      <section>
+        <h2>Copyright &copy; 2026</h2>
+        <a href="#">Plant Lady Juice Co.</a>
+      </section>
     </footer>
     <!-- end of erimo part -->
-</body>
+  </body>
 </html>

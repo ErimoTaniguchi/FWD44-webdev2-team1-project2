@@ -1,1 +1,106 @@
 @use 'variables' as *;
+
+.feature {
+    font-family: $font-family;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: auto;
+    padding: 3rem 1rem;
+    gap: 2rem;
+}
+
+.feature--yellow {
+    background: $section-1;
+}
+
+.feature--cream {
+    background: $section-2;
+}
+
+.feature--pink {
+    background: $section-3;
+}
+
+.feature__title {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.feature__text {
+    font-family: $font-family;
+    max-width: 26.875rem;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+.feature__button {
+    font-family: $font-family;
+    font-weight: 500;
+    background: #1d1d1d;
+    color: #ffffff;
+    border-radius: 999rem;
+    padding: 0.5rem 1.625rem;
+    border: 1px solid #1d1d1d;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.feature__image-placeholder {
+    width: 100%;
+    max-width: 40rem;
+    height: 35rem;
+    justify-self: center;
+    order: -1;
+    overflow: hidden;
+}
+
+.feature__image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (min-width: $large) {
+    .feature {
+        grid-template-columns: 1fr 1fr;
+        min-height: 24rem;
+        padding: 3.5rem 3rem;
+        gap: 2rem;
+    }
+
+    .feature__button {
+        padding: 0.9375rem 2.875rem;
+    }
+
+    .feature__title {
+        font-size: 4.4rem;
+        line-height: 1.2;
+    }
+
+    .feature__text {
+        font-size: 0.875rem;
+        max-width: 28rem;
+        line-height: 1.5;
+    }
+
+    .feature__image-placeholder {
+        width: 34rem;
+        height: 34rem;
+        order: initial;
+        overflow: visible;
+        justify-self: end;
+        align-self: center;
+    }
+
+    .feature__image-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
