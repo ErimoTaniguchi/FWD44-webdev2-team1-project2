@@ -28,10 +28,41 @@ $large:64em;
 $medium:48em;
 
 
-// Utility variables
+// Utility Variables
 $link-hover-selector: '&:hover, &:focus, &:active';
 
-//Hover mixin
+//Hover Mixin
 
+// Sizing Variables -- added by Jes 18/06/26
+
+// Sizing - Borders - Width and Border Radius
+$border-weight: 1px;
+
+$button-radius: 30px;
+$card-radius: 10px;
+$form-radius: 5px;
+
+// Sizing - Padding
+
+// Use the first value for mobile, then get use the two commented numbers for tablet and desktop values: calc($variable-name * [number])
+    // Example: $side-padding: 15px; // 2, 2.5
+        // Tablet - padding: 0 calc($side-padding * 2) 0;
+        // Desktop - padding: 0 calc($side-padding * 2.5) 0;
+
+    // Reference: https://sass-lang.com/documentation/values/calculations/
+
+// Header, Seasonal, Footer Sides
+$side-padding: 15px; // 2, 2.667
+ 
+// Card Sides
+$card-padding-left: 40px; // 1, 1.5
+$card-padding-right: 40px; // 0.625, 0.875
+
+// Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
+$card-button-vertical: 32px; // 1.25, 1.4375
+$card-button-horizontal: 12px; // 1, 1.25
+
+$seasonal-button-vertical: 24px; // 1.5, 1.5
+$seasonal-button-horizontal: 8px; // 1.375, 1.375
 
 
