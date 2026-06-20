@@ -1,14 +1,9 @@
-//Font
-
-
-// Font Sizes
-
-// mono default font
-
+// Font
 $font-family: "IBM Plex Mono", monospace;
 
+    // Font Sizes
 
-//Colors
+// Colors
 $announcement-color:#3c863b;
 $section-1:#fbb500;
 $section-2:#f1eadd;
@@ -17,52 +12,132 @@ $black-btn-color:#1d1d1d;
 $background-color: #ffffff;
 $border: #e1e1e1;
 
-//Text Colors
-$font-color: #1d1d1d;
-$black-btn-font-color: #ffffff; // added by Jade for text color on black buttons
+    // Text Colors
+    $font-color: #1d1d1d;
+    $black-btn-font-color: #ffffff; // added by Jade for text color on black buttons
 
-
-
-//Media Query Breakpoints
+// Media Query Breakpoints
 $large:64em;
 $medium:48em;
 
 
 // Utility Variables
-$link-hover-selector: '&:hover, &:focus, &:active';
 
-//Hover Mixin
+    // Links -- added by Jes 19/06/26
+        // Link State
+        $link-hover-selector: '&:hover, &:focus, &:active';
+
+        // Underlined Links - Line Weight, Padding Below, Margin Below
+        $link-underlined-weight: 1px; // 1, 1
+
+        $link-underlined-padding: 1px; // 1, 1
+
+        $link-underlined-margin: 5px; // 1, 1
 
 // Sizing Variables -- added by Jes 18/06/26
 
-// Sizing - Borders - Width and Border Radius
-$border-weight: 1px;
+    // Borders - Width and Border Radius
+    $border-weight: 1px; // borders are only ever 1px
 
-$button-radius: 30px;
-$card-radius: 10px;
-$form-radius: 5px;
+    $button-radius: 30px; // also used for search bar
+    $card-radius: 10px;
+    $form-radius: 5px;
 
-// Sizing - Padding
-
-// Use the first value for mobile, then get use the two commented numbers for tablet and desktop values: calc($variable-name * [number])
-    // Example: $side-padding: 15px; // 2, 2.5
-        // Tablet - padding: 0 calc($side-padding * 2) 0;
-        // Desktop - padding: 0 calc($side-padding * 2.5) 0;
+    // Use the first value for mobile, then get use the two commented numbers for tablet and desktop values: calc($variable-name * [number])
+        // Example: $side-padding: 15px; // 2, 2.5
+            // Tablet - padding: 0 calc($side-padding * 2) 0;
+            // Desktop - padding: 0 calc($side-padding * 2.5) 0;
 
     // Reference: https://sass-lang.com/documentation/values/calculations/
 
-// Header, Seasonal, Footer Sides
-$side-padding: 15px; // 2, 2.667
- 
-// Card Sides
-$card-padding-left: 40px; // 1, 1.5
-$card-padding-right: 40px; // 0.625, 0.875
+    // !! If the [number] value = 1 the value doesn't change between viewport sizes, so calc is unnecessary
 
-// Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
-$card-button-vertical: 32px; // 1.25, 1.4375
-$card-button-horizontal: 12px; // 1, 1.25
+        // Header, Seasonal, Footer Sides
+        $side-padding: 15px; // 2, 2.667
 
-$seasonal-button-vertical: 24px; // 1.5, 1.5
-$seasonal-button-horizontal: 8px; // 1.375, 1.375
+        // Card Sides
+        $card-padding-left: 40px; // 1, 1.5
+        $card-padding-right: 40px; // 0.625, 0.875
 
+        // Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
+        $card-button-padding-vertical: 32px; // 1.25, 1.4375
+        $card-button-padding-horizontal: 12px; // 1, 1.25
 
+        $seasonal-button-padding-vertical: 24px; // 1.5, 1.5
+        $seasonal-button-padding-horizontal: 8px; // 1.375, 1.375
+
+        // Forms - "horizontal" as in "horizontal sides" (long)
+        $form-email-padding-left: 8px; // 1.5, 1.5
+        $form-email-padding-right: 40px; // 1, 1
+        $form-email-padding-horizontal: 9px; // 1.33, 1.33
+
+        $form-search-padding-left: 43px; // 1, 1.232
+        $form-search-padding-right: 24px; // 1.5, 1.5
+        $form-search-padding-horizontal: 8px; // 1.375, 1.375
+
+    // Header
+        // Announcement
+        $announcement-padding-vertical: 20px; // 1, 1
+        $announcement-padding-horizontal: 5px; // 1, 1
+
+        // Logo and Search
+        $header-padding-horizontal: 15px; // 1.33, 2
+        $header-padding-vertical: 24px; // 1, 5
+        $header-padding-delivery: 7.5px; // 1.33, 2
+
+        // Menu
+        $menu-margin-left: -10px; // 1, N/A
+
+        // Delivery
+        $delivery-margin-vertical: 6px; // 1, 
+        $delivery-margin-horizontal: 6px; // 1, 
+        $delivery-margin-right: 10px; // 1, 1.5
+        $delivery-text-margin-top: 2px; // 1, 2.5
+        $delivery-text-padding-bottom: 3px; // 1, 1
+
+    // Cards
+        // Margins - Below
+        $card-heading-margin: 16px; // 1, 1
+        $card-text-margin: 12px; // 1, 1
+
+        // Margins - Above
+        $card-button-margin: 22px; // 1.091, 1.182
+
+        // Text Section Width
+        $card-text-width: 320px; // 1.225, 1.6
+
+    // Seasonal
+        // Margins - Section - Top
+        $seasonal-margin-top: 60px; // 
+
+        // Margins - Text - Bottom
+        $seasonal-heading-margin: 10px; // 
+        $seasonal-body-margin: 10px; // 
+        $seasonal-paragraph-margin: 20px; // 
+
+        // Margins - Product Cards - Bottom
+        $seasonal-price-margin: 17px; // 
+        $seasonal-name-margin: 14.875px; // 
+        $seasonal-name-negative: -8.181px; // 
+
+        // Margins - Vertical - Icon Carousel
+        $seasonal-carousel-margins: 9.25px; //
+
+        // Margins - Icon Carousel - Controls
+        $seasonal-carousel-controls-top: 10px; // 
+        $seasonal-carousel-controls-botton: -12px; //  
+
+        // Padding - Product Cards
+        $seasonal-padding-vertical: 15px; // 
+        $seasonal-padding-horizontal: 15px; // 
+
+        // Width & Grid Row Gap - Product Cards
+        $seasonal-card-width: 290px; // 
+        $seasonal-card-gap: 13px; // 
+
+        // Width & Grid Column Gap - Icon Carousel
+        $seasonal-carousel-width: 138.5px; //
+        $seasonal-carousel-gap: 13px; //
+
+    // Footer
+    
