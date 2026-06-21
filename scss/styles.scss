@@ -3,24 +3,17 @@
 
 // Imports
 
-
 // Resets and Defaults
 @use 'normalize';
 @use 'reset';
 
 
-
-
 // Body
 @use 'body';
 
-
 // Sections
-
 // Header - Jes
-@use 'nav-home';
-@use 'menubar';
-@use 'hamburger';
+@use 'header';
 
 // Cards - Jade
 @use 'feature';

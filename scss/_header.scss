@@ -1,0 +1,41 @@
+@use 'variables' as *;
+
+.site-header {
+    padding: 0 $side-padding;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.header-announcements {
+    background-color: $announcement-color;
+    color: $black-btn-font-color;
+    padding: $announcement-padding-horizontal $announcement-padding-vertical;
+}
+
+.btn-announcement {
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+}
+
+.btn-announcement svg {
+    stroke: $black-btn-font-color;
+    border-width: 0;
+    fill: none;
+}
+
+@media (min-width: $medium) {
+    .site-header {
+        padding: 0 calc($side-padding * 2);
+    }
+}
+
+@media (min-width: $large) {
+    .site-header {
+        padding: 0 calc($side-padding * 2.667);
+    }
+}
