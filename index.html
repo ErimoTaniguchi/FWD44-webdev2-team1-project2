@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Plant Lady Juice Co | Home</title>
     <link rel="stylesheet" href="styles/styles.css" />
 
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
     <!-- calling JavaScript -->
-    <script src="scripts/scripts.js" defer></script>
+    <script src="scripts/navigation.js" defer></script>
 </head>
 
 <body id="site-home">
@@ -54,8 +54,8 @@
               <path d="M0 0h24v24H0z" fill="none" />
               <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M2 11a9 9 0 1 0 18 0a9 9 0 1 0-18 0m15.364 6.364L22 22" />
             </svg>
-            <label for="search"></label>
-            <input type="text" placeholder="Search for..." />
+            <label for="site-search"></label>
+            <input type="text" id="site-search" placeholder="Search for..." />
           </li>
 
           <li class="btn-header btn-white" id="btn-account">
@@ -86,28 +86,29 @@
       </div>
 
       <!-- header navigation menu -->
-      <nav class="header-nav" id="header-nav">
+      <nav class="site-navigation" id="site-navigation">
 
         <!-- mobile nav button -->
-        <button class="nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Navigation Menu">
+        <button class="menu-toggle" id="menu-toggle" aria-controls="header-menu" aria-expanded="false" aria-label="Menu Toggle">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 6.5h15M4.5 12h15m-15 5.5h15" />
           </svg>
         </button>
 
-        <h2 class="mobile-menu">Menu</h2>
-
-        <button class="mobile-menu" id="mobile-menu-close" aria-controls="mobile-menu-close" aria-label="Menu Close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mobile-nav">
-            <path d="M0 0h24v24H0z" fill="none" />
-            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6l12 12" />
-          </svg>
-        </button>
-
         <ul class="header-menu" id="header-menu">
+          <li>
+            <h2 class="mobile-menu">Menu</h2>
+            <button class="mobile-menu" id="mobile-menu-close" aria-controls="header-menu" aria-label="Menu Close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mobile-nav">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </li>
+
           <li class="header-submenu">
-              <button class="submenu-toggle" aria-controls="submenu-toggle" aria-expanded="false" aria-label="Sub-Menu Open">
+              <button class="submenu-toggle" aria-controls="nav-submenu" aria-expanded="false" aria-label="Sub-Menu Open">
 
                 <!-- mobile submenu -->
                 <div id="submenu-open">
@@ -289,7 +290,7 @@
             </figure>
         </section>
         <!-- end of alan part -->
-         <!-- Erimo -->
+        <!-- Erimo -->
         <section>
             <h3>Featured collections</h3>
             <a href="#">View all collections</a>
@@ -326,8 +327,8 @@
       </section>
       <section>
         <h2>Sign up for (juicy) news!</h2>
-        <label for="email"></label>
-        <input type="text" placeholder="Enter your email" />
+        <label for="form-email"></label>
+        <input type="text" id="form-email" placeholder="Enter your email" />
       </section>
       <nav>
         <h2>Quick Links</h2>
