@@ -19,46 +19,56 @@
     <a class="screen-reader-text" href="#">Skip to content</a>
     <!-- Jes -->
     <header>
-      <div class="announcements">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="announcement-nav">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15 6l-6 6l6 6" />
-        </svg>
+      <div class="header-announcements">
+        <button class="btn-announcement" aria-controls="btn-announcement-left" aria-label="Announcement Controls Left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15 6l-6 6l6 6" />
+          </svg>
+        </button>
+
         <p>
           🌿 Local Farm Pickup Now Available | Pick up at the farm between 11AM - 7PM
         </p>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="announcement-nav">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
-        </svg>
+
+        <button class="btn-announcement" aria-controls="btn-announcement-right" aria-label="Announcement Controls Right">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="announcement-nav">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
+          </svg>
+        </button>
       </div>
 
-      <h1>
-        <a href="#site-home" class="logo-img">
+      <!-- site word-mark image -->
+      <h1 class="header-logo">
+        <a href="#site-home">
           <img src="images/logo.webp" alt="Plant Lady Juice Co.">
         </a>
       </h1>
 
+      <!-- desktop-only action buttons -->
       <div class="header-actions">
         <ul>
-          <li>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="action-icon">
+          <li class="btn-header btn-form" id="btn-search">
+            <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="action-icon">
               <path d="M0 0h24v24H0z" fill="none" />
               <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M2 11a9 9 0 1 0 18 0a9 9 0 1 0-18 0m15.364 6.364L22 22" />
             </svg>
             <label for="search"></label>
             <input type="text" placeholder="Search for..." />
           </li>
-          <li>
+
+          <li class="btn-header btn-white" id="btn-account">
             <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="action-icon">
                 <path d="M0 0h24v24H0z" fill="none" />
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0" />
               </svg>
               <p>Account</p>
             </a>
           </li>
-          <li>
+
+          <li class="btn-header btn-black" id="btn-cart">
             <a href="#">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="action-icon">
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -75,8 +85,10 @@
         </ul>
       </div>
 
+      <!-- header navigation menu -->
       <nav class="header-nav" id="header-nav">
 
+        <!-- mobile nav button -->
         <button class="nav-menu" aria-controls="nav-menu" aria-expanded="false" aria-label="Navigation Menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path d="M0 0h24v24H0z" fill="none" />
@@ -84,57 +96,71 @@
           </svg>
         </button>
 
-        <h2>Menu</h2>
-        <!-- add button tags to the menu svgs -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mobile-nav">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6l12 12" />
-        </svg>
+        <h2 class="mobile-menu">Menu</h2>
 
-        <ul>
-          <li>
-            <!-- go over transitions, I think this is wrong -->
-            <a href="#nav-submenu"> 
-              <p>Sips</p>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mobile-nav">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
-              </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="desktop-nav">
-                <path d="M0 0h24v24H0z" fill="none" />
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 9l6 6l6-6" />
-              </svg>
-            </a>
-          </li>
-            <ul class="mobile-submenu" id="mobile-submenu">
-              <li>
-                <a href="#">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mobile-nav">
+        <button class="mobile-menu" id="mobile-menu-close" aria-controls="mobile-menu-close" aria-label="Menu Close">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mobile-nav">
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
+        <ul class="header-menu" id="header-menu">
+          <li class="header-submenu">
+              <button class="submenu-toggle" aria-controls="submenu-toggle" aria-expanded="false" aria-label="Sub-Menu Open">
+
+                <!-- mobile submenu -->
+                <div id="submenu-open">
+                  <p>Sips</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
+                  </svg>
+                </div>
+
+                <div id="submenu-close">
+                  <svg class="submenu-mobile mobile-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path d="M0 0h24v24H0z" fill="none" />
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m15 6l-6 6l6 6" />
                   </svg>
-                  <p>Back</p>
-                </a>
-              </li>
+                  <p class="submenu-mobile-close">Back</p>
+                </div>
+
+                <!-- desktop submenu -->
+                <div id="submenu-desktop">
+                  <p>Sips</p>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M0 0h24v24H0z" fill="none" />
+                    <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 9l6 6l6-6" />
+                  </svg>
+                </div>
+
+              </button>
+
+            <ul class="mobile-submenu" id="nav-submenu">
                 <li><a href="#">Juices</a></li>
                 <li><a href="#">Teas</a></li>
                 <li><a href="#">Elixirs</a></li>
                 <li><a href="#">Waters</a></li>
             </ul>
+          </li>
+
           <li><a href="#">Cleanses</a></li>
           <li><a href="#">Apothecary</a></li>
           <li><a href="#">Services</a></li>
 
           <!-- should only display on mobile and tablet -->
-          <li class="mobile-menu">
+          <li class="mobile-menu" id="icon-account">
             <a href="#">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none" />
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0" />
               </svg>
+              Account
             </a>
           </li>
-          <li class="mobile-menu">
+
+          <li class="mobile-menu" id="icon-instagram">
             <a href="#">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M0 0h24v24H0z" fill="none" />
@@ -149,7 +175,7 @@
 
       </nav>
 
-      <a href="#">
+      <a href="#" class="header-shipping">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path d="M0 0h24v24H0z" fill="none" />
           <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
@@ -157,7 +183,7 @@
             <path d="M5 17H3v-4M2 5h11v12m-4 0h6m4 0h2v-6h-8m0-5h5l3 5M3 9h4" />
           </g>
         </svg>
-        <p>Delivery + Shipping Guidelines</p>
+        Delivery + Shipping Guidelines
       </a>
 
     </header>
