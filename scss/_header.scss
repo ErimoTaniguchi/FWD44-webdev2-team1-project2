@@ -2,8 +2,11 @@
 
 .site-header {
     padding: 0 $side-padding;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid:
+        "a b c" 1fr
+        "d d d" 1fr
+        "e e e" 1fr / 1fr 3fr 1fr;
     align-items: center;
     justify-content: space-between;
     position: relative;
@@ -13,19 +16,75 @@
 .header-announcements {
     background-color: $announcement-color;
     color: $black-btn-font-color;
-    padding: $announcement-padding-horizontal $announcement-padding-vertical;
+    padding: 0 $announcement-side-padding;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+}
+
+.header-announcements p {
+    padding: $announcement-text-padding-horizontal $announcement-text-padding-vertical;
+    text-align: center;
+    display: flex;
+    font-weight: $announcement-font-weight;
+    margin: 0;
 }
 
 .btn-announcement {
     border: 0;
     background-color: transparent;
     color: transparent;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .btn-announcement svg {
     stroke: $black-btn-font-color;
     border-width: 0;
     fill: none;
+    opacity: 0.36;
+}
+
+.site-navigation {
+    grid-area: a;
+}
+
+.header-logo {
+    grid-area: b;
+}
+
+#btn-cart {
+    grid-area: c;
+}
+
+#btn-account {
+    display: none;
+}
+
+#btn-search {
+    grid-area: d;
+}
+
+.header-menu,
+.mobile-submenu,
+.header-action-buttons {
+    list-style: $plain-link;
+}
+
+.header-menu {
+    display: none;
+}
+
+.site-navigation.toggled .header-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
 }
 
 @media (min-width: $medium) {

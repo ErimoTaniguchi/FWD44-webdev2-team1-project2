@@ -11,17 +11,23 @@ const submenuToggle = document.querySelector('.submenu-toggle');
 
 // Helper function to close main menu properly
 function closeMainMenu() {
+	if (!siteNavigation || !button) {
+		return;
+	}
+
 	siteNavigation.classList.remove('toggled');
-	button.setAttribute('aria-expanded', false);
+	button.setAttribute('aria-expanded', 'false');
 }
 
 // Toggle main menu via hamburger icon
-button.addEventListener('click', function(event) {
-	event.stopPropagation(); // Keeps click from firing instantly
-	const isExpanded = button.getAttribute('aria-expanded') === 'true';
-	siteNavigation.classList.toggle('toggled');
-	button.setAttribute('aria-expanded', !isExpanded);
-});
+if (button) {
+	button.addEventListener('click', function(event) {
+		event.stopPropagation(); // Keeps click from firing instantly
+		const isExpanded = button.getAttribute('aria-expanded') === 'true';
+		siteNavigation.classList.toggle('toggled');
+		button.setAttribute('aria-expanded', !isExpanded);
+	});
+}
 
 // Close main menu using "Close" button
 if (closeButton) {
@@ -44,20 +50,28 @@ if (submenuToggle) {
 
 // Close the nav menu if clicking outside of it
 document.addEventListener('click', function(event) {
+	const target = event.target;
+	const isClickInside = siteNavigation && siteNavigation.contains(target);
+
 	if (!isClickInside) {
 		closeMainMenu();
 		if (submenuToggle) {
 			submenuToggle.setAttribute('aria-expanded', 'false');
-			submenuToggle.closest('.header-submenu').classList.remove('focus');
+			const submenu = submenuToggle.closest('.header-submenu');
+			if (submenu) {
+				submenu.classList.remove('focus');
+			}
 		}
 	}
 });
 
 // Keyboard focus tracking
-const links = menu.querySelectorAll('li a');
-for (const link of links) {
-	link.addEventListener('focus', toggleFocus, true);
-	link.addEventListener('blur', toggleFocus, true);
+if (menu) {
+	const links = menu.querySelectorAll('li a');
+	for (const link of links) {
+		link.addEventListener('focus', toggleFocus, true);
+		link.addEventListener('blur', toggleFocus, true);
+	}
 }
 
 function toggleFocus(event) {
