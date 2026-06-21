@@ -1,14 +1,16 @@
 @use 'variables' as *;
 
 .site-header {
-    padding: 0 $side-padding;
+    padding: $header-padding-horizontal $side-padding $header-padding-delivery;
     display: grid;
     grid:
         "a b c" 1fr
         "d d d" 1fr
-        "e e e" 1fr / 1fr 3fr 1fr;
-    align-items: center;
-    justify-content: space-between;
+        "e e e" 1fr / 1fr 4fr 1fr;
+    row-gap: $header-padding-horizontal;
+    align-items: baseline;
+    justify-content: center;
+    justify-items: center;
     position: relative;
     z-index: 1;
 }
@@ -54,6 +56,8 @@
 
 .header-logo {
     grid-area: b;
+    padding: 0 $header-padding-vertical;
+    margin: 0;
 }
 
 #btn-cart {
@@ -66,6 +70,16 @@
 
 #btn-search {
     grid-area: d;
+}
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-shipping {
+    grid-area: e;
 }
 
 .header-menu,
@@ -90,8 +104,27 @@
 .menu-toggle {
     background-color: transparent;
     border: 0;
-    color: $font-color;
     padding: 0;
+    fill: $font-color;
+}
+
+.btn-cart {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    fill: $font-color;
+}
+
+.btn-cart svg:first-of-type {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-cart svg:last-of-type {
+    position: absolute;
+    z-index: 100;
+    right: 20px;
+    top: 25px;
 }
 
 @media (min-width: $medium) {
