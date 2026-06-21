@@ -87,6 +87,13 @@
     z-index: 999;
 }
 
+.menu-toggle {
+    background-color: transparent;
+    border: 0;
+    color: $font-color;
+    padding: 0;
+}
+
 @media (min-width: $medium) {
     .site-header {
         padding: 0 calc($side-padding * 2);
