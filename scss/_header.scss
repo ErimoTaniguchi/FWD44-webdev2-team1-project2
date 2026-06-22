@@ -1,11 +1,16 @@
 @use 'variables' as *;
 
 .site-header {
-    padding: 0 $side-padding;
-    display: flex;
-    flex-wrap: wrap;
+    padding: $header-padding-horizontal $side-padding $header-padding-delivery;
+    display: grid;
+    grid:
+        "a b c" 1fr
+        "d d d" 1fr
+        "e e e" 1fr / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
+    row-gap: $header-padding-horizontal;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    justify-items: stretch;
     position: relative;
     z-index: 1;
 }
@@ -13,19 +18,157 @@
 .header-announcements {
     background-color: $announcement-color;
     color: $black-btn-font-color;
-    padding: $announcement-padding-horizontal $announcement-padding-vertical;
+    padding: 0 $announcement-side-padding;
+    line-height: 1.1;
+    display: flex;
+    align-items: center;
+}
+
+.header-announcements p {
+    padding: $announcement-text-padding-horizontal $announcement-text-padding-vertical;
+    text-align: center;
+    display: flex;
+    font-weight: $announcement-font-weight;
+    margin: 0;
 }
 
 .btn-announcement {
     border: 0;
     background-color: transparent;
     color: transparent;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 .btn-announcement svg {
     stroke: $black-btn-font-color;
     border-width: 0;
     fill: none;
+    opacity: 0.36;
+}
+
+.site-navigation {
+    grid-area: a;
+}
+
+.header-logo {
+    grid-area: b;
+    padding: 0 $header-padding-vertical;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    margin-block: 0;
+    line-height: $header-logo-height;
+    width: fit-content;
+}
+
+
+.btn-account {
+    display: none;
+}
+
+.btn-search {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 100%;
+    width: 100%;
+    padding: $header-search-padding-horizontal $header-search-padding-vertical;
+    grid-area: d;
+    border: $border $border-weight solid;
+    border-radius: $button-radius;
+    font-size: $body-font-size;
+    line-height: $body-font-height;
+    font-weight: $body-font-weight;
+}
+
+.btn-search svg {
+    display: block;
+    margin-right: $header-search-padding-vertical;
+    stroke-width: 2px;
+}
+
+.btn-search input {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.header-shipping {
+    grid-area: e;
+    color: $font-color;
+    text-decoration: $plain-link;
+    display: flex;
+    align-items: center;
+    font-weight: $body-font-bold;
+    padding-right: $delivery-padding-right;
+}
+
+.header-shipping svg {
+    display: block;
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: $delivery-margin-right;
+}
+
+.header-menu,
+.mobile-submenu,
+.header-action-buttons {
+    list-style: $plain-link;
+}
+
+.header-menu {
+    display: none;
+}
+
+.site-navigation.toggled .header-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    fill: $font-color;
+}
+
+.btn-cart {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    fill: $font-color;
+    grid-area: c;
+}
+
+.btn-cart svg:last-child {
+    position: relative;
+    z-index: 1;
+    color: $font-color;
+}
+
+.btn-cart-counter {
+    position: absolute;
+    z-index: 100;
+    right: 15px;
+    top: 15px;
+}
+
+.btn-cart-counter svg:first-child {
+    position: absolute;
+    z-index: 200;
+    color: $font-color;
+}
+
+.btn-cart-counter svg:last-child {
+    color: $black-btn-font-color
 }
 
 @media (min-width: $medium) {
