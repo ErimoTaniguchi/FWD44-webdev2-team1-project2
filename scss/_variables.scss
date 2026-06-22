@@ -10,6 +10,10 @@ $font-family: "IBM Plex Mono", monospace;
     $body-font-height: 1;
     $heading-font-height: 1.5;
 
+    // Heading Font
+    $h3-font-size: 30.33px;
+    $h3-font-weight: 700;
+
 
 // Colors
 $announcement-color:#3c863b;
@@ -88,12 +92,12 @@ $medium:48em;
         $announcement-text-padding-vertical: 10px; // 1, 1
         $announcement-text-padding-horizontal: 6px; // 1, 1
         $announcement-font-weight: 400; // 
-        $announcement-side-padding: 13.5px; // 
+        $announcement-side-padding: 13.5008px; // 
 
         // Logo and Search
         $header-padding-horizontal: 15px; // 1.33, 2
         $header-padding-vertical: 24px; // 1, 5
-        $header-padding-delivery: 7.5px; // 1.33, 2
+        $header-padding-delivery: 7.5008px; // 1.33, 2
         $header-logo-height: 40px; // 
         $header-search-padding-vertical: 12px; // 
         $header-search-padding-horizontal: 8px; //
@@ -132,11 +136,11 @@ $medium:48em;
 
         // Margins - Product Cards - Bottom
         $seasonal-price-margin: 17px; // 
-        $seasonal-name-margin: 14.875px; // 
-        $seasonal-name-negative: -8.181px; // 
+        $seasonal-name-margin: 14.8752px; // 
+        $seasonal-name-negative: -8.1808px; // 
 
         // Margins - Vertical - Icon Carousel
-        $seasonal-carousel-margins: 9.25px; //
+        $seasonal-carousel-margins: 9.2496px; //
 
         // Margins - Icon Carousel - Controls
         $seasonal-carousel-controls-top: 10px; // 
@@ -151,7 +155,7 @@ $medium:48em;
         $seasonal-card-gap: 13px; // 
 
         // Width & Grid Column Gap - Icon Carousel
-        $seasonal-carousel-width: 138.5px; //
+        $seasonal-carousel-width: 138.5008px; //
         $seasonal-carousel-gap: 13px; //
 
     // Footer
