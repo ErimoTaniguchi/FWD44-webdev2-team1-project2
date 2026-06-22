@@ -1,12 +1,11 @@
 @use 'variables' as *;
 
 .site-header {
-    padding: $header-padding-horizontal $side-padding $header-padding-delivery;
     display: grid;
     grid:
-        "a b c" 1fr
-        "d d d" 1fr
-        "e e e" 1fr / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
+        "a b c"
+        "d d d"
+        "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
     row-gap: $header-padding-horizontal;
     align-items: center;
     justify-content: center;
@@ -52,11 +51,13 @@
 
 .site-navigation {
     grid-area: a;
+    padding: $header-padding-horizontal 0 0 $header-padding-horizontal;
+    margin-left: $menu-margin-left;
 }
 
 .header-logo {
     grid-area: b;
-    padding: 0 $header-padding-vertical;
+    padding: $header-padding-horizontal $header-padding-vertical 0;
     margin: 0;
     display: flex;
     align-items: center;
@@ -65,6 +66,9 @@
     width: fit-content;
 }
 
+.header-logo img {
+    max-height: 20px;
+}
 
 .btn-account {
     display: none;
@@ -74,8 +78,6 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    height: 100%;
-    width: 100%;
     padding: $header-search-padding-horizontal $header-search-padding-vertical;
     grid-area: d;
     border: $border $border-weight solid;
@@ -83,6 +85,7 @@
     font-size: $body-font-size;
     line-height: $body-font-height;
     font-weight: $body-font-weight;
+    margin: 0 $header-padding-horizontal;
 }
 
 .btn-search svg {
@@ -97,21 +100,72 @@
     margin: 0;
 }
 
+.btn-cart {
+    background-color: transparent;
+    border: 0;
+    padding: $header-padding-horizontal $header-padding-horizontal 0 0;
+    fill: $font-color;
+    grid-area: c;
+    width: $action-button-size;
+    height: $action-button-size;
+}
+
+.btn-cart svg:last-child {
+    position: relative;
+    z-index: 1;
+    color: $font-color;
+}
+
+.btn-cart-counter {
+    position: absolute;
+    z-index: 100;
+    right: 10px;
+    top: 17px;
+}
+
+.btn-cart-counter svg:first-child {
+    position: absolute;
+    z-index: 200;
+    color: $font-color;
+}
+
+.btn-cart-counter svg:last-child {
+    color: $black-btn-font-color
+}
+
 .header-shipping {
     grid-area: e;
     color: $font-color;
-    text-decoration: $plain-link;
     display: flex;
     align-items: center;
     font-weight: $body-font-bold;
+    padding: $header-padding-delivery $side-padding;
+    border-top: $border solid $border-weight;
+    width: 100%;
+}
+
+.header-shipping a {
+    text-decoration: $plain-link;
+    color: $font-color;
     padding-right: $delivery-padding-right;
+    display: grid;
+    grid: "a b" 1fr / 28px auto;
+    align-items: center;
+    column-gap: $delivery-margin-right;
+    margin: $delivery-margin-box;
 }
 
 .header-shipping svg {
     display: block;
     width: 28px !important;
     height: 28px !important;
-    margin-right: $delivery-margin-right;
+    grid-area: a;
+}
+
+.header-shipping p {
+    grid-area: b;
+    margin: $delivery-text-margin-top 0 0;
+    padding-bottom: $delivery-text-padding-bottom;
 }
 
 .header-menu,
@@ -138,38 +192,10 @@
     border: 0;
     padding: 0;
     fill: $font-color;
+    height: $action-button-size;
+    width: $action-button-size;
 }
 
-.btn-cart {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    fill: $font-color;
-    grid-area: c;
-}
-
-.btn-cart svg:last-child {
-    position: relative;
-    z-index: 1;
-    color: $font-color;
-}
-
-.btn-cart-counter {
-    position: absolute;
-    z-index: 100;
-    right: 15px;
-    top: 15px;
-}
-
-.btn-cart-counter svg:first-child {
-    position: absolute;
-    z-index: 200;
-    color: $font-color;
-}
-
-.btn-cart-counter svg:last-child {
-    color: $black-btn-font-color
-}
 
 @media (min-width: $medium) {
     .site-header {
