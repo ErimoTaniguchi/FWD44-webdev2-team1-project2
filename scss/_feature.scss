@@ -6,8 +6,10 @@
     grid-template-columns: 1fr;
     align-items: center;
     min-height: auto;
-    padding: 3rem 1rem;
-    gap: 2rem;
+    padding: 0 0 45px;
+    //padding: 0 0 calc($side-padding * 3);
+    //top: 0, right: 0, bottom: 45px, left: 0    
+    gap: 0;
 }
 
 .feature--yellow {
@@ -22,85 +24,182 @@
     background: $section-3;
 }
 
-.feature__title {
+.feature h2 {
+    width: 260px;
     font-family: $font-family;
-    font-weight: 700;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 2rem;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 7.5px;
+    //margin-bottom: calc($side-padding * 0.5);
+}
+.tm {
+    font-size: 0.4em;
+    font-weight: 600;
+    vertical-align: super;
 }
 
-.feature__text {
+
+.feature p {
     font-family: $font-family;
-    max-width: 26.875rem;
-    margin: 0 auto;
-    font-size: 0.875rem;
+    font-size: 0.95rem;
     line-height: 1.5;
-    margin-bottom: 1.5rem;
+    max-width: 26.875rem;
+    margin-top: 10px;
+    margin-bottom: 22.5px;
+    //margin-bottom: calc($side-padding * 1.5);
 }
 
-.feature__button {
+.feature a {
     font-family: $font-family;
-    font-weight: 500;
-    background: #1d1d1d;
-    color: #ffffff;
-    border-radius: 999rem;
-    padding: 0.5rem 1.625rem;
-    border: 1px solid #1d1d1d;
+    font-size: 1.22rem;
+    font-weight: 400;
+    background: $black-btn-color;
+    color: $black-btn-font-color;
+    border-radius: $button-radius;
+    padding: 13px 32px;
+    border: $border-weight solid $black-btn-color;
     text-decoration: none;
     display: inline-block;
+    width: fit-content;
 }
 
-.feature__image-placeholder {
+.feature h2,
+.feature p,
+.feature a {
+    margin-left: 38px;
+    margin-right: 38px;
+   // margin-left: calc($side-padding * 2.667);
+   // margin-right: calc($side-padding * 2.667);
+    
+}
+
+.feature img {
     width: 100%;
-    max-width: 40rem;
-    height: 35rem;
+    object-fit: cover;
+    object-position: center;
     justify-self: center;
     order: -1;
-    overflow: hidden;
+    margin-left:0;
+    margin-bottom: 22.5px;
+    //margin-bottom: calc($side-padding * 1.5);
 }
 
-.feature__image-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+// Cream section image should stay first visually
+.feature--cream img {
+    order: -1;
+}
+
+@media (min-width: $medium) {
+    .feature {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+    }
+
+    .feature--yellow {
+        padding: 18vh 45px;
+    }
+
+    .feature--cream {
+        padding: 20vh 30px;
+    }
+
+    .feature--pink {
+        padding: 22vh 45px;
+    }
+
+
+
+    .feature h2 {
+        font-size: 2.3rem;
+
+    }
+
+    .feature h2,
+    .feature p,
+    .feature a {
+        width: 47%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .feature img {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50%;
+        margin-bottom: 0;
+        order: initial;
+    }
+    .feature h2, .feature p {
+        width: 45%;
+    }
+
+    .feature a {
+        width: fit-content;
+        padding: 13px 48px;
+
+    }   
+
+
+      /* cream section: image left, text right */
+    .feature--cream h2, .feature--cream p {
+        margin-left: auto;
+        margin-right: 10px;
+        width: 42%;
+    }
+    .feature--cream h2 {
+        margin-top: 0;
+    }
+    .feature--cream a {
+    margin-left: 55%;
+    margin-right: 0;
+    }
+
+   
+    .feature--cream img {
+        left: 15px;
+        right: auto;
+    }
+
+
+    
 }
 
 @media (min-width: $large) {
+    //64em = 64 × 16px = 1024px Desktop
     .feature {
         grid-template-columns: 1fr 1fr;
         min-height: 24rem;
-        padding: 3.5rem 3rem;
-        gap: 2rem;
+        padding: calc($side-padding * 3.5) calc($side-padding * 2.667);
+        gap: calc($side-padding * 2);
     }
 
-    .feature__button {
-        padding: 0.9375rem 2.875rem;
-    }
-
-    .feature__title {
+    .feature h2 {
         font-size: 4.4rem;
         line-height: 1.2;
     }
 
-    .feature__text {
-        font-size: 0.875rem;
+    .feature p {
         max-width: 28rem;
         line-height: 1.5;
     }
 
-    .feature__image-placeholder {
-        width: 34rem;
-        height: 34rem;
-        order: initial;
-        overflow: visible;
-        justify-self: end;
-        align-self: center;
+    .feature a {
+        padding: calc($seasonal-button-horizontal * 1.375)
+                 calc($seasonal-button-vertical * 1.5);
+
     }
 
-    .feature__image-placeholder img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    .feature img {
+        width: 34rem;
+        max-width: 100%;
+        order: initial;
+        justify-self: end;
     }
 }
