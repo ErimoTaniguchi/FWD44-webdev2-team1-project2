@@ -3,33 +3,26 @@
 
 // Imports
 
-
 // Resets and Defaults
 @use 'normalize';
 @use 'reset';
 
 
-
-
-//Body
+// Body
 @use 'body';
 
+// Sections
+// Header - Jes
+@use 'header';
 
-//Sections
-
-//Navigation - Jes
-@use 'nav-home';
-@use 'menubar';
-@use 'hamburger';
-
-//Jade
+// Cards - Jade
 @use 'feature';
 
-//Alan
+// Seasonal - Alan
 @use 'seasonal-fav';
 @use 'goals';
 
-//Erimo
+// Footer - Erimo
 @use 'featured-col';
 @use 'socials';
 @use 'signup';

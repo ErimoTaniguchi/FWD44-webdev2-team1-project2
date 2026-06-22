@@ -1,0 +1,24 @@
+{
+  "name": "fwd44-webdev2-team1-project2",
+  "version": "1.0.0",
+  "description": "<!-- schedule --> Tentative deadline of  parts  on: July 3 Regular checkin on: June 16, 24, 26",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErimoTaniguchi/FWD44-webdev2-team1-project2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ErimoTaniguchi/FWD44-webdev2-team1-project2/issues"
+  },
+  "homepage": "https://github.com/ErimoTaniguchi/FWD44-webdev2-team1-project2#readme",
+  "devDependencies": {
+    "sass": "^1.101.0"
+  }
+}
