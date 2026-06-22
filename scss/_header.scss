@@ -179,12 +179,67 @@
 }
 
 .site-navigation.toggled .header-menu {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 100%;
+    background-color: $background-color;
+    color: $font-color;
+    height: auto;
+    padding: 0;
+    top: -40%;
     left: 0;
     right: 0;
     z-index: 999;
+}
+
+.mobile-menu {
+    padding: $mobile-header-padding-top $mobile-header-padding-vertical $mobile-header-padding-bottom;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: $border-weight $border solid;
+}
+
+.mobile-menu h2 {
+    margin: 0;
+    font-size: $mobile-heading-font-size;
+    font-weight: $mobile-heading-font-weight;
+    line-height: $mobile-heading-line-height;
+}
+
+.mobile-menu button {
+    padding: 0;
+}
+
+#mobile-menu-close {
+    width: $action-button-size;
+    height: $action-button-size;
+}
+
+.header-menu li:nth-of-type(n+2) {
+    padding: $mobile-list-padding-horizontal $mobile-list-padding-vertical;
+    border-bottom: $border-weight $border solid;
+}
+
+.header-menu a {
+    text-decoration: $plain-link;
+    color: $font-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.header-menu p,
+.header-menu a {
+    font-size: $mobile-list-font-size;
+    font-weight: $mobile-list-font-weight;
+    line-height: $mobile-list-line-height;
+}
+
+.header-menu button {
+    background-color: transparent;
+    border: 0;
+    color: $black-btn-color;
 }
 
 .menu-toggle {
@@ -196,6 +251,36 @@
     width: $action-button-size;
 }
 
+.submenu-toggle {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+
+.submenu-toggle div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.submenu-toggle div > p {
+    margin: 0;
+}
+
+.mobile-submenu {
+    display: none;
+}
+
+.header-submenu.toggled .mobile-submenu {
+    display: block;
+    z-index: 999;
+}
+
+#submenu-desktop {
+    display: none;
+}
 
 @media (min-width: $medium) {
     .site-header {
