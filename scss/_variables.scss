@@ -4,6 +4,7 @@ $font-family: "IBM Plex Mono", monospace;
     // Body Font
     $body-font-size: 14px; // 1.071, 1.143
     $body-font-weight: 500;
+    $body-font-bold: 600;
     
     // Line Height
     $body-font-height: 1;
@@ -93,7 +94,9 @@ $medium:48em;
         $header-padding-horizontal: 15px; // 1.33, 2
         $header-padding-vertical: 24px; // 1, 5
         $header-padding-delivery: 7.5px; // 1.33, 2
-        $header-col-width: 40px; // 
+        $header-logo-height: 40px; // 
+        $header-search-padding-vertical: 12px; // 
+        $header-search-padding-horizontal: 8px; //
 
         // Menu
         $menu-margin-left: -10px; // 1, N/A
@@ -105,6 +108,7 @@ $medium:48em;
         $delivery-margin-right: 10px; // 1, 1.5
         $delivery-text-margin-top: 2px; // 1, 2.5
         $delivery-text-padding-bottom: 3px; // 1, 1
+        $delivery-padding-right: 40px; // 
 
     // Cards
         // Margins - Below

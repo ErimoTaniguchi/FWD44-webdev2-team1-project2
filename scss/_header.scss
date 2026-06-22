@@ -6,11 +6,11 @@
     grid:
         "a b c" 1fr
         "d d d" 1fr
-        "e e e" 1fr / 1fr 4fr 1fr;
+        "e e e" 1fr / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
     row-gap: $header-padding-horizontal;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
-    justify-items: center;
+    justify-items: stretch;
     position: relative;
     z-index: 1;
 }
@@ -58,28 +58,60 @@
     grid-area: b;
     padding: 0 $header-padding-vertical;
     margin: 0;
+    display: flex;
+    align-items: center;
+    margin-block: 0;
+    line-height: $header-logo-height;
+    width: fit-content;
 }
 
-#btn-cart {
-    grid-area: c;
-}
 
-#btn-account {
+.btn-account {
     display: none;
-}
-
-#btn-search {
-    grid-area: d;
 }
 
 .btn-search {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    height: 100%;
+    width: 100%;
+    padding: $header-search-padding-horizontal $header-search-padding-vertical;
+    grid-area: d;
+    border: $border $border-weight solid;
+    border-radius: $button-radius;
+    font-size: $body-font-size;
+    line-height: $body-font-height;
+    font-weight: $body-font-weight;
+}
+
+.btn-search svg {
+    display: block;
+    margin-right: $header-search-padding-vertical;
+    stroke-width: 2px;
+}
+
+.btn-search input {
+    border: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .header-shipping {
     grid-area: e;
+    color: $font-color;
+    text-decoration: $plain-link;
+    display: flex;
+    align-items: center;
+    font-weight: $body-font-bold;
+    padding-right: $delivery-padding-right;
+}
+
+.header-shipping svg {
+    display: block;
+    width: 28px !important;
+    height: 28px !important;
+    margin-right: $delivery-margin-right;
 }
 
 .header-menu,
@@ -113,18 +145,30 @@
     border: 0;
     padding: 0;
     fill: $font-color;
+    grid-area: c;
 }
 
-.btn-cart svg:first-of-type {
+.btn-cart svg:last-child {
     position: relative;
     z-index: 1;
+    color: $font-color;
 }
 
-.btn-cart svg:last-of-type {
+.btn-cart-counter {
     position: absolute;
     z-index: 100;
-    right: 20px;
-    top: 25px;
+    right: 15px;
+    top: 15px;
+}
+
+.btn-cart-counter svg:first-child {
+    position: absolute;
+    z-index: 200;
+    color: $font-color;
+}
+
+.btn-cart-counter svg:last-child {
+    color: $black-btn-font-color
 }
 
 @media (min-width: $medium) {
