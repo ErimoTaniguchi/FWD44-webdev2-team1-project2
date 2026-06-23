@@ -168,31 +168,57 @@
     padding-bottom: $delivery-text-padding-bottom;
 }
 
-.header-menu,
-.mobile-submenu,
-.header-action-buttons {
-    list-style: $plain-link;
-}
-
-.header-menu {
+.mobile-menu {
     display: none;
 }
 
-.site-navigation.toggled .header-menu {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+// Mobile Nav Menu
+
+.site-navigation.toggled .mobile-menu {
+    display: grid;
+    grid:   
+        "a" min-content
+        "b" 1fr
+        "c" min-content / 1fr;
+    position: fixed;
     background-color: $background-color;
     color: $font-color;
-    height: auto;
+    height: 100vh;
+    width: 100vw;
     padding: 0;
-    top: -40%;
+    margin: 0;
+    top: 0;
     left: 0;
-    right: 0;
+    align-content: space-between;
     z-index: 999;
 }
 
-.mobile-menu {
+.mobile-footer {
+    grid-area: c;
+    padding: $mobile-footer-padding;
+    box-shadow: 0 0 60px $box-shadow;
+}
+
+.mobile-footer svg {
+    width: $social-icon-size;
+    height: $social-icon-size;
+    margin: $social-icon-margin;
+}
+
+// .menu-list:last-child {
+//     display: grid;
+//     grid-template-columns: min-content auto;
+// }
+
+#icon-account svg {
+    width: $account-icon-size;
+    height: $account-icon-size;
+    display: block;
+    margin-right: $account-icon-margin-right;
+}
+
+.mobile-header {
+    grid-area: a;
     padding: $mobile-header-padding-top $mobile-header-padding-vertical $mobile-header-padding-bottom;
     display: flex;
     align-items: center;
@@ -200,14 +226,14 @@
     border-bottom: $border-weight $border solid;
 }
 
-.mobile-menu h2 {
+.mobile-header h2 {
     margin: 0;
     font-size: $mobile-heading-font-size;
     font-weight: $mobile-heading-font-weight;
     line-height: $mobile-heading-line-height;
 }
 
-.mobile-menu button {
+.mobile-header button {
     padding: 0;
 }
 
@@ -216,12 +242,27 @@
     height: $action-button-size;
 }
 
-.header-menu li:nth-of-type(n+2) {
-    padding: $mobile-list-padding-horizontal $mobile-list-padding-vertical;
+.menu-list-cell {
+    grid-area: b;
+    display: flex;
     border-bottom: $border-weight $border solid;
 }
 
-.header-menu a {
+.menu-list-section {
+    padding: 0;
+    padding-inline: 0;
+    list-style: $plain-link;
+    width: 100%;
+}
+
+.menu-list {
+    padding: $mobile-list-padding-horizontal $mobile-list-padding-vertical;
+    border-bottom: $border-weight $border solid;
+    display: flex;
+    height: min-content;
+}
+
+.mobile-menu a {
     text-decoration: $plain-link;
     color: $font-color;
     display: flex;
@@ -229,14 +270,14 @@
     justify-content: flex-start;
 }
 
-.header-menu p,
-.header-menu a {
+.mobile-menu p,
+.mobile-menu a {
     font-size: $mobile-list-font-size;
     font-weight: $mobile-list-font-weight;
     line-height: $mobile-list-line-height;
 }
 
-.header-menu button {
+.mobile-menu button {
     background-color: transparent;
     border: 0;
     color: $black-btn-color;
