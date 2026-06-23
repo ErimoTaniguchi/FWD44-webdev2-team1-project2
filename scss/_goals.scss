@@ -1,1 +1,25 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+
+
+
+
+.goals{
+    width: fit-content;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+.goals figure img{
+    width: 60px;
+    height: 60px;
+    @include mq($medium){
+        width: 80px;
+        height: 80px;
+    }
+    @include mq($large){
+        width: 80px;
+        height: 80px;
+    }
+}
