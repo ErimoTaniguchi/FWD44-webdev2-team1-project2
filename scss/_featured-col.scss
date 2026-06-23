@@ -1,7 +1,7 @@
 @use 'normalize' as *;
 @use 'variables' as *;
 @use 'reset' as *;
-
+@use 'mixins' as *;
 
 .featured-section {
     margin-top: $seasonal-margin-top;
