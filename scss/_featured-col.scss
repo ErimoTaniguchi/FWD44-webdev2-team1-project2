@@ -19,9 +19,9 @@
         font-family: $font-family;
         font-size: $h3-font-size;
         font-weight: $h3-font-weight;
-        padding-right: 29px; // 元々あった設定
+        padding-right: 29px; 
 
-        @media screen and (min-width: $large) { 
+        @include mq ($large) { 
             font-size: calc($h3-font-size * 1.75); 
         }
     }
@@ -35,7 +35,7 @@
         border-bottom: $link-underlined-weight solid $font-color;
         margin-top: $seasonal-body-margin;
 
-        @media screen and (min-width: $large) {
+        @include mq ($large){
             font-size: calc($seasonal-link-font-size * 1.25);
             margin-top: 0;
         }
@@ -52,15 +52,15 @@
     -webkit-overflow-scrolling: touch;
     
 
-    @media screen and (min-width: $medium) {
+    @include mq ($medium) {
         grid-auto-columns: calc($seasonal-carousel-width * 2);
     }
 
-    @media screen and (min-width: $large) {
+    @include mq ($large){
         grid-auto-columns: calc($seasonal-carousel-width * 2.5);
     }
 
-    @media screen and (min-width: 475px) {
+    @include mq (475px) {
         grid-auto-columns: calc((100% - $seasonal-card-gap)/3);
     }
 
@@ -104,11 +104,11 @@
                 font-size: $h3-card-font-size;
                 font-weight: $h3-card-font-weight;
 
-                @media screen and (min-width: $medium) {
+                @include mq ($medium) {
                     font-size: calc($h3-card-font-size * 1.0714);
                 }
 
-                @media screen and (min-width: $large) {
+                @include mq ($large) {
                     font-size: calc($h3-card-font-size * 1.1428);
                 }
             }
