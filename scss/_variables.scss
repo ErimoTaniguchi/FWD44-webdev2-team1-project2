@@ -6,6 +6,15 @@ $body-font-size: 14px; // 1.071, 1.143
 $body-font-weight: 500;
 $body-font-bold: 600;
 
+// Mobile Menu
+$mobile-heading-font-size: 19px; // 
+$mobile-heading-font-weight: 700; // 
+$mobile-heading-line-height: 1.2; // 
+
+$mobile-list-font-size: 14.875px; // 
+$mobile-list-font-weight: 400; // 
+$mobile-list-line-height: 1.5; // 
+
 // Line Height
 $body-font-height: 1;
 $heading-font-height: 1.5;
@@ -98,12 +107,12 @@ $form-search-padding-horizontal: 8px; // 1.375, 1.375
 $announcement-text-padding-vertical: 10px; // 1, 1
 $announcement-text-padding-horizontal: 6px; // 1, 1
 $announcement-font-weight: 400; // 
-$announcement-side-padding: 13.5px; // 
+$announcement-side-padding: 13.5008px; // 
 
 // Logo and Search
 $header-padding-horizontal: 15px; // 1.33, 2
 $header-padding-vertical: 24px; // 1, 5
-$header-padding-delivery: 7.5px; // 1.33, 2
+$header-padding-delivery: 7.5008px; // 1.33, 2
 $header-logo-height: 40px; // 
 $header-search-padding-vertical: 12px; // 
 $header-search-padding-horizontal: 8px; //
@@ -112,6 +121,19 @@ $header-search-padding-horizontal: 8px; //
 $menu-margin-left: -10px; // 1, N/A
 $plain-link: none;
 $action-button-size: 40px; // 
+$account-icon-size: 22px; // 
+$account-icon-margin-right: 12px; // 
+$social-icon-size: 24px; // 
+$social-icon-margin: 5px; // 
+
+$mobile-header-padding-vertical: 15px; // 
+$mobile-header-padding-top: 22px; // 
+$mobile-header-padding-bottom: 18px; // 
+
+$mobile-footer-padding: 15px; // 
+
+$mobile-list-padding-horizontal: 10px; // 
+$mobile-list-padding-vertical: 15px; // 
 
 // Delivery
 $delivery-margin-box: 6px; // 1, 
@@ -142,11 +164,11 @@ $seasonal-paragraph-margin: 20px; //
 
 // Margins - Product Cards - Bottom
 $seasonal-price-margin: 17px; // 
-$seasonal-name-margin: 14.875px; // 
-$seasonal-name-negative: -8.181px; // 
+$seasonal-name-margin: 14.8752px; // 
+$seasonal-name-negative: -8.1808px; // 
 
 // Margins - Vertical - Icon Carousel
-$seasonal-carousel-margins: 9.25px; //
+$seasonal-carousel-margins: 9.2496px; //
 
 // Margins - Icon Carousel - Controls
 $seasonal-carousel-controls-top: 10px; // 
@@ -161,7 +183,7 @@ $seasonal-card-width: 290px; //
 $seasonal-card-gap: 13px; // 
 
 // Width & Grid Column Gap - Icon Carousel
-$seasonal-carousel-width: 138.5px; //
+$seasonal-carousel-width: 138.5008px; //
 $seasonal-carousel-gap: 13px; //
 
 // Footer
