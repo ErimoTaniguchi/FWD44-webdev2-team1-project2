@@ -1,5 +1,5 @@
 @use 'variables' as *;
-
+@use 'mixins' as *;
 
 
 .favorites{
@@ -12,6 +12,21 @@
 }
 
 .favorites img{
-    width: 230px;
-    height: 280px;
+    // width: 230px;
+    // height: 280px;
+    width: 300px;
+    aspect-ratio: 0.83333;
+    object-fit: cover;
+    @include mq(22em){
+        width:calc(100vw - 200px);
+    }
+    @include mq($medium){
+        width:calc((100vw - 50px) / 2);
+    }
+    @include mq($large){
+        width:calc((100vw - 100px) / 3);
+    }
+    @include mq(80em){
+        width:calc((100vw - 120px) / 4);
+    }    
 }
