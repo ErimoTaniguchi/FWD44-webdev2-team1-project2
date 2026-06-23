@@ -11,9 +11,14 @@ $font-family: "IBM Plex Mono", monospace;
     $heading-font-height: 1.5;
 
     // Heading Font
-    $h3-font-size: 30.33px;
-    $h3-font-weight: 700;
+    $h3-font-size: 23.33px; 
+    $h3-font-weight: 700;  // 1, 1.75
+    $h3-card-font-size: (14 / 16) * 17px; // 1.0714, 1.1428 
+    $h3-card-font-weight: 300;
+    
 
+    // Link
+    $seasonal-link-font-size: 17px; // 1. 1.125
 
 // Colors
 $announcement-color:#3c863b;
