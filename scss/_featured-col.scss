@@ -2,17 +2,25 @@
 @use 'variables' as *;
 @use 'reset' as *;
 
-@use 'normalize' as *;
-@use 'variables' as *;
-@use 'reset' as *;
-
 
 .featured-section {
     margin-top: $seasonal-margin-top;
     padding: 0 $side-padding;
 
-    &__header {
-        margin: 0 0 $seasonal-paragraph-margin 0; 
+    h3 {
+        margin: 0; 
+        margin-block: 0;
+        margin-bottom: $seasonal-heading-margin;
+        font-family: $font-family;
+        font-size: $h3-font-size;
+        font-weight: $h3-font-weight;
+    }
+}
+.grid-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 1rem) / 2);
+    padding-bottom: 10px;
 
         @media screen and (min-width: $medium) {
             display: flex;
@@ -47,7 +55,6 @@
             }
         }
     }
-
 }
 
 .grid-container {

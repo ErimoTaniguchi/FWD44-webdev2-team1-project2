@@ -6,6 +6,15 @@ $font-family: "IBM Plex Mono", monospace;
     $body-font-weight: 500;
     $body-font-bold: 600;
     
+    // Mobile Menu
+    $mobile-heading-font-size: 19px; // 
+    $mobile-heading-font-weight: 700; // 
+    $mobile-heading-line-height: 1.2; // 
+
+    $mobile-list-font-size: 14.875px; // 
+    $mobile-list-font-weight: 400; // 
+    $mobile-list-line-height: 1.5; // 
+
     // Line Height
     $body-font-height: 1;
     $heading-font-height: 1.5;
@@ -27,6 +36,7 @@ $section-2:#f1eadd;
 $section-3:#ffaaca;
 $black-btn-color:#1d1d1d;
 $background-color: #ffffff;
+$box-shadow: #0000001a;
 $border: #e1e1e1;
 
     // Text Colors
@@ -111,6 +121,19 @@ $medium:48em;
         $menu-margin-left: -10px; // 1, N/A
         $plain-link: none;
         $action-button-size: 40px; // 
+        $account-icon-size: 22px; // 
+        $account-icon-margin-right: 12px; // 
+        $social-icon-size: 24px; // 
+        $social-icon-margin: 5px; // 
+
+        $mobile-header-padding-vertical: 15px; // 
+        $mobile-header-padding-top: 22px; // 
+        $mobile-header-padding-bottom: 18px; // 
+
+        $mobile-footer-padding: 15px; // 
+
+        $mobile-list-padding-horizontal: 10px; // 
+        $mobile-list-padding-vertical: 15px; // 
 
         // Delivery
         $delivery-margin-box: 6px; // 1, 

@@ -5,7 +5,7 @@
 // Define variables
 const siteNavigation = document.getElementById('site-navigation');
 const button = document.getElementById('menu-toggle');
-const menu = document.getElementById('header-menu');
+const menu = document.getElementById('mobile-menu');
 const closeButton = document.getElementById('mobile-menu-close');
 const submenuToggle = document.querySelector('.submenu-toggle');
 
@@ -79,7 +79,7 @@ function toggleFocus(event) {
 		let self = this;
 
 		// Move up nav tree to main container
-		while (self && !self.classList.contains('header-menu')) {
+		while (self && !self.classList.contains('mobile-menu')) {
 			if ('li' === self.tagName.toLowerCase()) {
 				self.classList.toggle('focus');
 			}
