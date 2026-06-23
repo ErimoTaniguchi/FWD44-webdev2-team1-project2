@@ -8,45 +8,39 @@
     padding: 0 $side-padding;
 }
 
-.grid-container {
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% - 1rem) / 2);
+.featured-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     padding-bottom: 10px;
 
-        @media screen and (min-width: $medium) {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
+    h3 {
+        margin: 0;
+        font-family: $font-family;
+        font-size: $h3-font-size;
+        font-weight: $h3-font-weight;
+        padding-right: 29px; // 元々あった設定
 
-        h3 {
-            margin-block: 0;
-            font-family: $font-family;
-            font-size: $h3-font-size;
-            font-weight: $h3-font-weight;
-            padding: 0 29px 0 0;
-
-            @media screen and (min-width: $large) { 
+        @media screen and (min-width: $large) { 
             font-size: calc($h3-font-size * 1.75); 
         }
-        }
+    }
 
-        a {
-            display: inline-block;
-            margin-top: $seasonal-body-margin;
-            text-decoration: none;
-            color: $font-color;
-            padding-bottom: $link-underlined-padding;
-            font-size: $seasonal-link-font-size;
-            border-bottom: $link-underlined-weight solid $font-color;
+    a {
+        display: inline-block;
+        text-decoration: none;
+        color: $font-color;
+        padding-bottom: $link-underlined-padding;
+        font-size: $seasonal-link-font-size;
+        border-bottom: $link-underlined-weight solid $font-color;
+        margin-top: $seasonal-body-margin;
 
-            @media screen and (min-width: $large) {
-                font-size: calc($seasonal-link-font-size * 1.25);
-                margin-top: 0;
-            }
+        @media screen and (min-width: $large) {
+            font-size: calc($seasonal-link-font-size * 1.25);
+            margin-top: 0;
         }
     }
+}
 
 .grid-container {
     display: grid;
