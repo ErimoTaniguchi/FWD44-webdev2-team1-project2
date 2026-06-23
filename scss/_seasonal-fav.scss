@@ -5,5 +5,9 @@
 .favorites{
     display: flex;
     width: fit-content;
+    flex-wrap: wrap;
     margin: 0 auto;
+    margin-top: $seasonal-margin-top;
+    padding: 0 $side-padding;
 }
+
