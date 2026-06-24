@@ -16,6 +16,7 @@
             font-size: $h3-font-size;
             font-weight: $h3-font-weight;
             padding-right: 29px; 
+            color: $h2-font-color;
             
             @include mq ($large) { 
                 font-size: calc($h3-font-size * 1.75); 
