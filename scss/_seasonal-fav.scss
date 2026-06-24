@@ -4,21 +4,58 @@
 
 
 .favorites{
-    display: flex;
-    width: fit-content;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-wrap: wrap;
     margin-top: $seasonal-margin-top;
+    margin-bottom: $seasonal-heading-margin;
     @extend %section-side-padding;
 
 }
-.favorites-heading{
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin: 0 auto;
-    
-    
+
+
+.favorites h3{
+    font-size: $h3-font-size;
+    font-weight: $h3-font-weight;
+    @include mq ($large) { 
+        font-size: calc($h3-font-size * 1.75); 
+    }
 }
+.favorites p{
+    display: inline-block;
+    padding-right: 29px; 
+    font-size: $body-font-size;
+    @include mq($large){
+        padding-right: 94px;
+    }
+    @include mq($medium){
+        padding-right: 70px;
+    }
+}
+
+.favorites a{
+    display: inline-block;
+    text-decoration: none;
+    color: $font-color;
+    padding-bottom: $link-underlined-padding;
+    font-size: $seasonal-link-font-size;
+    border-bottom: $link-underlined-weight solid $font-color;
+    margin-top: $seasonal-body-margin;
+    
+    @include mq ($large){
+        font-size: calc($seasonal-link-font-size * 1.25);
+        margin-top: 0;
+    }
+}
+
+.favorites-summary{
+    @include mq($large){
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+}
+
 
 .favorites img{
     width: 300px;
