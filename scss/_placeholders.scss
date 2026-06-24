@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
 %hover-underline {
     background-image: linear-gradient($font-color, $font-color);
@@ -6,4 +7,17 @@
     background-position: left bottom 8px;
     background-size: 0% 1px;             
     transition: background-size 0.3s ease; 
+}
+
+
+%section-side-padding{
+    padding: 0 $side-padding;
+
+    @include mq($medium){
+        padding: 0 calc($side-padding * 2);
+    }
+
+    @include mq($large){
+        padding: 0 calc($side-padding * 2.5);
+    }
 }

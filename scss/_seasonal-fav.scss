@@ -1,19 +1,26 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+@use 'placeholders' as *;
 
 
 .favorites{
     display: flex;
     width: fit-content;
     flex-wrap: wrap;
-    margin: 0 auto;
     margin-top: $seasonal-margin-top;
-    padding: 0 $side-padding;
+    @extend %section-side-padding;
+
+}
+.favorites-heading{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin: 0 auto;
+    
+    
 }
 
 .favorites img{
-    // width: 230px;
-    // height: 280px;
     width: 300px;
     aspect-ratio: 0.83333;
     object-fit: cover;

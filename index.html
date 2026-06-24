@@ -23,6 +23,7 @@
     <!-- calling JavaScript -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/search.js" defer></script>
+    <script src="scripts/gallery.js" defer></script>
   </head>
 
   <body id="site-home">
@@ -363,12 +364,15 @@
       <!-- end of jade part -->
       <!-- Alan -->
       <section class="favorites">
-        <h3>Seasonal Favorites</h3>
-        <p>
-          Featuring seeded watermelon, mineral-rich okra, and rose to nourish
-          the heart.
-        </p>
-        <a href="#">View all products</a>
+        <div class="favorites-heading">
+          <h3>Seasonal Favorites</h3>
+          <p>
+            Featuring seeded watermelon, mineral-rich okra, and rose to nourish
+            the heart.
+          </p>
+          <a href="#">View all products</a>
+        </div>
+
         <article>
           <p>$15.00</p>
           <h4>Watermelon Juice</h4>
@@ -389,22 +393,25 @@
         </article>
       </section>
       <section class="goals">
-        <figure>
-          <img src="images/icon-01.avif" alt="flower" />
-          <figcaption>Guided by ancestral wisdom</figcaption>
-        </figure>
-        <figure>
-          <img src="images/icon-02.avif" alt="hand with heart in the palm" />
-          <figcaption>Handcrafted with love</figcaption>
-        </figure>
-        <figure>
-          <img src="images/icon-03.avif" alt="dandelion with happy face" />
-          <figcaption>Real ingredients & people</figcaption>
-        </figure>
-        <figure>
-          <img src="images/icon-04.avif" alt="picture of origami" />
-          <figcaption>Locally sourced & proudly served</figcaption>
-        </figure>
+        <div class="gallery-container">
+          <figure class="gallery-item">
+            <img src="images/icon-01.avif" alt="flower" />
+            <figcaption>Guided by ancestral wisdom</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/icon-02.avif" alt="hand with heart in the palm" />
+            <figcaption>Handcrafted with love</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/icon-03.avif" alt="dandelion with happy face" />
+            <figcaption>Real ingredients & people</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/icon-04.avif" alt="picture of origami" />
+            <figcaption>Locally sourced & proudly served</figcaption>
+          </figure>
+        </div>
+        <div class="gallery-controls"></div>
       </section>
       <!-- end of alan part -->
       <!-- Erimo -->
