@@ -25,14 +25,3 @@
     }
 }
 
-.grid-container {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-
-    &__item { 
-        min-width:100%;
-        flex-shrink: 0;
-    }
-}

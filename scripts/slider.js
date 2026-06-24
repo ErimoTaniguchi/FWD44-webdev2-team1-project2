@@ -16,8 +16,6 @@ function updateSlides(){
     currentDisplay.textContent = currentIndex;
     sliderPrev.disabled = (currentIndex === 1);
     sliderNext.disabled = (currentIndex === totalSlides);
-
-    sliderContainer.style.transform = `translateX(${getOffset(currentIndex)}%)`;
 };
 
 function handleSwipe(){
@@ -31,7 +29,6 @@ function handleSwipe(){
             currentIndex ++;
         }
     }
-
     updateSlides();
 };
 
