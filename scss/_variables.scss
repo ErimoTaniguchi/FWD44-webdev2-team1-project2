@@ -1,15 +1,36 @@
 // Font
 $font-family: "IBM Plex Mono", monospace;
 
-    // Body Font
-    $body-font-size: 14px; // 1.071, 1.143
-    $body-font-weight: 500;
-    $body-font-bold: 600;
-    
-    // Line Height
-    $body-font-height: 1;
-    $heading-font-height: 1.5;
+// Body Font
+$body-font-size: 14px; // 1.071, 1.143
+$body-font-weight: 500;
+$body-font-bold: 600;
 
+// Mobile Menu
+$mobile-heading-font-size: 19px; // 
+$mobile-heading-font-weight: 700; // 
+$mobile-heading-line-height: 1.2; // 
+
+$mobile-list-font-size: 14.875px; // 
+$mobile-list-font-weight: 400; // 
+$mobile-list-line-height: 1.5; // 
+
+// Line Height
+$body-font-height: 1;
+$heading-font-height: 1.5;
+
+// Heading Font
+$h3-font-size: 23.33px; 
+$h3-font-weight: 700;  // 1, 1.75
+$h3-card-font-size: (14 / 16) * 17px; // 1.0714, 1.1428 
+$h3-card-font-weight: 300;
+$h2-footer-font-size: 18.7px; //1, 1.17
+$h2-footer-text-font-size: 15px;
+$h2-footer-text-font-weight: 400;
+
+
+// Link
+$seasonal-link-font-size: 17px; // 1. 1.125
 
 // Colors
 $announcement-color:#3c863b;
@@ -18,11 +39,15 @@ $section-2:#f1eadd;
 $section-3:#ffaaca;
 $black-btn-color:#1d1d1d;
 $background-color: #ffffff;
+$box-shadow: #0000001a;
 $border: #e1e1e1;
+$footer-border: #00000026;
+$footer-svg-color: #000000;
+$submenu-header-background: #f6f6f6;
 
-    // Text Colors
-    $font-color: #1d1d1d;
-    $black-btn-font-color: #ffffff; // added by Jade for text color on black buttons
+// Text Colors
+$font-color: #1d1d1d;
+$black-btn-font-color: #ffffff; // added by Jade for text color on black buttons
 
 // Media Query Breakpoints
 $large:64em;
@@ -31,128 +56,148 @@ $medium:48em;
 
 // Utility Variables
 
-    // Links -- added by Jes 19/06/26
-        // Link State
-        $link-hover-selector: '&:hover, &:focus, &:active';
+// Links -- added by Jes 19/06/26
+// Link State
+$link-hover-selector: '&:hover, &:focus, &:active';
 
-        // Underlined Links - Line Weight, Padding Below, Margin Below
-        $link-underlined-weight: 1px; // 1, 1
+// Underlined Links - Line Weight, Padding Below, Margin Below
+$link-underlined-weight: 1px; // 1, 1
 
-        $link-underlined-padding: 1px; // 1, 1
+$link-underlined-padding: 1px; // 1, 1
 
-        $link-underlined-margin: 5px; // 1, 1
+$link-underlined-margin: 5px; // 1, 1
 
 // Sizing Variables -- added by Jes 18/06/26
 
-    // Borders - Width and Border Radius
-    $border-weight: 1px; // borders are only ever 1px
+// Borders - Width and Border Radius
+$border-weight: 1px; // borders are only ever 1px
 
-    $button-radius: 30px; // also used for search bar
-    $card-radius: 10px;
-    $form-radius: 5px;
+$button-radius: 30px; // also used for search bar
+$card-radius: 10px;
+$form-radius: 5px;
 
-    // Use the first value for mobile, then get use the two commented numbers for tablet and desktop values: calc($variable-name * [number])
-        // Example: $side-padding: 15px; // 2, 2.5
-            // Tablet - padding: 0 calc($side-padding * 2) 0;
-            // Desktop - padding: 0 calc($side-padding * 2.5) 0;
+// Use the first value for mobile, then get use the two commented numbers for tablet and desktop values: calc($variable-name * [number])
+// Example: $side-padding: 15px; // 2, 2.5
+// Tablet - padding: 0 calc($side-padding * 2) 0;
+// Desktop - padding: 0 calc($side-padding * 2.5) 0;
 
-    // Reference: https://sass-lang.com/documentation/values/calculations/
+// Reference: https://sass-lang.com/documentation/values/calculations/
 
-    // !! If the [number] value = 1 the value doesn't change between viewport sizes, so calc is unnecessary
+// !! If the [number] value = 1 the value doesn't change between viewport sizes, so calc is unnecessary
 
-        // Header, Seasonal, Footer Sides
-        $side-padding: 15px; // 2, 2.667
+// Header, Seasonal, Footer Sides
+$side-padding: 15px; // 2, 2.667
 
-        // Card Sides
-        $card-padding-left: 40px; // 1, 1.5
-        $card-padding-right: 40px; // 0.625, 0.875
+// Card Sides
+$card-padding-left: 40px; // 1, 1.5
+$card-padding-right: 40px; // 0.625, 0.875
 
-        // Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
-        $card-button-padding-vertical: 32px; // 1.25, 1.4375
-        $card-button-padding-horizontal: 12px; // 1, 1.25
+// Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
+$card-button-padding-vertical: 32px; // 1.25, 1.4375
+$card-button-padding-horizontal: 12px; // 1, 1.25
 
-        $seasonal-button-padding-vertical: 24px; // 1.5, 1.5
-        $seasonal-button-padding-horizontal: 8px; // 1.375, 1.375
+$seasonal-button-padding-vertical: 24px; // 1.5, 1.5
+$seasonal-button-padding-horizontal: 8px; // 1.375, 1.375
 
-        // Forms - "horizontal" as in "horizontal sides" (long)
-        $form-email-padding-left: 8px; // 1.5, 1.5
-        $form-email-padding-right: 40px; // 1, 1
-        $form-email-padding-horizontal: 9px; // 1.33, 1.33
+// Forms - "horizontal" as in "horizontal sides" (long)
+$form-email-padding-left: 8px; // 1.5, 1.5
+$form-email-padding-right: 40px; // 1, 1
+$form-email-padding-horizontal: 9px; // 1.33, 1.33
 
-        $form-search-padding-left: 43px; // 1, 1.232
-        $form-search-padding-right: 24px; // 1.5, 1.5
-        $form-search-padding-horizontal: 8px; // 1.375, 1.375
+$form-search-padding-left: 43px; // 1, 1.232
+$form-search-padding-right: 24px; // 1.5, 1.5
+$form-search-padding-horizontal: 8px; // 1.375, 1.375
 
-    // Header
-        // Announcement
-        $announcement-text-padding-vertical: 10px; // 1, 1
-        $announcement-text-padding-horizontal: 6px; // 1, 1
-        $announcement-font-weight: 400; // 
-        $announcement-side-padding: 13.5px; // 
+// Header
+// Announcement
+$announcement-text-padding-vertical: 10px; // 1, 1
+$announcement-text-padding-horizontal: 6px; // 1, 1
+$announcement-font-weight: 400; // 
+$announcement-side-padding: 13.5008px; // 
 
-        // Logo and Search
-        $header-padding-horizontal: 15px; // 1.33, 2
-        $header-padding-vertical: 24px; // 1, 5
-        $header-padding-delivery: 7.5px; // 1.33, 2
-        $header-logo-height: 40px; // 
-        $header-search-padding-vertical: 12px; // 
-        $header-search-padding-horizontal: 8px; //
+// Logo and Search
+$header-padding-horizontal: 15px; // 1.33, 2
+$header-padding-vertical: 24px; // 1, 5
+$header-padding-delivery: 7.5008px; // 1.33, 2
+$header-logo-height: 40px; // 
+$header-search-padding-vertical: 12px; // 
+$header-search-padding-horizontal: 8px; //
 
-        // Menu
-        $menu-margin-left: -10px; // 1, N/A
-        $plain-link: none;
+// Menu
+$menu-margin-left: -10px; // 1, N/A
+$plain-link: none;
+$action-button-size: 40px; // 
+$account-icon-size: 22px; // 
+$account-icon-margin-right: 12px; // 
+$social-icon-size: 24px; // 
+$social-icon-margin: 5px; // 
 
-        // Delivery
-        $delivery-margin-vertical: 6px; // 1, 
-        $delivery-margin-horizontal: 6px; // 1, 
-        $delivery-margin-right: 10px; // 1, 1.5
-        $delivery-text-margin-top: 2px; // 1, 2.5
-        $delivery-text-padding-bottom: 3px; // 1, 1
-        $delivery-padding-right: 40px; // 
+$mobile-header-padding-vertical: 15px; // 
+$mobile-header-padding-top: 22px; // 
+$mobile-header-padding-bottom: 18px; // 
 
-    // Cards
-        // Margins - Below
-        $card-heading-margin: 16px; // 1, 1
-        $card-text-margin: 12px; // 1, 1
+$mobile-footer-padding: 15px; // 
 
-        // Margins - Above
-        $card-button-margin: 22px; // 1.091, 1.182
+$mobile-list-padding-horizontal: 10px; // 
+$mobile-list-padding-vertical: 15px; // 
 
-        // Text Section Width
-        $card-text-width: 320px; // 1.225, 1.6
+// Delivery
+$delivery-margin-box: 6px; // 1, 
+$delivery-margin-right: 10px; // 1, 1.5
+$delivery-text-margin-top: 2px; // 1, 2.5
+$delivery-text-padding-bottom: 3px; // 1, 1
+$delivery-padding-right: 40px; // 
 
-    // Seasonal
-        // Margins - Section - Top
-        $seasonal-margin-top: 60px; // 
+// Cards
+// Margins - Below
+$card-heading-margin: 16px; // 1, 1
+$card-text-margin: 12px; // 1, 1
 
-        // Margins - Text - Bottom
-        $seasonal-heading-margin: 10px; // 
-        $seasonal-body-margin: 10px; // 
-        $seasonal-paragraph-margin: 20px; // 
+// Margins - Above
+$card-button-margin: 22px; // 1.091, 1.182
 
-        // Margins - Product Cards - Bottom
-        $seasonal-price-margin: 17px; // 
-        $seasonal-name-margin: 14.875px; // 
-        $seasonal-name-negative: -8.181px; // 
+// Text Section Width
+$card-text-width: 320px; // 1.225, 1.6
 
-        // Margins - Vertical - Icon Carousel
-        $seasonal-carousel-margins: 9.25px; //
+// Seasonal
+// Margins - Section - Top
+$seasonal-margin-top: 60px; // 
 
-        // Margins - Icon Carousel - Controls
-        $seasonal-carousel-controls-top: 10px; // 
-        $seasonal-carousel-controls-botton: -12px; //  
+// Margins - Text - Bottom
+$seasonal-heading-margin: 10px; // 
+$seasonal-body-margin: 10px; // 
+$seasonal-paragraph-margin: 20px; // 
 
-        // Padding - Product Cards
-        $seasonal-padding-vertical: 15px; // 
-        $seasonal-padding-horizontal: 15px; // 
+// Margins - Product Cards - Bottom
+$seasonal-price-margin: 17px; // 
+$seasonal-name-margin: 14.8752px; // 
+$seasonal-name-negative: -8.1808px; // 
 
-        // Width & Grid Row Gap - Product Cards
-        $seasonal-card-width: 290px; // 
-        $seasonal-card-gap: 13px; // 
+// Margins - Vertical - Icon Carousel
+$seasonal-carousel-margins: 9.2496px; //
 
-        // Width & Grid Column Gap - Icon Carousel
-        $seasonal-carousel-width: 138.5px; //
-        $seasonal-carousel-gap: 13px; //
+// Margins - Icon Carousel - Controls
+$seasonal-carousel-controls-top: 10px; // 
+$seasonal-carousel-controls-botton: -12px; //  
 
-    // Footer
-    
+// Padding - Product Cards
+$seasonal-padding-vertical: 15px; // 2, 2.67
+$seasonal-padding-horizontal: 15px; // 
+
+// Width & Grid Row Gap - Product Cards
+$seasonal-card-width: 290px; // 
+$seasonal-card-gap: 13px; // 
+
+// Width & Grid Column Gap - Icon Carousel
+$seasonal-carousel-width: 138.5008px; //
+$seasonal-carousel-gap: 13px; //
+
+// Footer
+$footer-margin-top: 60px;
+$footer-padding-sides: 15px;
+$footer-padding-top: 40px;
+$footer-grid-gap: 32px; //1, 1.5
+$footer-text-margin: 16px;
+$footer-form-padding: 0.55em;
+$footer-form-border-radius: 5px;
+

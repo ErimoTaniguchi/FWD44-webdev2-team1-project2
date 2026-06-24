@@ -1,18 +1,32 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+@use 'placeholders' as *;
 
 .site-header {
-    padding: $header-padding-horizontal $side-padding $header-padding-delivery;
     display: grid;
     grid:
-        "a b c" 1fr
-        "d d d" 1fr
-        "e e e" 1fr / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
+        "a b c"
+        "d d d"
+        "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
     row-gap: $header-padding-horizontal;
     align-items: center;
     justify-content: center;
     justify-items: stretch;
     position: relative;
     z-index: 1;
+    @include mq($medium) {
+        grid:
+            "a b c"
+            "d d d"
+            "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
+    }
+
+    @include mq($large) {
+        grid:
+            "a b c"
+            "d d d"
+            "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
+    }
 }
 
 .header-announcements {
@@ -52,11 +66,13 @@
 
 .site-navigation {
     grid-area: a;
+    padding: $header-padding-horizontal 0 0 $header-padding-horizontal;
+    margin-left: $menu-margin-left;
 }
 
 .header-logo {
     grid-area: b;
-    padding: 0 $header-padding-vertical;
+    padding: $header-padding-horizontal $header-padding-vertical 0;
     margin: 0;
     display: flex;
     align-items: center;
@@ -65,6 +81,9 @@
     width: fit-content;
 }
 
+.header-logo img {
+    max-height: 20px;
+}
 
 .btn-account {
     display: none;
@@ -74,8 +93,6 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    height: 100%;
-    width: 100%;
     padding: $header-search-padding-horizontal $header-search-padding-vertical;
     grid-area: d;
     border: $border $border-weight solid;
@@ -83,6 +100,7 @@
     font-size: $body-font-size;
     line-height: $body-font-height;
     font-weight: $body-font-weight;
+    margin: 0 $header-padding-horizontal;
 }
 
 .btn-search svg {
@@ -97,55 +115,14 @@
     margin: 0;
 }
 
-.header-shipping {
-    grid-area: e;
-    color: $font-color;
-    text-decoration: $plain-link;
-    display: flex;
-    align-items: center;
-    font-weight: $body-font-bold;
-    padding-right: $delivery-padding-right;
-}
-
-.header-shipping svg {
-    display: block;
-    width: 28px !important;
-    height: 28px !important;
-    margin-right: $delivery-margin-right;
-}
-
-.header-menu,
-.mobile-submenu,
-.header-action-buttons {
-    list-style: $plain-link;
-}
-
-.header-menu {
-    display: none;
-}
-
-.site-navigation.toggled .header-menu {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 999;
-}
-
-.menu-toggle {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
-    fill: $font-color;
-}
-
 .btn-cart {
     background-color: transparent;
     border: 0;
-    padding: 0;
+    padding: $header-padding-horizontal $header-padding-horizontal 0 0;
     fill: $font-color;
     grid-area: c;
+    width: $action-button-size;
+    height: $action-button-size;
 }
 
 .btn-cart svg:last-child {
@@ -157,8 +134,8 @@
 .btn-cart-counter {
     position: absolute;
     z-index: 100;
-    right: 15px;
-    top: 15px;
+    right: 10px;
+    top: 17px;
 }
 
 .btn-cart-counter svg:first-child {
@@ -171,14 +148,240 @@
     color: $black-btn-font-color
 }
 
-@media (min-width: $medium) {
-    .site-header {
-        padding: 0 calc($side-padding * 2);
-    }
+.header-shipping {
+    grid-area: e;
+    color: $font-color;
+    display: flex;
+    align-items: center;
+    font-weight: $body-font-bold;
+    padding: $header-padding-delivery $side-padding;
+    border-top: $border solid $border-weight;
+    width: 100%;
 }
 
-@media (min-width: $large) {
-    .site-header {
-        padding: 0 calc($side-padding * 2.667);
-    }
+.header-shipping a {
+    text-decoration: $plain-link;
+    color: $font-color;
+    padding-right: $delivery-padding-right;
+    display: grid;
+    grid: "a b" 1fr / 28px auto;
+    align-items: center;
+    column-gap: $delivery-margin-right;
+    margin: $delivery-margin-box;
+}
+
+.header-shipping svg {
+    display: block;
+    width: 28px !important;
+    height: 28px !important;
+    grid-area: a;
+}
+
+.header-shipping p {
+    grid-area: b;
+    margin: $delivery-text-margin-top 0 0;
+    padding-bottom: $delivery-text-padding-bottom;
+}
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid:
+        "a" min-content
+        "b" 1fr
+        "c" min-content / 1fr;
+    align-content: space-between;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-100%);
+    transition: transform .3s ease-in-out;
+    will-change: transform;
+    z-index: 500;
+    background-color: $background-color;
+    color: $font-color;
+}
+
+.site-navigation.toggled .mobile-menu {
+    transform: translateX(0);
+    z-index: 500;
+}
+
+#icon-account svg {
+    width: $account-icon-size;
+    height: $account-icon-size;
+    display: block;
+    margin-right: $account-icon-margin-right;
+}
+
+.mobile-header {
+    grid-area: a;
+    padding: $mobile-header-padding-top $mobile-header-padding-vertical $mobile-header-padding-bottom;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: $border-weight $border solid;
+}
+
+.mobile-header h2 {
+    margin: 0;
+    font-size: $mobile-heading-font-size;
+    font-weight: $mobile-heading-font-weight;
+    line-height: $mobile-heading-line-height;
+}
+
+.mobile-header button {
+    padding: 0;
+}
+
+#mobile-menu-close {
+    width: $action-button-size;
+    height: $action-button-size;
+}
+
+.menu-list-cell {
+    grid-area: b;
+    display: flex;
+    border-bottom: $border-weight $border solid;
+}
+
+.menu-list-section {
+    padding: 0;
+    padding-inline: 0;
+    list-style: $plain-link;
+    width: 100%;
+}
+
+.submenu-list,
+.menu-list {
+    padding: $mobile-list-padding-horizontal $mobile-list-padding-vertical;
+    border-bottom: $border-weight $border solid;
+    display: flex;
+    height: min-content;
+    width: 100%;
+}
+
+.submenu-list p,
+.menu-list p {
+    margin: 0;
+}
+
+.mobile-submenu li:first-of-type {
+    background-color: $submenu-header-background;
+}
+
+#submenu-close {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: center;
+    height: min-content;
+    width: 100%;
+    justify-items: start;
+    grid-gap: $account-icon-margin-right;
+    padding: 0;
+}
+
+.header-submenu {
+    display: flex;
+    height: min-content;
+    border-bottom: $border-weight $border solid;
+    position: relative;
+}
+
+.mobile-menu a {
+    text-decoration: $plain-link;
+    color: $font-color;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mobile-menu p,
+.mobile-menu a {
+    font-size: $mobile-list-font-size;
+    font-weight: $mobile-list-font-weight;
+    line-height: $mobile-list-line-height;
+}
+
+.mobile-menu button {
+    background-color: transparent;
+    border: 0;
+    color: $black-btn-color;
+}
+
+.menu-toggle {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    fill: $font-color;
+    height: $action-button-size;
+    width: $action-button-size;
+}
+
+.submenu-toggle {
+    display: block;
+    width: 100%;
+    padding: 0;
+    padding: $mobile-list-padding-horizontal $mobile-list-padding-vertical;
+}
+
+.submenu-toggle div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.submenu-toggle div > p {
+    margin: 0;
+}
+
+.mobile-submenu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 100vw;
+    min-height: 200px;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $background-color;
+    z-index: 999;
+    transform: translateX(-100vw);
+    transition: transform .3s ease-in-out;
+    pointer-events: none;
+}
+
+.submenu-toggle.toggled ~ .mobile-submenu {
+    transform: translateX(0);
+    pointer-events: auto;
+    z-index: 999;
+}
+
+#submenu-desktop {
+    display: none;
+}
+
+.mobile-footer {
+    grid-area: c;
+    padding: $mobile-footer-padding;
+    box-shadow: 0 0 60px $box-shadow;
+}
+
+.mobile-footer a {
+    width: $social-icon-size;
+    height: $social-icon-size;
+    margin: $social-icon-margin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mobile-footer svg {
+    width: $social-icon-size;
+    height: $social-icon-size;
 }

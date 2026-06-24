@@ -6,6 +6,7 @@
 // Resets and Defaults
 @use 'normalize';
 @use 'reset';
+@use 'variables';
 
 
 // Body
@@ -28,4 +29,5 @@
 @use 'signup';
 @use 'sitemap';
 @use 'footer';
+@use 'slider';
 
