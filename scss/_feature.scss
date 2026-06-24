@@ -6,9 +6,7 @@
     grid-template-columns: 1fr;
     align-items: center;
     min-height: auto;
-    padding: 0 0 45px;
-    //padding: 0 0 calc($side-padding * 3);
-    //top: 0, right: 0, bottom: 45px, left: 0    
+    padding: 0 0 10vw; 
     gap: 0;
 }
 
@@ -25,13 +23,12 @@
 }
 
 .feature h2 {
-    width: 260px;
+    width: 70%;
+    font-size: clamp(2.3rem, 12vw, 3rem);
     font-family: $font-family;
     font-weight: 600;
-    font-size: 2rem;
-    line-height: 1.2;
+    line-height: 1.1;
     margin-bottom: 7.5px;
-    //margin-bottom: calc($side-padding * 0.5);
 }
 .tm {
     font-size: 0.4em;
@@ -42,7 +39,7 @@
 
 .feature p {
     font-family: $font-family;
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 2.5vw, 0.95rem);
     line-height: 1.5;
     max-width: 26.875rem;
     margin-top: 10px;
@@ -57,7 +54,8 @@
     background: $black-btn-color;
     color: $black-btn-font-color;
     border-radius: $button-radius;
-    padding: 13px 32px;
+    padding: clamp(0.7rem, 2vw, 0.85rem)
+             clamp(1.5rem, 5vw, 2rem);
     border: $border-weight solid $black-btn-color;
     text-decoration: none;
     display: inline-block;
@@ -67,22 +65,21 @@
 .feature h2,
 .feature p,
 .feature a {
-    margin-left: 38px;
-    margin-right: 38px;
-   // margin-left: calc($side-padding * 2.667);
-   // margin-right: calc($side-padding * 2.667);
+    margin-left: 12%;
+    margin-right: 12%;
     
 }
 
 .feature img {
     width: 100%;
+    max-width: none;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
     object-fit: cover;
     object-position: center;
-    justify-self: center;
     order: -1;
-    margin-left:0;
-    margin-bottom: 22.5px;
-    //margin-bottom: calc($side-padding * 1.5);
+
 }
 
 // Cream section image should stay first visually
@@ -90,116 +87,261 @@
     order: -1;
 }
 
+//===================================================================================================================
+
+// the original website https://plantladyjuice.co/ has only one breaking point at 768px, 
+// so we will use that for our media query
+// $medium:48em; // 768px
 @media (min-width: $medium) {
+
     .feature {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-    }
-
-    .feature--yellow {
-        padding: 18vh 45px;
-    }
-
-    .feature--cream {
-        padding: 20vh 30px;
-    }
-
-    .feature--pink {
-        padding: 22vh 45px;
-    }
-
-
-
-    .feature h2 {
-        font-size: 2.3rem;
-
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        min-height: 0;
+        padding: 0;
     }
 
     .feature h2,
     .feature p,
     .feature a {
-        width: 47%;
-        margin-left: 0;
-        margin-right: 0;
+        margin: 0;
     }
-
-    .feature img {
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 50%;
-        margin-bottom: 0;
-        order: initial;
-    }
-    .feature h2, .feature p {
-        width: 45%;
-    }
-
-    .feature a {
-        width: fit-content;
-        padding: 13px 48px;
-
-    }   
-
-
-      /* cream section: image left, text right */
-    .feature--cream h2, .feature--cream p {
-        margin-left: auto;
-        margin-right: 10px;
-        width: 42%;
-    }
-    .feature--cream h2 {
-        margin-top: 0;
-    }
-    .feature--cream a {
-    margin-left: 55%;
-    margin-right: 0;
-    }
-
-   
-    .feature--cream img {
-        left: 15px;
-        right: auto;
-    }
-
-
-    
-}
-
-@media (min-width: $large) {
-    //64em = 64 × 16px = 1024px Desktop
-    .feature {
-        grid-template-columns: 1fr 1fr;
-        min-height: 24rem;
-        padding: calc($side-padding * 3.5) calc($side-padding * 2.667);
-        gap: calc($side-padding * 2);
-    }
-
     .feature h2 {
-        font-size: 4.4rem;
-        line-height: 1.2;
+        font-size: 2.1rem;
+        line-height: 1.3;
+        margin-bottom: 0.8rem;
+
     }
 
     .feature p {
-        max-width: 28rem;
-        line-height: 1.5;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
     }
 
     .feature a {
-        padding: calc($seasonal-button-horizontal * 1.375)
-                 calc($seasonal-button-vertical * 1.5);
+        font-size: 1.2rem;
+        padding: 13px 37px;
+        margin-bottom: 2rem;
+    }
+
+    .feature__text {
+        padding: 40px 25px 0px 40px;
+        align-self: center;
+    }
+    .feature__image {
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .feature__image img {
+        width: 75%;
+        display: block;
+    }
+
+    .feature--cream .feature__image {
+        order: 1;
+    }
+
+    .feature--cream .feature__text {
+        order: 2;
+        padding: 0 35px 0 0px;    
+    }
+
+    .feature--cream h2,
+    .feature--cream p,
+    .feature--cream a {
+        max-width: 410px;
+    }
+
+    .feature--cream h2 {
+        font-size: 2.2rem;
+        line-height: 1;
+        white-space: nowrap;
+        margin-bottom: 0.8rem;
 
     }
 
-    .feature img {
-        width: 34rem;
-        max-width: 100%;
-        order: initial;
-        justify-self: end;
+    .feature--cream p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1.2rem;
+    }
+    .feature--cream a {
+        margin-bottom: 0;
+    }
+    .feature--pink h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+
+    .feature--pink .feature__image img {
+        width: 100%;
     }
 }
+
+
+
+
+
+
+//======================================================================
+// @media (min-width: $medium) {
+//     .feature {
+//         display: grid;
+//         grid-template-columns: 1fr 1fr;
+//         grid-template-areas:
+//             "text image";
+//         align-items: center;
+//         column-gap: 4%;
+//         padding: 6% 7%;
+//         min-height: auto;
+//         position: static;
+//     }
+
+//     .feature h2,
+//     .feature p,
+//     .feature a {
+//         grid-column: 1;
+//         margin-left: 0;
+//         margin-right: 0;
+//         width: 100%;
+//     }
+
+//     .feature h2 {
+//         font-size: clamp(2.3rem, 4vw, 3rem);
+//         line-height: 1.1;
+//     }
+
+//     .feature p {
+//         font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+//         max-width: 28rem;
+//     }
+
+//     .feature a {
+//         width: fit-content;
+//         padding: 13px 48px;
+//     }
+
+//     .feature img {
+//         grid-column: 2;
+//         position: static;
+//         transform: none;
+//         width: 85%;
+//         max-width: none;
+//         justify-self: center;
+//         order: initial;
+//         margin: 0;
+//     }
+
+//     /* Cream section: image left, text right */
+//     .feature--cream img {
+//         grid-column: 1;
+//         justify-self: center;
+//     }
+
+//     .feature--cream h2,
+//     .feature--cream p,
+//     .feature--cream a {
+//         grid-column: 2;
+//     }
+// }
+
+// @media (min-width: $large) {
+//     //$large:64em;// 1024px
+//     .feature {
+//         position: relative;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: flex-start;
+//         min-height: 30rem;
+//         padding: 110px 60px;
+//     }
+
+//     .feature h2,
+//     .feature p {
+//         width: 45%;
+//         margin-left: 0;
+//         margin-right: 0;
+//     }
+
+//     .feature h2 {
+//         font-size:2.6rem;
+//         font-weight: 600;
+//         line-height: 1.2;
+//         margin-top: 0;
+//         margin-bottom: 18px;
+//     }
+
+//     .feature p {
+//         font-size:0.95rem;
+//         max-width: 28rem;
+//         line-height: 1.5;
+
+//         margin-top: 0;
+//         margin-bottom: 24px;
+//     }
+
+//     .feature a {
+//         width: fit-content;
+//         padding: 15px 45px;
+//         margin-left: 0;
+//         margin-right: 0;
+//         font-size: 1.32rem;
+//     }
+
+//     .feature img {
+//         position: absolute;
+//         right: 40px;
+//         transform: translateY(-50%);
+//         width:45%;
+//         max-width: 30rem;
+//         margin-bottom: 0;
+//         order: initial;
+//     }
+
+//     .feature--cream {
+//         padding: 130px 60px;
+//     }
+//     .feature--cream img {
+//         width: 42%;
+//         left: 60px;
+//         right: auto;
+//     }
+
+//     .feature--cream h2,
+//     .feature--cream p {
+//         width: 38%;
+//         margin-left: 58%;
+//         margin-right: 0;
+//     }
+
+//     .feature--cream a {
+//         margin-left: 58%;
+//         margin-right: 0;
+//     }
+
+    
+//     .tm {
+//         font-size: 0.45em;
+//         font-weight: 700;
+
+//         // Chatgpt AI prompt: how to lower down TM position 
+//         position: relative;
+//         //Keep the element in its normal position, but allow small adjustments using top, right, bottom, or left.
+//         top: -5px;
+//         // Move the TM symbol downward -5pxfrom its normal position.
+//         // End of AI suggestion
+//     }
+
+
+//     .feature--pink {
+//         padding: 130px 60px;
+//     }
+
+// }
