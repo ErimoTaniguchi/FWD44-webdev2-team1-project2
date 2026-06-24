@@ -22,6 +22,7 @@
 
     <!-- calling JavaScript -->
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/slider.js" defer></script>
     <script src="scripts/search.js" defer></script>
   </head>
 
@@ -441,52 +442,80 @@
           </a>
         </div>
 
-          <button type="button" class="css-slider-button css-slider-prev" disabled aria-label="Previous slide">
-            <svg fill="none" height="13" viewBox="0 0 8 13" width="8" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <g fill="#000">
-                <path d="m7.91419 1.41431-6.48529 6.48528-1.4142102-1.41422 6.4852802-6.48527702z"></path>
-                <path d="m6.48528 12.9849-6.48528027-6.48532 1.41421027-1.41421 6.48528 6.48523z"></path>
-              </g>
-            </svg>
+        <nav class="slider-navigation-container" aria-label="Carousel navigation" role="group">
+          <button type="button" class="slider-button slider-prev" aria-label="Previous slide" id="slider-prev" disabled>
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7.91419 1.41431L1.4289 7.89959L0.01468 6.48537L6.49996 0.00009L7.91419 1.41431Z" fill="black"/>
+                <path d="M6.48528 12.9849L0 6.49958L1.41421 5.08537L7.89949 11.5706L6.48528 12.9849Z" fill="black"/>
+              </svg>
           </button>
 
-          <button type="button" class="css-slider-button css-slider-next" aria-label="Next slide">
+          <div class="slider-index-navigation" aria-live="polite" aria-atomic="true">
+            <span class="slider-navigation__current">1</span>
+            <span aria-hidden="true">/</span>
+            <span class="slider-navigation__total">2</span>
+          </div>
+
+          <button type="button" class="slider-button slider-next" aria-label="Next slide" id="slider-next">
             <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M0.914169 11.5857L7.39945 5.10041L8.81367 6.51463L2.32838 12.9999L0.914169 11.5857Z" fill="black"></path>
-              <path d="M2.34307 0.0151367L8.82835 6.50042L7.41414 7.91463L0.928857 1.42935L2.34307 0.0151367Z" fill="black"></path>
+              <path d="M0.914169 11.5857L7.39945 5.10041L8.81367 6.51463L2.32838 12.9999L0.914169 11.5857Z" fill="black"/>
+              <path d="M2.34307 0.0151367L8.82835 6.50042L7.41414 7.91463L0.928857 1.42935L2.34307 0.0151367Z" fill="black"/>
             </svg>
           </button>
+        </nav>
+        
       </section>
     </main>
 
-    <footer>
-      <section>
-        <h2>Plant Lady Juice Co.</h2>
-        <p>Deeply Rooted &trade;</p>
-        <img src="#" alt="instagram logo" />
-      </section>
-      <section>
-        <h2>Sign up for (juicy) news!</h2>
-        <label for="form-email"></label>
-        <input type="text" id="form-email" placeholder="Enter your email" />
-      </section>
-      <nav>
-        <h2>Quick Links</h2>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog Posts</a></li>
-          <li><a href="#">Ordering and Delivery</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cancellation & Refund Policy</a></li>
-          <li><a href="#">Disclaimer</a></li>
-        </ul>
-      </nav>
-      <section>
-        <h2>Copyright &copy; 2026</h2>
-        <a href="#">Plant Lady Juice Co.</a>
-      </section>
+    <footer class="footer">
+      <div class="footer__inner">
+        <section class="footer__brand">
+          <h2 class="footer__title">Plant Lady Juice Co.</h2>
+          <p class="footer__tagline">Deeply Rooted &trade;</p>
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0">
+                <path d="M3 9.4c0-2.24 0-3.36.436-4.216a4 4 0 0 1 1.748-1.748C6.04 3 7.16 3 9.4 3h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C21 6.04 21 7.16 21 9.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C17.96 21 16.84 21 14.6 21H9.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C3 17.96 3 16.84 3 14.6zm14-2.9h.5" />
+                <path d="M15.462 11.487a3.5 3.5 0 1 1-6.925 1.026a3.5 3.5 0 0 1 6.925-1.026" />
+              </g>
+            </svg>
+          </a>
+        </section>
+
+        <section class="footer__newsletter">
+          <h2 class="footer__title">Sign up for (juicy) news!</h2>
+          <form class="footer__form" action="/subscribe" method="post">
+            <label for="newsletter-email" class="sr-only"></label>
+            <input type="email" id="newsletter-email" class="footer__input" placeholder="Enter your email" required />
+            <button type="submit" class="footer__submit" aria-label="Submit email">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M47.5 2.5 22.75 27.25M47.5 2.5l-15.75 45-9-20.25-20.25-9 45-15.75Z" 
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </form>
+        </section>
+
+        <nav class="footer__nav" aria-labelledby="quick-links-heading">
+          <h2 id="quick-links-heading" class="footer__title">Quick Links</h2>
+          <ul class="footer__list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Ordering and Delivery</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cancellation & Refund Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          Copyright &copy; 2026 <a href="#">Plant Lady Juice Co</a>.
+        </p>
+      </div>
     </footer>
     <!-- end of erimo part -->
   </body>

@@ -24,6 +24,9 @@ $h3-font-size: 23.33px;
 $h3-font-weight: 700;  // 1, 1.75
 $h3-card-font-size: (14 / 16) * 17px; // 1.0714, 1.1428 
 $h3-card-font-weight: 300;
+$h2-footer-font-size: 18.7px; //1, 1.17
+$h2-footer-text-font-size: 15px;
+$h2-footer-text-font-weight: 400;
 
 
 // Link
@@ -38,6 +41,8 @@ $black-btn-color:#1d1d1d;
 $background-color: #ffffff;
 $box-shadow: #0000001a;
 $border: #e1e1e1;
+$footer-border: #00000026;
+$footer-svg-color: #000000;
 
 // Text Colors
 $font-color: #1d1d1d;
@@ -187,3 +192,11 @@ $seasonal-carousel-width: 138.5008px; //
 $seasonal-carousel-gap: 13px; //
 
 // Footer
+$footer-margin-top: 60px;
+$footer-padding-sides: 15px;
+$footer-padding-top: 40px;
+$footer-grid-gap: 32px; //1, 1.5
+$footer-text-margin: 16px;
+$footer-form-padding: 0.55em;
+$footer-form-border-radius: 5px;
+

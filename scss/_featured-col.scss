@@ -6,6 +6,7 @@
 .featured-section {
     margin-top: $seasonal-margin-top;
     padding: 0 $side-padding;
+    overflow: hidden;
     
     &__header {
         
@@ -139,7 +140,3 @@
 
 }
 
-.css-slider-button {
-    margin-top: $seasonal-carousel-controls-top;
-    margin-bottom: $seasonal-carousel-controls-botton;
-}
