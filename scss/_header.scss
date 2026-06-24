@@ -1,4 +1,6 @@
 @use 'variables' as *;
+@use 'mixins' as *;
+@use 'placeholders' as *;
 
 .site-header {
     display: grid;
@@ -199,16 +201,14 @@
     box-shadow: 0 0 60px $box-shadow;
 }
 
-.mobile-footer svg {
+.mobile-footer a {
     width: $social-icon-size;
     height: $social-icon-size;
     margin: $social-icon-margin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-// .menu-list:last-child {
-//     display: grid;
-//     grid-template-columns: min-content auto;
-// }
 
 #icon-account svg {
     width: $account-icon-size;
@@ -321,16 +321,4 @@
 
 #submenu-desktop {
     display: none;
-}
-
-@media (min-width: $medium) {
-    .site-header {
-        padding: 0 calc($side-padding * 2);
-    }
-}
-
-@media (min-width: $large) {
-    .site-header {
-        padding: 0 calc($side-padding * 2.667);
-    }
 }
