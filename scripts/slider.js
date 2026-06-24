@@ -11,9 +11,6 @@ const currentDisplay = document.querySelector('.slider-navigation__current');
 const sliderContainer = document.querySelector('.grid-container');
 
 // Functions / Logic
-function getOffset(index) {
-    return (index - 1) * -33; // 33%ずつ移動
-}
 
 function updateSlides(){
     currentDisplay.textContent = currentIndex;
@@ -63,18 +60,5 @@ sliderContainer.addEventListener('touchend', (e)=>{
     handleSwipe();
 });
 
-sliderContainer.addEventListener('touchmove', (e) => {
-    const currentX = e.touches[0].clientX;
-    const diff = currentX - touchStartX;
-    
-    // 現在の「止まるべき場所」を計算
-    const baseOffset = getOffset(currentIndex);
-    
-    // 指の移動分を計算（※ここも33%の幅に合わせて調整が必要）
-    const movePercentage = (diff / window.innerWidth) * 100;
-    
-    sliderContainer.style.transform = `translateX(${baseOffset + movePercentage}%)`;
-    sliderContainer.style.transition = 'none'; 
-});
 
 
