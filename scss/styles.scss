@@ -3,24 +3,18 @@
 
 // Imports
 
-
 // Resets and Defaults
 @use 'normalize';
 @use 'reset';
-
-
+@use 'variables';
 
 
 // Body
 @use 'body';
 
-
 // Sections
-
-// Navigation - Jes
-@use 'nav-home';
-@use 'menubar';
-@use 'hamburger';
+// Header - Jes
+@use 'header';
 
 // Cards - Jade
 @use 'feature';
@@ -31,8 +25,8 @@
 
 // Footer - Erimo
 @use 'featured-col';
-@use 'socials';
 @use 'signup';
 @use 'sitemap';
 @use 'footer';
+@use 'slider';
 

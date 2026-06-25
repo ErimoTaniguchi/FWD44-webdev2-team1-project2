@@ -2,4 +2,21 @@
 
 body {
     background-color: $background-color;
-};
+    font-family: $font-family;
+    color: $font-color;
+    line-height: $body-font-height;
+    font-size: $body-font-size;
+    margin: 0 auto;
+}
+
+@media (min-width: $medium) {
+    body {
+        font-size: calc($body-font-size * 1.071);
+    }
+}
+
+@media (min-width: $large) {
+    body {
+        font-size: calc($body-font-size * 1.143);
+    }
+}

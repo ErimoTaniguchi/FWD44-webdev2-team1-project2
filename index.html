@@ -2,284 +2,521 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Plant Lady Juice Co | Home</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <!-- favicon for the website -->
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- adding DM Sans and IBM Plex Mono from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- adding IBM Plex Mono from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
 
-    <script src="scripts/scripts.js" defer></script>
-</head>
-<body>
+    <!-- calling JavaScript -->
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/slider.js" defer></script>
+    <script src="scripts/search.js" defer></script>
+    <script src="scripts/gallery.js" defer></script>
+  </head>
+
+  <body id="site-home">
     <a class="screen-reader-text" href="#">Skip to content</a>
     <!-- Jes -->
     <header>
-      <p>
-        Local Farm Pickup Now Available | Pick up at the farm between 11AM - 7PM
-      </p>
+      <div class="header-announcements">
+        <button
+          class="btn-announcement"
+          aria-controls="btn-announcement-left"
+          aria-label="Announcement Controls Left"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="m15 6l-6 6l6 6"
+            />
+          </svg>
+        </button>
 
-      <h1><a href="#">Plant Lady Juice Co.</a></h1>
-      <div>
-        <ul>
-          <li>
-            <label for="search"></label>
-            <input type="text" placeholder="Search for..." />
-          </li>
-          <li><a href="#">Account</a></li>
-          <li><a href="#">Cart</a></li>
-        </ul>
+        <p>
+          🌿 Local Farm Pickup Now Available | Pick up at the farm between 11AM
+          - 7PM
+        </p>
+
+        <button
+          class="btn-announcement"
+          aria-controls="btn-announcement-right"
+          aria-label="Announcement Controls Right"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            class="announcement-nav"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="m9 18l6-6l-6-6"
+            />
+          </svg>
+        </button>
       </div>
-      <nav>
-        <h2>Menu</h2>
 
-        <ul>
-          <li>
-            <a href="#">Sips</a>
-            <ul>
-              <li><a href="">Juices</a></li>
-              <li><a href="">Teas</a></li>
-              <li><a href="">Elixirs</a></li>
-              <li><a href="">Waters</a></li>
-            </ul>
-          </li>
-          <li><a href="">Cleanses</a></li>
-          <li><a href="">Apothecary</a></li>
-          <li><a href="">Services</a></li>
+      <div class="site-header">
+        <!-- site word-mark image -->
+        <h1 class="header-logo">
+          <a href="#site-home">
+            <img src="images/logo.webp" alt="Plant Lady Juice Co." />
+          </a>
+        </h1>
 
-          <!-- should only display on mobile and tablet -->
-          <li>
-            <a href="#"><img src="#" alt="instagram-logo" /></a>
-          </li>
-          <li><a href="#">Account</a></li>
-        </ul>
-      </nav>
-      <a href="#">Delivery + Shipping Guidelines</a>
-    </header>
-    <!-- End of jes part -->
-    <main>
+        <!-- action buttons -->
+        <div class="btn-header btn-search">
+          <svg
+            focusable="false"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            viewBox="0 0 22 22">
+            <g fill="none" fill-rule="evenodd">
+              <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+              <path fill="currentColor"
+                  d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0" />
+            </g>
+          </svg>
 
+          <form class="search-form" id="btn-search" role="search">
+            <input
+            type="search"
+            name="q"
+            id="site-search"
+            aria-label="Search site for content"
+            placeholder="Search for..."/>
+          </form>
+          <div class="search-submit">
+            <a class="search-button" id="search-button" href="#">
+            </a>
+          </div> 
+        </div >
 
-      <!-- Jade -->
-      <section class="feature feature--yellow">
+        <button class="btn-header btn-account" id="btn-account">
+          <a href="#">
+            <svg
+              focusable="false"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0"
+              />
+            </svg>
+            <p>Account</p>
+          </a>
+        </button>
 
-          <div class="feature__text">
-              <h2>Locally sourced in Atlanta, GA</h2>
-
-              <p>
-                  Plant Lady Juice Co. nurtures wellness from the ground up—growing
-                  ingredients in our garden and sourcing from local Georgia farmers.
-                  From cold-pressed juices to herbal remedies, our offerings are crafted
-                  with care.
-              </p>
-
-              <a href="#">Shop Now</a>
-          </div>
-
-          <div class="feature__image">
-              <img
-                  src="images/card-01.webp"
-                  alt="Locally sourced illustration"
+        <button class="btn-header btn-cart" id="btn-cart">
+          <a href="#">
+            <div class="btn-cart-counter">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
               >
-          </div>
+                <path
+                  fill="currentColor"
+                  d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m-1-5h2q.825 0 1.413-.587T15 15V9q0-.825-.587-1.412T13 7h-2q-.825 0-1.412.588T9 9v6q0 .825.588 1.413T11 17m0-8h2v6h-2z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                />
+              </svg>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M21.08 7a2 2 0 0 0-1.7-1H6.58L6 3.74A1 1 0 0 0 5 3H3a1 1 0 0 0 0 2h1.24L7 15.26A1 1 0 0 0 8 16h9a1 1 0 0 0 .89-.55l3.28-6.56A2 2 0 0 0 21.08 7m-4.7 7H8.76L7.13 8h12.25Z"
+              />
+              <circle cx="7.5" cy="19.5" r="1.5" />
+              <circle cx="17.5" cy="19.5" r="1.5" />
+            </svg>
+          </a>
+        </button>
 
+        <!-- header navigation menu -->
+        <nav class="site-navigation" id="site-navigation">
+          <!-- mobile nav button -->
+          <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-controls="mobile-menu"
+            aria-label="Menu Toggle">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="16"
+              viewBox="0 0 20 16">
+              <g>
+                <path fill="currentColor" d="m0 0h20v2h-20z"></path>
+                <path fill="currentColor" d="m0 7h20v2h-20z"></path>
+                <path fill="currentColor" d="m0 14h20v2h-20z"></path>
+              </g>
+            </svg>
+          </button>
+        
+          <ul class="mobile-menu" id="mobile-menu">
+            <li class="mobile-header">
+              <h2>Menu</h2>
+              <button id="mobile-menu-close" aria-controls="mobile-menu" aria-label="Menu Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 1L1 17M1 1L17 17" />
+                </svg>
+              </button>
+            </li>
+
+            <li class="menu-list-cell">
+              <ul class="menu-list-section">
+                <li class="header-submenu" id="header-submenu">
+                    <button class="submenu-toggle" aria-controls="nav-submenu" aria-label="Sub-Menu Open">
+                    
+                      <!-- mobile submenu -->
+                      <div id="submenu-open">
+                        <p>Sips</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
+                        </svg>
+                      </div>
+                    
+                      <!-- desktop submenu -->
+                      <div id="submenu-desktop">
+                        <p>Sips</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 9l6 6l6-6" />
+                        </svg>
+                      </div>
+                    
+                    </button>
+                  
+                  <ul class="mobile-submenu" id="nav-submenu">
+                    <li class="submenu-list">
+                      <button id="submenu-close">
+                        <svg class="submenu-mobile mobile-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6" />
+                        </svg>
+                        <p class="submenu-mobile-close">Back</p>
+                      </button>
+                    </li>
+                    <li class="submenu-list"><a href="#">Juices</a></li>
+                    <li class="submenu-list"><a href="#">Teas</a></li>
+                    <li class="submenu-list"><a href="#">Elixirs</a></li>
+                    <li class="submenu-list"><a href="#">Waters</a></li>
+                  </ul>
+                </li>
+              
+                <li class="menu-list"><a href="#">Cleanses</a></li>
+                <li class="menu-list"><a href="#">Apothecary</a></li>
+                <li class="menu-list"><a href="#">Services</a></li>
+              
+                <!-- should only display on mobile and tablet -->
+                <li class="menu-list" id="icon-account">
+                  <a href="#">
+                    <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+                      <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0" />
+                    </svg>
+                    Account
+                  </a>
+                </li>
+              </ul>
+            </li>
+      
+            <li class="mobile-footer" id="mobile-footer">
+              <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24">
+                  <path fill="currentColor" d="M12.001 9a3 3 0 1 0 0 6a3 3 0 0 0 0-6m0-2a5 5 0 1 1 0 10a5 5 0 0 1 0-10m6.5-.25a1.25 1.25 0 0 1-2.5 0a1.25 1.25 0 0 1 2.5 0M12.001 4c-2.474 0-2.878.007-4.029.058c-.784.037-1.31.142-1.798.332a2.9 2.9 0 0 0-1.08.703a2.9 2.9 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.007 9.075 4 9.461 4 12c0 2.475.007 2.878.058 4.029c.037.783.142 1.31.331 1.797c.17.435.37.748.702 1.08c.337.336.65.537 1.08.703c.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.475 0 2.878-.007 4.029-.058c.782-.037 1.308-.142 1.797-.331a2.9 2.9 0 0 0 1.08-.703c.337-.336.538-.649.704-1.08c.19-.492.296-1.018.332-1.8c.052-1.103.058-1.49.058-4.028c0-2.474-.007-2.878-.058-4.029c-.037-.782-.143-1.31-.332-1.798a2.9 2.9 0 0 0-.703-1.08a2.9 2.9 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.926 4.006 14.54 4 12 4m0-2c2.717 0 3.056.01 4.123.06c1.064.05 1.79.217 2.427.465c.66.254 1.216.598 1.772 1.153a4.9 4.9 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428c.047 1.066.06 1.405.06 4.122s-.01 3.056-.06 4.122s-.218 1.79-.465 2.428a4.9 4.9 0 0 1-1.153 1.772a4.9 4.9 0 0 1-1.772 1.153c-.637.247-1.363.415-2.427.465c-1.067.047-1.406.06-4.123.06s-3.056-.01-4.123-.06c-1.064-.05-1.789-.218-2.427-.465a4.9 4.9 0 0 1-1.772-1.153a4.9 4.9 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.012 15.056 2 14.717 2 12s.01-3.056.06-4.122s.217-1.79.465-2.428a4.9 4.9 0 0 1 1.153-1.772A4.9 4.9 0 0 1 5.45 2.525c.637-.248 1.362-.415 2.427-.465C8.945 2.013 9.284 2 12.001 2" />
+                </svg>
+                </a>
+              </li>
+          </ul>
+        </nav>
+
+        <div class="header-shipping">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="none"
+                stroke="currentColor"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.0"
+              >
+                <path
+                  d="M5 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0m10 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"
+                />
+                <path
+                  d="M5 17H3v-4M2 5h11v12m-4 0h6m4 0h2v-6h-8m0-5h5l3 5M3 9h4"
+                />
+              </g>
+            </svg>
+            <p>Delivery + Shipping Guidelines</p>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- End of Jes part -->
+
+    <main>
+      <!-- Jade -->
+      <!-- Jade -->
+
+      <section class="feature feature--yellow">
+        <h2>Locally sourced in Atlanta, GA</h2>
+
+        <p>
+          Plant Lady Juice Co. nurtures wellness from the ground up—growing
+          ingredients in our garden and sourcing from local Georgia farmers.
+          From cold-pressed juices to herbal remedies, our offerings are crafted
+          with care.
+        </p>
+
+        <a href="#">Shop Now</a>
+
+        <img src="images/card-01.webp" alt="Locally sourced illustration" />
       </section>
 
       <section class="feature feature--cream">
+        <img src="images/card-02.webp" alt="Deeply rooted illustration" />
+        <h2>Deeply Rooted <sup>TM</sup></h2>
 
-          <div class="feature__image">
-              <img
-                  src="images/card-02.webp"
-                  alt="Deeply rooted illustration"
-              >
-          </div>
+        <p>
+          Roots are the lifeline of plants. Roots absorb vital nutrients which
+          nourish our bodies. In the same respect, Plant Lady Juice Co. knows
+          that staying deeply rooted harmonizes the journey to
+          self-actualization.
+        </p>
 
-          <div class="feature__text">
-              <h2>Deeply Rooted<sup class="tm">TM</sup></h2>
-
-              <p>
-                  Roots are the lifeline of plants. Roots absorb vital nutrients which
-                  nourish our bodies. In the same respect, Plant Lady Juice Co. knows
-                  that staying deeply rooted harmonizes the journey to self-actualization.
-              </p>
-
-              <a href="#">Our Story</a>
-          </div>
-
+        <a href="#">Our Story</a>
       </section>
-
       <section class="feature feature--pink">
+        <h2>Where to Shop</h2>
 
-          <div class="feature__text">
-              <h2>Where to Shop</h2>
+        <p>
+          Order online for nationwide shipping or local delivery within the
+          metro-Atlanta area.
+        </p>
 
-              <p>
-                  Order online for nationwide shipping or local delivery within the
-                  metro-Atlanta area.
-              </p>
+        <a href="#">Learn More</a>
 
-              <a href="#">Learn More</a>
-          </div>
-
-          <div class="feature__image">
-              <img
-                  src="images/card-03.webp"
-                  alt="Where to shop illustration"
-              >
-          </div>
-
+        <img src="images/card-03.webp" alt="Where to shop illustration" />
       </section>
-<!-- End of Jade -->
+
+      <!-- end of jade part -->
+      <!-- Alan -->
+      <section class="favorites">
+        
+        <h3>Seasonal Favorites</h3>
+        <div class="favorites-summary">
+          <p>
+            Featuring seeded watermelon, mineral-rich okra, and rose to nourish
+            the heart.
+          </p>
+          <a href="#">View all products</a>
+        </div>
 
 
+        <article>
+          <p>$15.00</p>
+          <h4>Watermelon Juice</h4>
+          <p>(seasonal)</p>
+          <img src="images/seasonal-01.webp" alt="watermelon juice" />
+        </article>
+        <article>
+          <p>$13.00</p>
+          <h4>Okra Water</h4>
+          <p>(seasonal)</p>
+          <img src="images/seasonal-02.webp" alt="okra water" />
+        </article>
+        <article>
+          <p>$15.00</p>
+          <h4>Rose Iced Tea</h4>
+          <p>(seasonal)</p>
+          <img src="images/seasonal-03.webp" alt="rose iced tea" />
+        </article>
+      </section>
+      <section class="goals">
+        <div class="gallery-container">
+          <figure class="gallery-item">
+            <img src="images/icon-01.avif" alt="flower" />
+            <figcaption>Guided by ancestral wisdom</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/icon-02.avif" alt="hand with heart in the palm" />
+            <figcaption>Handcrafted with love</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/icon-03.avif" alt="dandelion with happy face" />
+            <figcaption>Real ingredients & people</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="images/icon-04.avif" alt="picture of origami" />
+            <figcaption>Locally sourced & proudly served</figcaption>
+          </figure>
+        </div>
+        <div class="gallery-controls"></div>
+      </section>
+      <!-- end of alan part -->
+      <!-- Erimo -->
+      <section class="featured-section">
+        <div class="featured-section__header">
+          <h3>Featured collections</h3>
+          <a href="#">View all collections</a>
+        </div>
 
-
-
-
-    <!-- <section class="feature feature--yellow">
-      <h2>Locally sourced in Atlanta, GA</h2>
-    
-      <p>
-        Plant Lady Juice Co. nurtures wellness from the ground up—growing
-        ingredients in our garden and sourcing from local Georgia farmers.
-        From cold-pressed juices to herbal remedies, our offerings are crafted
-        with care.
-      </p>
-    
-      <a href="#">Shop Now</a>
-    
-      <img src="images/card-01.webp" alt="Locally sourced illustration">
-    </section>
-    
-    
-    <section class="feature feature--cream">
-    
-      <img src="images/card-02.webp" alt="Deeply rooted illustration">
-      <h2>Deeply Rooted<sup class="tm">TM</sup></h2>
-    
-      <p>
-        Roots are the lifeline of plants. Roots absorb vital nutrients which
-        nourish our bodies. In the same respect, Plant Lady Juice Co. knows
-        that staying deeply rooted harmonizes the journey to self-actualization.
-      </p>
-    
-      <a href="#">Our Story</a>
-    </section>
-    <section class="feature feature--pink">
-      <h2>Where to Shop</h2>
-    
-      <p>
-        Order online for nationwide shipping or local delivery within the
-        metro-Atlanta area.
-      </p>
-    
-      <a href="#">Learn More</a>
-    
-      <img src="images/card-03.webp" alt="Where to shop illustration">
-    </section> -->
-    <!-- end of jade part -->
-        <!-- Alan -->
-        <section>
-            <h3>Seasonal Favorites</h3>
-            <p>Featuring seeded watermelon, mineral-rich okra, and rose to nourish the heart.</p>
-            <a href="#">View all products</a>
+        <div class="grid-container">
+          <a class="grid-container__item" href="#">
             <article>
-                <p>$15.00</p>
-                <h4>Watermelon Juice</h4>
-                <p>(seasonal)</p>
-                <img src="#" alt="watermelon juice">
-            </article>
-            <article>
-                <p>$13.00</p>
-                <h4>Okra Water</h4>
-                <p>(seasonal)</p>
-                <img src="#" alt="okra water">
-            </article>
-            <article>
-                <p>$15.00</p>
-                <h4>Rose Iced Tea</h4>
-                <p>(seasonal)</p>
-                <img src="#" alt="rose iced tea">
-            </article>
-        </section>
-        <section>
-            <figure>
-                <img src="#" alt="flower">
-                <figcaption>Guided by ancestral wisdom</figcaption>
-            </figure>
-            <figure>
-                <img src="#" alt="hand with heart in the palm">
-                <figcaption>Handcrafted with love</figcaption>
-            </figure>
-            <figure>
-                <img src="#" alt="dandelion with happy face">
-                <figcaption>Real ingredients & people</figcaption>
-            </figure>
-            <figure>
-                <img src="" alt="picture of origami">
-                <figcaption>Locally sourced & proudly served</figcaption>
-            </figure>
-        </section>
-        <!-- end of alan part -->
-         <!-- Erimo -->
-        <section>
-            <h3>Featured collections</h3>
-            <a href="#">View all collections</a>
-
-        <!-- consult with gabbie -->
-        <div class="css-slider-container">
-          <a class="card__whole-link" href="#">
-            <article>
+              <div class="image-wrapper">
+                <img src="images/apothecary.webp" alt="apothecary">
+              </div>
               <h3>Apothecary</h3>
-              <img src="images/apothecary.webp" alt="apothecary" />
             </article>
           </a>
-          <a  class="card__whole-link" href="#">
+          <a  class="grid-container__item" href="#">
             <article>
-              <h3>Cleanses</h3>
-              <img src="images/cleanses.webp" alt="cleanses" />
+              <div class="image-wrapper">
+                <img src="images/cleanses.webp" alt="cleanses">
+              </div>
+                <h3>Cleanses</h3>
             </article>
           </a>
-          <a class="card__whole-link" href="#">
+          <a class="grid-container__item" href="#">
             <article>
+              <div class="image-wrapper">
+                <img src="images/support.webp" alt="support">
+              </div>
               <h3>Support at any level</h3>
-              <img src="images/support.webp" alt="support" />
             </article>
           </a>
         </div>
+
+        <nav class="slider-navigation-container" aria-label="Carousel navigation" role="group">
+          <button type="button" class="slider-button slider-prev" aria-label="Previous slide" id="slider-prev" disabled>
+              <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M7.91419 1.41431L1.4289 7.89959L0.01468 6.48537L6.49996 0.00009L7.91419 1.41431Z" fill="black"/>
+                <path d="M6.48528 12.9849L0 6.49958L1.41421 5.08537L7.89949 11.5706L6.48528 12.9849Z" fill="black"/>
+              </svg>
+          </button>
+
+          <div class="slider-index-navigation" aria-live="polite" aria-atomic="true">
+            <span class="slider-navigation__current">1</span>
+            <span aria-hidden="true">/</span>
+            <span class="slider-navigation__total">2</span>
+          </div>
+
+          <button type="button" class="slider-button slider-next" aria-label="Next slide" id="slider-next">
+            <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M0.914169 11.5857L7.39945 5.10041L8.81367 6.51463L2.32838 12.9999L0.914169 11.5857Z" fill="black"/>
+              <path d="M2.34307 0.0151367L8.82835 6.50042L7.41414 7.91463L0.928857 1.42935L2.34307 0.0151367Z" fill="black"/>
+            </svg>
+          </button>
+        </nav>
+        
       </section>
     </main>
 
-    <footer>
-      <section>
-        <h2>Plant Lady Juice Co.</h2>
-        <p>Deeply Rooted &trade;</p>
-        <img src="#" alt="instagram logo" />
-      </section>
-      <section>
-        <h2>Sign up for (juicy) news!</h2>
-        <label for="email"></label>
-        <input type="text" placeholder="Enter your email" />
-      </section>
-      <nav>
-        <h2>Quick Links</h2>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog Posts</a></li>
-          <li><a href="#">Ordering and Delivery</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cancellation & Refund Policy</a></li>
-          <li><a href="#">Disclaimer</a></li>
-        </ul>
-      </nav>
-      <section>
-        <h2>Copyright &copy; 2026</h2>
-        <a href="#">Plant Lady Juice Co.</a>
-      </section>
+    <footer class="footer">
+      <div class="footer__inner">
+        <section class="footer__brand">
+          <h2 class="footer__title">Plant Lady Juice Co.</h2>
+          <p class="footer__tagline">Deeply Rooted &trade;</p>
+          <a href="#" class="footer__social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0">
+                <path d="M3 9.4c0-2.24 0-3.36.436-4.216a4 4 0 0 1 1.748-1.748C6.04 3 7.16 3 9.4 3h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C21 6.04 21 7.16 21 9.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C17.96 21 16.84 21 14.6 21H9.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C3 17.96 3 16.84 3 14.6zm14-2.9h.5" />
+                <path d="M15.462 11.487a3.5 3.5 0 1 1-6.925 1.026a3.5 3.5 0 0 1 6.925-1.026" />
+              </g>
+            </svg>
+          </a>
+        </section>
+
+        <section class="footer__newsletter">
+          <h2 class="footer__title">Sign up for (juicy) news!</h2>
+          <form class="footer__form" action="/subscribe" method="post">
+            <label for="newsletter-email" class="sr-only"></label>
+            <input type="email" id="newsletter-email" class="footer__input" placeholder="Enter your email" required />
+            <button type="submit" class="footer__submit" aria-label="Submit email">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M47.5 2.5 22.75 27.25M47.5 2.5l-15.75 45-9-20.25-20.25-9 45-15.75Z" 
+                      stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </form>
+        </section>
+
+        <nav class="footer__nav" aria-labelledby="quick-links-heading">
+          <h2 id="quick-links-heading" class="footer__title">Quick Links</h2>
+          <ul class="footer__list">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog Posts</a></li>
+            <li><a href="#">Ordering and Delivery</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cancellation & Refund Policy</a></li>
+            <li><a href="#">Disclaimer</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          Copyright &copy; 2026 <a href="#">Plant Lady Juice Co</a>.
+        </p>
+      </div>
     </footer>
     <!-- end of erimo part -->
   </body>
