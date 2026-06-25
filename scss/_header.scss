@@ -92,7 +92,7 @@
 .btn-search {
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: start;
     padding: $header-search-padding-horizontal $header-search-padding-vertical;
     grid-area: d;
     border: $border $border-weight solid;
@@ -104,15 +104,47 @@
 }
 
 .btn-search svg {
-    display: block;
+    box-sizing: border-box;
     margin-right: $header-search-padding-vertical;
     stroke-width: 2px;
+}
+
+.btn-search svg g {
+    width: $account-icon-size;
+    height: $account-icon-size;
 }
 
 .btn-search input {
     border: 0;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+#site-search {
+    box-sizing: border-box;
+    width: 100%;
+    border: 0;
+}
+
+#site-search:focus {
+    outline: none;
+}
+
+#search-submit {
+    background-color: $background-color;
+    border: $border $border-weight solid;
+    border-radius: $button-radius;
+    color: $font-color;
+    transition: background-color .2s ease, color .2s ease;
+    position: relative;
+    top: 20px;
+}
+
+#search-submit:hover,
+#search-submit:focus {
+    background-color: darken($background-color, 8%);
+    color: $font-color;
 }
 
 .btn-cart {
