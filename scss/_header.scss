@@ -90,61 +90,95 @@
 }
 
 .btn-search {
-    display: flex;
+    display: grid;
+    grid-template-areas: "a b";
+    grid-template-rows: $header-search-height;
+    grid-template-columns: $header-icon-small auto;
     align-items: center;
     justify-content: start;
+    align-content: center;
+    justify-items: start;
     padding: $header-search-padding-horizontal $header-search-padding-vertical;
     grid-area: d;
-    border: $border $border-weight solid;
     border-radius: $button-radius;
-    font-size: $body-font-size;
-    line-height: $body-font-height;
-    font-weight: $body-font-weight;
     margin: 0 $header-padding-horizontal;
+    column-gap: $header-icon-margin-right;
+    min-width: 0;
+    height: $header-search-height;
+    position: relative;
+    background-color: $background-color;
+    box-shadow: 0 0 0 transparent;
+    border: $border $border-weight solid;
+    transition: background-color .2s ease,
+                box-shadow .2s ease,
+                border .2s ease;
+}
+
+.btn-search:focus-within {
+    background-color: $search-input-overlay;
+    box-shadow: 0 18px 40px $search-input-box-shadow;
+    border: $border-weight solid $search-input-border;
 }
 
 .btn-search svg {
-    box-sizing: border-box;
-    margin-right: $header-search-padding-vertical;
-    stroke-width: 2px;
+    grid-area: a;
 }
 
-.btn-search svg g {
-    width: $account-icon-size;
-    height: $account-icon-size;
-}
-
-.btn-search input {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.search-form {
+    grid-area: b;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
 }
 
 #site-search {
     box-sizing: border-box;
+    min-width: 0;
     width: 100%;
+    max-width: 100%;
     border: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 #site-search:focus {
     outline: none;
 }
 
-#search-submit {
+.search-submit {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: $header-search-height;
+    left: -$side-padding;
+    right: 0;
+    justify-self: center;
+    vertical-align: baseline;
+    min-width: 100%;
+    max-width: 100%;
+    margin: $search-submit-margin-top $side-padding 0;
+    padding: $search-submit-padding-horizontal $search-submit-padding-vertical;
+    border: 0;
+    box-shadow: 0 18px 40px $search-input-box-shadow;
     background-color: $background-color;
-    border: $border $border-weight solid;
-    border-radius: $button-radius;
-    color: $font-color;
-    transition: background-color .2s ease, color .2s ease;
-    position: relative;
-    top: 20px;
+    border-radius: $card-radius;
 }
 
-#search-submit:hover,
-#search-submit:focus {
-    background-color: darken($background-color, 8%);
-    color: $font-color;
+.search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: $black-btn-color;
+    color: $black-btn-font-color;
+    border: $black-btn-color solid $border-weight;
+    border-radius: $button-radius;
+    font-size: $search-font-size;
+    font-weight: $search-font-weight;
+    line-height: $search-font-height;
+    padding: $search-button-padding-horizontal $search-button-padding-vertical;
 }
 
 .btn-cart {
@@ -242,10 +276,10 @@
 }
 
 #icon-account svg {
-    width: $account-icon-size;
-    height: $account-icon-size;
+    width: $header-icon-small;
+    height: $header-icon-small;
     display: block;
-    margin-right: $account-icon-margin-right;
+    margin-right: $header-icon-margin-right;
 }
 
 .mobile-header {
@@ -311,7 +345,7 @@
     height: min-content;
     width: 100%;
     justify-items: start;
-    grid-gap: $account-icon-margin-right;
+    grid-gap: $header-icon-margin-right;
     padding: 0;
 }
 
@@ -405,15 +439,15 @@
 }
 
 .mobile-footer a {
-    width: $social-icon-size;
-    height: $social-icon-size;
-    margin: $social-icon-margin;
+    width: $header-icon-base;
+    height: $header-icon-base;
+    margin: $header-icon-margin-box;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .mobile-footer svg {
-    width: $social-icon-size;
-    height: $social-icon-size;
+    width: $header-icon-base;
+    height: $header-icon-base;
 }

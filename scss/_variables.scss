@@ -6,6 +6,10 @@ $body-font-size: 14px; // 1.071, 1.143
 $body-font-weight: 500;
 $body-font-bold: 600;
 
+// Line Height
+$body-font-height: 1;
+$heading-font-height: 1.5;
+
 // Mobile Menu
 $mobile-heading-font-size: 19px; // 
 $mobile-heading-font-weight: 700; // 
@@ -15,9 +19,10 @@ $mobile-list-font-size: 14.875px; //
 $mobile-list-font-weight: 400; // 
 $mobile-list-line-height: 1.5; // 
 
-// Line Height
-$body-font-height: 1;
-$heading-font-height: 1.5;
+// Header Font
+$search-font-size: 16px; // 1, 1.125
+$search-font-weight: 400; // 1, 1.125
+$search-font-height: 1.5; // 1, 1.125
 
 // Heading Font
 $h3-font-size: 23.33px; 
@@ -40,6 +45,9 @@ $section-3:#ffaaca;
 $black-btn-color:#1d1d1d;
 $background-color: #ffffff;
 $box-shadow: #0000001a;
+$search-input-overlay: #fffffff2;
+$search-input-border: #00000014;
+$search-input-box-shadow: #0000001f;
 $border: #e1e1e1;
 $footer-border: #00000026;
 $footer-svg-color: #000000;
@@ -122,15 +130,23 @@ $header-padding-delivery: 7.5008px; // 1.33, 2
 $header-logo-height: 40px; // 
 $header-search-padding-vertical: 12px; // 
 $header-search-padding-horizontal: 8px; //
+$header-search-height: 40px; // 
+
+$search-submit-margin-top: 30px; // 
+$search-submit-padding-vertical: 30px; // 
+$search-submit-padding-horizontal: 20px; // 
+
+$search-button-padding-vertical: 24px; // 
+$search-button-padding-horizontal: 8px; // 
 
 // Menu
 $menu-margin-left: -10px; // 1, N/A
 $plain-link: none;
 $action-button-size: 40px; // 
-$account-icon-size: 22px; // 
-$account-icon-margin-right: 12px; // 
-$social-icon-size: 24px; // 
-$social-icon-margin: 5px; // 
+$header-icon-small: 22px; // 
+$header-icon-margin-right: 12px; // 
+$header-icon-base: 24px; // 
+$header-icon-margin-box: 5px; // 
 
 $mobile-header-padding-vertical: 15px; // 
 $mobile-header-padding-top: 22px; // 
