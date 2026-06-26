@@ -8,7 +8,7 @@
     padding: 0 $side-padding;
     overflow: hidden;
     
-    &--header {
+    &-header {
         
         h3 {
             margin: 0;
@@ -68,7 +68,7 @@
     
 
     
-    &--item {
+    &-item {
         display: flex;
         text-decoration: none;
         border: solid 1px $border;

@@ -8,7 +8,7 @@
 }
 
 .footer {
-    &__inner {
+    &-inner {
         border-top: 1px solid $footer-border;
         border-bottom: 1px solid $footer-border;
         margin-top: $footer-margin-top;
@@ -27,7 +27,7 @@
         }
     }
 
-    &__title {
+    &-title {
         font-size: $h2-footer-heading-font-size;
         margin-bottom: $footer-text-margin;
 
@@ -36,34 +36,34 @@
         }
     }
 
-    &__tagline {
+    &-tagline {
         margin-top: 0;
         margin-bottom: $footer-text-margin;
         color: $h2-font-color;
         @include footer-responsive-font($h2-footer-text-font-size);
     }
 
-    &__social-link {
+    &-social-link {
         color: $footer-svg-color;
         transition: all 100ms linear;
         &:hover { color: $footer-hover-color; }
     }
 
-    &__form {
+    &-form {
         border: $border-weight solid #1d1d1d4d;
         opacity: 0.66;
         border-radius: $footer-form-border-radius;
         position: relative;
     }
 
-    &__input {
+    &-input {
         outline: none;
         font-size: $footer-newsletter-font-size;
         width: 100%;
         padding: 0.5rem;
     }
 
-    &__submit {
+    &-submit {
         position: absolute;
         right: 0;
         top: 9px;
@@ -85,7 +85,7 @@
         &:hover { opacity: 1; }
     }
 
-    &__list {
+    &-list {
         list-style: none;
         padding: 0;
         margin: 0;
@@ -105,7 +105,7 @@
         }
     }
 
-    &__bottom {
+    &-bottom {
         padding: $footer-padding-sides;
         margin: 0;
         color: $h2-font-color;
