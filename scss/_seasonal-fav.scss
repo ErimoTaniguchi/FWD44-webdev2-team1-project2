@@ -64,13 +64,13 @@
     flex-wrap: wrap;
 }
 .favorites article a{
-    text-decoration: none;
     border-bottom: none;
 }
 .fav-cart{
     width: 80%;
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 15px;
     border: solid 1px $border;
     border-radius: $button-radius;
     padding: $seasonal-button-padding-vertical $seasonal-button-padding-horizontal;
