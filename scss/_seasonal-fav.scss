@@ -80,6 +80,11 @@
     @include mq($large){
         padding: calc($seasonal-button-padding-vertical * 1.4375) calc($seasonal-button-padding-horizontal * 1.25);
     }
+    &:hover{
+        background-color: $black-btn-color;
+        color: $black-btn-font-color;
+    }
+
 }
 
 .favorites img{
@@ -110,5 +115,8 @@
 }
 
 .fav-product{
-    @extend %hover-underline;
+    &:hover{
+        @extend %hover-underline;
+    }
 }
+
