@@ -19,3 +19,9 @@
         padding: 0 calc($side-padding * 2.667);
     }
 }
+
+@mixin footer-responsive-font($base-size) {
+    font-size: $base-size;
+    @include mq($medium) { font-size: $base-size * $scale-medium; }
+    @include mq($large) { font-size: $base-size * $scale-large; }
+}

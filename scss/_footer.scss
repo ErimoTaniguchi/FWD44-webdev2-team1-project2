@@ -1,10 +1,14 @@
 @use 'variables' as *;
 @use 'mixins' as *;
 
+@mixin footer-responsive-font($base-size) {
+    font-size: $base-size;
+    @include mq($medium) { font-size: $base-size * $scale-medium; }
+    @include mq($large) { font-size: $base-size * $scale-large; }
+}
 
 .footer {
-    
-    &__inner{
+    &__inner {
         border-top: 1px solid $footer-border;
         border-bottom: 1px solid $footer-border;
         margin-top: $footer-margin-top;
@@ -12,166 +16,114 @@
         display: grid;
         grid-gap: $footer-grid-gap;
 
-        @include mq ($medium) {
+        @include mq($medium) {
             grid-template-columns: repeat(3, 1fr);
             grid-gap: $footer-grid-gap;
-            padding: $footer-padding-top calc($footer-padding-sides * 2);
             
         }
-        @include mq ($large) {
+        @include mq($large) {
             grid-gap: calc($footer-grid-gap * 1.5);
             padding: calc($footer-padding-top * 1.5) calc($footer-padding-sides * 2.67);
-            
         }
     }
 
-    &__title{
-        font-size: $h2-footer-heading-font-size ;
+    &__title {
+        font-size: $h2-footer-heading-font-size;
         margin-bottom: $footer-text-margin;
 
-        @include mq ($large) {
-            font-size: calc($h2-footer-heading-font-size * 1.17) ; 
+        @include mq($large) {
+            font-size: calc($h2-footer-heading-font-size * 1.17);
         }
     }
 
-    
-
-    &__tagline{
+    &__tagline {
         margin-top: 0;
         margin-bottom: $footer-text-margin;
-        font-size: $h2-footer-text-font-size;
         color: $h2-font-color;
-
-        @include mq ($medium) {
-                font-size: calc($h2-footer-text-font-size * 1.07); 
-            }
-            
-
-        @include mq ($large) {
-                font-size: calc($h2-footer-text-font-size * 1.14); 
-            }
+        @include footer-responsive-font($h2-footer-text-font-size);
     }
-    
-    &__social-link{
+
+    &__social-link {
         color: $footer-svg-color;
         transition: all 100ms linear;
-        &:hover{
-            color: $footer-hover-color;
-        }
+        &:hover { color: $footer-hover-color; }
     }
 
-    &__form{
+    &__form {
         border: $border-weight solid #1d1d1d4d;
+        opacity: 0.66;
         border-radius: $footer-form-border-radius;
         position: relative;
     }
 
-    &__input{
-        border: none;
+    &__input {
         outline: none;
         font-size: $footer-newsletter-font-size;
         width: 100%;
         padding: 0.5rem;
     }
 
-    &__submit{
+    &__submit {
         position: absolute;
-        right: 0; 
-        top: 9px;  
-        height: calc(100% - 9px); 
+        right: 0;
+        top: 9px;
+        height: calc(100% - 9px);
         width: 50px;
-        
         border: none;
         background: none;
         cursor: pointer;
         padding: 0;
-
         opacity: .66;
         transition: all .1s linear;
-        svg{
+        svg {
             stroke: $footer-svg-color;
             pointer-events: none;
-            width: 65%;
-            height: 65%;
+            width: 32.5px;
+            height: 22.42px;
         }
-        &:hover{
-            opacity: 1;
-        }
+
+        &:hover { opacity: 1; }
     }
 
-    &__list{
+    &__list {
         list-style: none;
         padding: 0;
         margin: 0;
-
-
-        li{
+        li {
             margin-bottom: 5px;
         }
-        a{
-            display: block;
-            width: fit-content;
+        a {
+            display: inline;
+            line-height: 1.5;
             padding-bottom: 1px;
             text-decoration: none;
-
             color: $h2-font-color;
-            font-size: $h2-footer-text-font-size;
-            border-bottom: $border-weight solid $font-color;
-
+            border-bottom: $border-weight solid;
             transition: all 100ms linear;
-
-            &:hover{
-                color: $footer-hover-color;
-            }
-
-            @include mq ($medium) {
-                font-size: calc($h2-footer-text-font-size * 1.07); 
-            }
-            
-
-            @include mq ($large) {
-                font-size: calc($h2-footer-text-font-size * 1.14); 
-            }
+            @include footer-responsive-font($h2-footer-text-font-size);
+            &:hover { color: $footer-hover-color; }
         }
     }
 
-
-    &__bottom{
+    &__bottom {
         padding: $footer-padding-sides;
         margin: 0;
         color: $h2-font-color;
-
-        p{
+        p {
             margin: 0;
-            font-size: $h2-footer-text-font-size;
-            font-weight:$h2-footer-text-font-weight;
+            font-weight: $h2-footer-text-font-weight;
+            @include footer-responsive-font($h2-footer-text-font-size);
         }
-
-        a{
+        a {
             color: $font-color;
             transition: all .1s linear;
-            &:hover{
-                color: $footer-hover-color;
-            }
+            &:hover { color: $footer-hover-color; }
         }
-
-        @include mq ($medium) {
+        @include mq($medium) {
             padding: $footer-copy-padding-top calc($footer-padding-sides * 2);
-            a, p {
-                font-size: calc($h2-footer-text-font-size * 1.07); 
-            }
         }
-        @include mq ($large) {
+        @include mq($large) {
             padding: calc($footer-copy-padding-top * 1.33) calc($footer-padding-sides * 2.67);
-            a, p {   
-                font-size: calc($h2-footer-text-font-size * 1.07); 
-            }
         }
-
     }
 }
-
-
-
-
-

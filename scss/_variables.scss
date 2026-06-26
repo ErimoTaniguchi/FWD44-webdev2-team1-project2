@@ -27,7 +27,7 @@ $search-font-height: 1.5; // 1, 1.125
 // Seasonal, Features Font
 $h3-font-size: 23.33px; 
 $h3-font-weight: 700;  // 1, 1.75
-$h3-card-font-size: calc(14 / 16) * 17px; // 1.0714, 1.1428 
+$h3-card-font-size: calc(14 / 16) * 17px; // 1.07, 1.142
 $h3-card-font-weight: 300;
 
 // Footer Font
@@ -35,6 +35,8 @@ $h2-footer-heading-font-size: 18.7px; //1, 1.17
 $h2-footer-text-font-size: 14.875px; //1.07, 1.14
 $h2-footer-text-font-weight: 400;
 $footer-newsletter-font-size: 17px;
+$scale-medium:1.07;
+$scale-large: 1.14;
 
 
 // Link
