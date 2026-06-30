@@ -65,7 +65,9 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin-top: $seasonal-paragraph-margin;
-    
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar { display: none; }
 
     
     &-item {
@@ -74,6 +76,8 @@
         border: solid 1px $border;
         border-radius: $card-radius;
         overflow: hidden; 
+        scroll-snap-align: start;
+        width: 100%;
         
         article {
             width: 100%;
@@ -136,7 +140,16 @@
 
     @include mq (475px) {
         grid-auto-columns: calc((100% - $seasonal-card-gap)/3);
+        .slider-navigation-container {
+            display: none;
+        }
     }
 
+}
+
+.featured-section .slider-navigation-container {
+    @include mq(475px) {
+        display: none ; 
+    }
 }
 
