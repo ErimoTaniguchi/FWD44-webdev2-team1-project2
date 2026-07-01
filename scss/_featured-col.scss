@@ -104,7 +104,8 @@
                 color: $font-color;
                 font-size: $h3-card-font-size;
                 font-weight: $h3-card-font-weight;
-                display: inline-block; 
+                display: inline;
+                line-height: 1.2;
 
                 width: fit-content;    
                 position: relative;
