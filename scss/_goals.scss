@@ -5,16 +5,27 @@
 
 
 .goals{
+    width: 100%;
+    display: grid;
+    gap: $seasonal-card-gap;
+    grid-auto-flow: column;
+    grid-auto-columns: 300px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin: $seasonal-carousel-margins 0;
+    scroll-snap-type: x mandatory;
     @extend %section-side-padding;
+    &::-webkit-scrollbar { display: none; }
 }
 .goals figure{
-    display: inline-block;
-    // width: $seasonal-carousel-width;
+    scroll-snap-align: start;
+    overflow: hidden;
 }
-
 .goals figcaption{
     padding: 20px;
+    font-size: $h3-font-size;
+    font-weight: $h3-font-weight;
+    text-align: center;
 }
 
 .goals figure img{
