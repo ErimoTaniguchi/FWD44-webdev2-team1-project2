@@ -7,7 +7,9 @@
     margin-top: $seasonal-margin-top;
     margin-bottom: $seasonal-heading-margin;
     @extend %section-side-padding;
-
+    @include mq($large){
+        margin: 80px 0;
+    }
 }
 
 .seasonal-grid{
