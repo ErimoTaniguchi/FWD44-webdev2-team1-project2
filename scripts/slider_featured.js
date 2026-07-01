@@ -5,10 +5,28 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 // DOM Elements
+
+//featured collection carousel
+const featuredCarousel = {
+    sliderPrev: document.getElementById('slider-prev'),
+    sliderNext: document.getElementById('slider-next'),
+    currentDisplay: document.querySelector('.slider-navigation-current'),
+    sliderContainer: document.querySelector('.grid-container')
+}
+
+//goals carousel
+const goalCarousel = {
+    sliderPrev: document.getElementById('goal-slider-prev'),
+    sliderNext: document.getElementById('goal-slider-next'),
+    currentDisplay: document.querySelector('.goal-slider-navigation-current'),
+    sliderContainer: document.querySelector('.goals')
+}
 const sliderPrev = document.getElementById('slider-prev');
 const sliderNext = document.getElementById('slider-next');
-const currentDisplay = document.querySelector('.slider-navigation__current');
+const currentDisplay = document.querySelector('.slider-navigation-current');
 const sliderContainer = document.querySelector('.grid-container');
+
+console.log(goalCarousel.sliderContainer);
 
 // Functions / Logic
 function getScrollAmount(){
