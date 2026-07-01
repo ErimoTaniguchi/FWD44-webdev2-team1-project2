@@ -12,6 +12,9 @@ const submenuClose = document.getElementById('submenu-close');
 const submenuDesktop = document.getElementById('submenu-desktop');
 const navSubmenu = document.getElementById('nav-submenu');
 const menuListSection = document.querySelector('.menu-list-section');
+const mobileHeader = document.querySelector('.mobile-header');
+const iconAccount = document.getElementById('icon-account');
+const mobileFooter = document.getElementById('mobile-footer');
 const BREAKPOINT = 1024;
 
 function closeMainMenu() {
@@ -113,6 +116,22 @@ function updateSubmenuVisibility() {
 
     if (submenuClose) {
         submenuClose.style.display = wide ? 'none' : '';
+    }
+
+    if (button) {
+        button.style.display = wide ? 'none' : '';
+    }
+
+    if (mobileHeader) {
+        mobileHeader.style.display = wide ? 'none' : '';
+    }
+
+    if (iconAccount) {
+        iconAccount.style.display = wide ? 'none' : '';
+    }
+
+    if (mobileFooter) {
+        mobileFooter.style.display = wide ? 'none' : '';
     }
 
     if (navSubmenu && wide) {

@@ -29,7 +29,7 @@
   <body id="site-home">
     <a class="screen-reader-text" href="#">Skip to content</a>
     <!-- Jes -->
-    <header>
+    <header class="header-wrapper">
       <div class="header-announcements">
         <button
           class="btn-announcement"
@@ -116,8 +116,8 @@
           </div> 
         </div >
 
-        <button class="btn-header btn-account" id="btn-account">
-          <a href="#">
+        <a href="#">
+          <button class="btn-header btn-account" id="btn-account">
             <svg
               focusable="false"
               aria-hidden="true"
@@ -136,41 +136,39 @@
               />
             </svg>
             <p>Account</p>
-          </a>
-        </button>
+          </button>
+        </a>
 
-        <button class="btn-header btn-cart" id="btn-cart">
-          <a href="#">
-            <div class="btn-cart-counter">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m-1-5h2q.825 0 1.413-.587T15 15V9q0-.825-.587-1.412T13 7h-2q-.825 0-1.412.588T9 9v6q0 .825.588 1.413T11 17m0-8h2v6h-2z"
-                />
-              </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                />
-              </svg>
-            </div>
+        <a href="#">
+          <button class="btn-header btn-cart" id="btn-cart">
             <svg
+              class="btn-cart-counter"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m-1-5h2q.825 0 1.413-.587T15 15V9q0-.825-.587-1.412T13 7h-2q-.825 0-1.412.588T9 9v6q0 .825.588 1.413T11 17m0-8h2v6h-2z"
+              />
+            </svg>
+            <svg
+              class="btn-cart-counter-back"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22" />
+            </svg>
+            <svg
+              class="btn-cart-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
-              viewBox="0 0 24 24"
-            >
+              viewBox="0 0 24 24">
               <path
                 fill="currentColor"
                 d="M21.08 7a2 2 0 0 0-1.7-1H6.58L6 3.74A1 1 0 0 0 5 3H3a1 1 0 0 0 0 2h1.24L7 15.26A1 1 0 0 0 8 16h9a1 1 0 0 0 .89-.55l3.28-6.56A2 2 0 0 0 21.08 7m-4.7 7H8.76L7.13 8h12.25Z"
@@ -178,8 +176,8 @@
               <circle cx="7.5" cy="19.5" r="1.5" />
               <circle cx="17.5" cy="19.5" r="1.5" />
             </svg>
-          </a>
-        </button>
+          </button>
+        </a>
 
         <!-- header navigation menu -->
         <nav class="site-navigation" id="site-navigation">

@@ -2,31 +2,32 @@
 @use 'mixins' as *;
 @use 'placeholders' as *;
 
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: min-content;
+}
+
 .site-header {
     display: grid;
     grid:
-        "a b c"
-        "d d d"
-        "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
-    row-gap: $header-padding-horizontal;
+        "a b c" min-content
+        "d d d" min-content
+        "e e e" min-content / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
     align-items: center;
     justify-content: center;
     justify-items: stretch;
     position: relative;
     z-index: 1;
-    @include mq($medium) {
-        grid:
-            "a b c"
-            "d d d"
-            "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
-    }
 
-    @include mq($large) {
-        grid:
-            "a b c"
-            "d d d"
-            "e e e" / minmax(35px, min-content) minmax(172px, 100%) minmax(35px, min-content);
-    }
+    // @include mq($large) {
+        
+        
+    // }
 }
 
 .header-announcements {
@@ -66,19 +67,24 @@
 
 .site-navigation {
     grid-area: a;
-    padding: $header-padding-horizontal 0 0 $header-padding-horizontal;
-    margin-left: $menu-margin-left;
+    margin: $header-margin;
+
+    @include mq($large) {
+        grid-area: e;
+    }
 }
 
 .header-logo {
     grid-area: b;
-    padding: $header-padding-horizontal $header-padding-vertical 0;
-    margin: 0;
+    margin: $header-margin $header-logo-margin;
     display: flex;
     align-items: center;
-    margin-block: 0;
     line-height: $header-logo-height;
     width: fit-content;
+
+    @include mq($large) {
+        grid-area: a;
+    }
 }
 
 .header-logo img {
@@ -87,6 +93,11 @@
 
 .btn-account {
     display: none;
+
+    @include mq($large) {
+        display: flex;
+        grid-area: c;
+    }
 }
 
 .btn-search {
@@ -101,7 +112,7 @@
     padding: $header-search-padding-horizontal $header-search-padding-vertical;
     grid-area: d;
     border-radius: $button-radius;
-    margin: 0 $header-padding-horizontal;
+    margin: 0 $header-margin;
     column-gap: $header-icon-margin-right;
     min-width: 0;
     height: $header-search-height;
@@ -112,6 +123,10 @@
     transition: background-color .2s ease,
                 box-shadow .2s ease,
                 border .2s ease;
+
+    @include mq($large) {
+        grid-area: b;
+    }
 }
 
 .btn-search:focus-within {
@@ -182,17 +197,23 @@
 }
 
 .btn-cart {
+    position: absolute;
+    top: 0;
+    right: -5px;
     background-color: transparent;
     border: 0;
-    padding: $header-padding-horizontal $header-padding-horizontal 0 0;
+    margin: $header-margin;
     fill: $font-color;
     grid-area: c;
     width: $action-button-size;
     height: $action-button-size;
+
+    @include mq($large) {
+        grid-area: d;
+    }
 }
 
-.btn-cart svg:last-child {
-    position: relative;
+.btn-cart-icon {
     z-index: 1;
     color: $font-color;
 }
@@ -202,16 +223,13 @@
     z-index: 100;
     right: 10px;
     top: 17px;
-}
-
-.btn-cart-counter svg:first-child {
-    position: absolute;
-    z-index: 200;
     color: $font-color;
 }
 
-.btn-cart-counter svg:last-child {
-    color: $black-btn-font-color
+.btn-cart-counter-back {
+    color: $black-btn-font-color;
+    position: absolute;
+    z-index: 200
 }
 
 .header-shipping {
@@ -220,9 +238,14 @@
     display: flex;
     align-items: center;
     font-weight: $body-font-bold;
+    margin-top: $header-margin;
     padding: $header-padding-delivery $side-padding;
     border-top: $border solid $border-weight;
     width: 100%;
+
+    @include mq($large) {
+        grid-area: f;
+    }
 }
 
 .header-shipping a {
@@ -385,6 +408,7 @@
     height: $action-button-size;
     width: $action-button-size;
 }
+
 
 .submenu-toggle {
     display: block;
