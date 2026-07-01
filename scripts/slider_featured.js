@@ -13,7 +13,7 @@ const sliderContainer = document.querySelector('.grid-container');
 // Functions / Logic
 function getScrollAmount(){
     const item = sliderContainer.querySelector('.grid-container-item');
-    const gap = parseInt(getComputedStyle(sliderContainer).gap) ;
+    const gap = parseInt(getComputedStyle(sliderContainer).gap) || 0;
     return item.offsetWidth + gap;
 };
 

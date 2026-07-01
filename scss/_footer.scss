@@ -101,7 +101,7 @@
             border-bottom: $border-weight solid;
             transition: all 100ms linear;
             @include footer-responsive-font($h2-footer-text-font-size);
-            &:hover { color: $footer-hover-color; }
+            &:hover {color: $footer-hover-color;}
         }
     }
 
