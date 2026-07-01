@@ -3,11 +3,12 @@ let currentIndex = 1;
 const totalSlides = 2;
 let touchStartX = 0;
 let touchEndX = 0;
+let tempIndex = 1;
 
 // DOM Elements
 
 //featured collection carousel
-const featuredCarousel = {
+const featured = {
     sliderPrev: document.getElementById('slider-prev'),
     sliderNext: document.getElementById('slider-next'),
     currentDisplay: document.querySelector('.slider-navigation-current'),
@@ -15,38 +16,56 @@ const featuredCarousel = {
 }
 
 //goals carousel
-const goalCarousel = {
+const goal = {
     sliderPrev: document.getElementById('goal-slider-prev'),
     sliderNext: document.getElementById('goal-slider-next'),
     currentDisplay: document.querySelector('.goal-slider-navigation-current'),
     sliderContainer: document.querySelector('.goals')
 }
-const sliderPrev = document.getElementById('slider-prev');
-const sliderNext = document.getElementById('slider-next');
-const currentDisplay = document.querySelector('.slider-navigation-current');
-const sliderContainer = document.querySelector('.grid-container');
 
-console.log(goalCarousel.sliderContainer);
 
 // Functions / Logic
-function getScrollAmount(){
-    const item = sliderContainer.querySelector('.grid-container-item');
-    const gap = parseInt(getComputedStyle(sliderContainer).gap) || 0;
+function getScrollAmount(carouselName){
+    var item = featured.sliderContainer.querySelector('.grid-container-item');
+    var gap = parseInt(getComputedStyle(featured.sliderContainer).gap) || 0;
+    if(carouselName =='goal'){
+        item = goal.sliderContainer.querySelector('figure');
+        gap = parseInt(getComputedStyle(featured.sliderContainer).gap) || 0;
+    }
+    else if(carouselName == 'featured'){
+        item = featured.sliderContainer.querySelector('.grid-container-item');
+        gap = parseInt(getComputedStyle(featured.sliderContainer).gap) || 0;
+    }
+
     return item.offsetWidth + gap;
 };
 
-function updateSlides(){
-    currentDisplay.textContent = currentIndex;
-    sliderPrev.disabled = (currentIndex === 1);
-    sliderNext.disabled = (currentIndex === totalSlides);
+function updateSlides(carouselName){
+    if(carouselName == 'goal'){
+        goal.currentDisplay.textContent = currentIndex;
+        goal.sliderPrev.disabled = (currentIndex === 1);
+        goal.sliderNext.disabled = (currentIndex === totalSlides);
 
-    sliderContainer.scrollTo({
-        left: (currentIndex - 1) * getScrollAmount(),
-        behavior: 'smooth'
-    });
+        goal.sliderContainer.scrollTo({
+            left: (currentIndex - 1) * getScrollAmount(carouselName),
+            behavior: 'smooth'
+        });
+    }
+
+    else if(carouselName =='featured'){
+        featured.currentDisplay.textContent = currentIndex;
+        featured.sliderPrev.disabled = (currentIndex === 1);
+        featured.sliderNext.disabled = (currentIndex === totalSlides);
+
+        featured.sliderContainer.scrollTo({
+            left: (currentIndex - 1) * getScrollAmount(carouselName),
+            behavior: 'smooth'
+        });
+    }
+
 };
 
-function handleSwipe(){
+function handleSwipe(carouselName){
     const diff = touchEndX - touchStartX;
 
     if (Math.abs(diff) > 50) {
@@ -55,36 +74,71 @@ function handleSwipe(){
         } else if (diff < -50) {
             currentIndex = Math.min(totalSlides, currentIndex + 1);
         }
-        updateSlides();
+        updateSlides(carouselName);
     } else {
-        updateSlides();
+        updateSlides(carouselName);
     }
 };
 
 
+
 // Event Listeners
-sliderPrev.addEventListener('click',()=>{
-    if (currentIndex > 1) {
-        currentIndex --;
-        updateSlides();
-    }
+const sliderPrevArray = [featured.sliderPrev, goal.sliderPrev];
+const sliderNextArray = [featured.sliderNext, goal.sliderNext];
+const sliderContainerArray = [featured.sliderContainer, goal.sliderContainer];
+
+sliderPrevArray.forEach(slider => {
+    slider.addEventListener('click',()=>{
+        if (currentIndex > 1) {
+            currentIndex --;
+            if(slider.className.includes('goal')){
+                tempIndex -=2;
+                updateSlides('goal');
+            }
+            else{
+                updateSlides('featured');
+            }
+        }
+        console.log(tempIndex);
+    });
 });
 
-sliderNext.addEventListener('click',()=>{
+sliderNextArray.forEach(slider => {
+    slider.addEventListener('click',()=>{
     if (currentIndex < totalSlides) {
-        currentIndex ++;
-        updateSlides();
-    }
+            currentIndex ++;
+            if(slider.className.includes('goal')){
+                tempIndex +=2;
+                updateSlides('goal');
+            }
+            else{
+                updateSlides('featured');
+            }
+        }
+        console.log(tempIndex);
+    });
 });
 
-sliderContainer.addEventListener('touchstart', (e)=>{
-    touchStartX = e.touches[0].clientX;
+sliderContainerArray.forEach(slider => {
+    slider.addEventListener('touchstart', (e)=>{
+        touchStartX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e)=>{
+        touchEndX = e.changedTouches[0].clientX;
+        if(slider.className.includes('goal')){
+            handleSwipe('goal');
+        }
+        else{
+            handleSwipe('featured');
+        }
+    });
 });
 
-sliderContainer.addEventListener('touchend', (e)=>{
-    touchEndX = e.changedTouches[0].clientX;
-    handleSwipe();
-});
+
+
+
+
 
 
 
