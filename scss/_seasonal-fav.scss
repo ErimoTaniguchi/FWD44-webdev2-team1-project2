@@ -7,19 +7,23 @@
     margin-top: $seasonal-margin-top;
     margin-bottom: $seasonal-heading-margin;
     @extend %section-side-padding;
-
+    @include mq($large){
+        margin: 80px 0;
+    }
 }
 
 .seasonal-grid{
     display: grid;
     padding:0;
     width: 100%;
-    grid-template-columns: $seasonal-card-width;
+    grid-template-columns: auto;
     gap: $seasonal-card-gap;
     margin-top: $seasonal-margin-top;
     margin-bottom: $seasonal-heading-margin;
     @extend %section-side-padding;
-
+    @include mq(39.125em){
+        grid-template-columns: repeat(2,$seasonal-card-width);
+    }
     @include mq($medium){
         grid-template-columns: repeat(2,calc((100vw - 50px) / 2));
     }
@@ -42,7 +46,7 @@
 .favorites p{
     display: inline-block;
     padding-right: 29px; 
-    font-size: $body-font-size;
+    font-size: $h3-font-size;
     @include mq($large){
         padding-right: 94px;
     }
@@ -56,6 +60,7 @@
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 }
 .favorites-summary a{
@@ -84,7 +89,7 @@
 }
 
 .favorites article a{
-    font-size: $h3-card-font-size;
+    font-size: $h3-font-size;
     font-weight: $h3-card-font-weight;
     text-decoration: none;
     color: $font-color;
@@ -96,12 +101,12 @@
     margin-bottom: $seasonal-padding-vertical;
     border: solid 1px $border;
     border-radius: $button-radius;
-    padding: $seasonal-button-padding-vertical $seasonal-button-padding-horizontal;
+    padding: $seasonal-button-padding-horizontal $seasonal-button-padding-vertical ;
     @include mq($medium){
-        padding: calc($seasonal-button-padding-vertical * 1.25) $seasonal-button-padding-horizontal;
+        padding: $seasonal-button-padding-horizontal calc($seasonal-button-padding-vertical * 1.25) ;
     }
     @include mq($large){
-        padding: calc($seasonal-button-padding-vertical * 1.4375) calc($seasonal-button-padding-horizontal * 1.25);
+        padding: calc($seasonal-button-padding-horizontal * 1.25) calc($seasonal-button-padding-vertical * 1.4375) ;
     }
     &:hover{
         background-color: $black-btn-color;
@@ -127,9 +132,26 @@
 }
 
 .fav-product{
-    &:hover{
-        @extend %hover-underline;
+    height: 84.99px;
+    h4, p{
+        width: fit-content;
+        background-image: linear-gradient($font-color, $font-color);
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 0% 1px;             
+        transition: background-size 0.3s ease; 
+        padding-right: 0;
     }
+    &:hover{
+        h4, p{
+            position: relative;
+            background-size: 100% 1px;
+        }
+    }
+}
+
+.fav-product h4, .fav-cart a{
+    font-size: $h3-font-size;
 }
 
 .fav-product h4, .favorites article p, .fav-cart{

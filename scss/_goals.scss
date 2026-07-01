@@ -5,38 +5,49 @@
 
 
 .goals{
+    overflow: hidden;
     width: 100%;
     display: grid;
-    gap: $seasonal-card-gap;
+    gap: $seasonal-carousel-gap;
     grid-auto-flow: column;
-    grid-template-columns: repeat(4,350px);
+    grid-auto-columns: calc((100vw - $seasonal-carousel-gap) / 2);
+    @extend %section-side-padding;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    margin: $seasonal-carousel-margins 0;
+    margin: $seasonal-margin-top 0;
     scroll-snap-type: x mandatory;
-    @extend %section-side-padding;
     &::-webkit-scrollbar { display: none; }
+
     @include mq($large){
-        grid-template-columns: repeat(4,350px);
+        grid-auto-columns: calc((100vw - $seasonal-carousel-gap) / 3);
+    }
+    @include mq(92em){
+        grid-auto-columns: calc((100vw - $seasonal-carousel-gap) / 4);
     }
 
 }
-@include mq($large){
+@include mq(92em){
     .goals-navigation-container {
         display: none;
     }
 }
 
-
 .goals figure{
     scroll-snap-align: start;
+    margin: 0;
     overflow: hidden;
 }
 .goals figcaption{
     padding: 20px;
-    font-size: $h3-font-size;
+    font-size: 19px;
     font-weight: $h3-font-weight;
     text-align: center;
+    @include mq($medium){
+        font-size: $h3-font-size;
+    }
+    @include mq($large){
+        font-size: $h3-font-size;
+    }
 }
 
 .goals figure img{
