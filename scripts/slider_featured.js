@@ -12,7 +12,8 @@ const featured = {
     sliderPrev: document.getElementById('slider-prev'),
     sliderNext: document.getElementById('slider-next'),
     currentDisplay: document.querySelector('.slider-navigation-current'),
-    sliderContainer: document.querySelector('.grid-container')
+    sliderContainer: document.querySelector('.grid-container'),
+    currentIndex: 1
 }
 
 //goals carousel
@@ -20,7 +21,8 @@ const goal = {
     sliderPrev: document.getElementById('goal-slider-prev'),
     sliderNext: document.getElementById('goal-slider-next'),
     currentDisplay: document.querySelector('.goal-slider-navigation-current'),
-    sliderContainer: document.querySelector('.goals')
+    sliderContainer: document.querySelector('.goals'),
+    currentIndex: 1
 }
 
 
@@ -42,23 +44,23 @@ function getScrollAmount(carouselName){
 
 function updateSlides(carouselName){
     if(carouselName == 'goal'){
-        goal.currentDisplay.textContent = currentIndex;
-        goal.sliderPrev.disabled = (currentIndex === 1);
-        goal.sliderNext.disabled = (currentIndex === totalSlides);
+        goal.currentDisplay.textContent = goal.currentIndex;
+        goal.sliderPrev.disabled = (goal.currentIndex === 1);
+        goal.sliderNext.disabled = (goal.currentIndex === totalSlides);
 
         goal.sliderContainer.scrollTo({
-            left: (currentIndex - 1) * getScrollAmount(carouselName),
+            left: (goal.currentIndex - 1) * getScrollAmount(carouselName),
             behavior: 'smooth'
         });
     }
 
     else if(carouselName =='featured'){
-        featured.currentDisplay.textContent = currentIndex;
-        featured.sliderPrev.disabled = (currentIndex === 1);
-        featured.sliderNext.disabled = (currentIndex === totalSlides);
+        featured.currentDisplay.textContent = featured.currentIndex;
+        featured.sliderPrev.disabled = (featured.currentIndex === 1);
+        featured.sliderNext.disabled = (featured.currentIndex === totalSlides);
 
         featured.sliderContainer.scrollTo({
-            left: (currentIndex - 1) * getScrollAmount(carouselName),
+            left: (featured.currentIndex - 1) * getScrollAmount(carouselName),
             behavior: 'smooth'
         });
     }
@@ -67,17 +69,33 @@ function updateSlides(carouselName){
 
 function handleSwipe(carouselName){
     const diff = touchEndX - touchStartX;
-
-    if (Math.abs(diff) > 50) {
-        if (diff > 50) {
-            currentIndex = Math.max(1, currentIndex - 1);
-        } else if (diff < -50) {
-            currentIndex = Math.min(totalSlides, currentIndex + 1);
+    if(carouselName == 'goal'){
+        if (Math.abs(diff) > 50) {
+            if (diff > 50) {
+                goal.currentIndex = Math.max(1, goal.currentIndex - 1);
+            } else if (diff < -50) {
+                goal.currentIndex = Math.min(totalSlides, goal.currentIndex + 1);
+            }
+            updateSlides(carouselName);
+        } else {
+            updateSlides(carouselName);
         }
-        updateSlides(carouselName);
-    } else {
-        updateSlides(carouselName);
     }
+
+    else if(carouselName == 'featured'){
+         if (Math.abs(diff) > 50) {
+            if (diff > 50) {
+                featured.currentIndex = Math.max(1, featured.currentIndex - 1);
+            } else if (diff < -50) {
+                featured.currentIndex = Math.min(totalSlides, featured.currentIndex + 1);
+            }
+            updateSlides(carouselName);
+        } else {
+            updateSlides(carouselName);
+        }       
+    }
+
+
 };
 
 
@@ -89,33 +107,35 @@ const sliderContainerArray = [featured.sliderContainer, goal.sliderContainer];
 
 sliderPrevArray.forEach(slider => {
     slider.addEventListener('click',()=>{
-        if (currentIndex > 1) {
-            currentIndex --;
-            if(slider.className.includes('goal')){
-                tempIndex -=2;
+        if(slider.className.includes('goal')){
+            if(goal.currentIndex > 1){
+                goal.currentIndex --;
                 updateSlides('goal');
             }
-            else{
+        }
+        else{
+            if(featured.currentIndex > 1){
+                featured.currentIndex --;
                 updateSlides('featured');
             }
         }
-        console.log(tempIndex);
     });
 });
 
 sliderNextArray.forEach(slider => {
     slider.addEventListener('click',()=>{
-    if (currentIndex < totalSlides) {
-            currentIndex ++;
-            if(slider.className.includes('goal')){
-                tempIndex +=2;
+        if(slider.className.includes('goal')){
+            if (goal.currentIndex < totalSlides){
+                goal.currentIndex ++;
                 updateSlides('goal');
             }
-            else{
+        }
+        else{
+            if (featured.currentIndex < totalSlides){
+                featured.currentIndex ++;
                 updateSlides('featured');
             }
         }
-        console.log(tempIndex);
     });
 });
 
