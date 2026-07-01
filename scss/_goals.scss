@@ -8,6 +8,7 @@
     width: 100%;
     display: grid;
     gap: $seasonal-card-gap;
+    grid-auto-flow: column;
     grid-template-columns: repeat(4,350px);
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -15,7 +16,18 @@
     scroll-snap-type: x mandatory;
     @extend %section-side-padding;
     &::-webkit-scrollbar { display: none; }
+    @include mq($large){
+        grid-template-columns: repeat(4,350px);
+    }
+
 }
+@include mq($large){
+    .goals-navigation-container {
+        display: none;
+    }
+}
+
+
 .goals figure{
     scroll-snap-align: start;
     overflow: hidden;
