@@ -5,12 +5,16 @@
 
 
 .goals{
-    width: fit-content;
-    margin: $seasonal-carousel-margins auto;
+    margin: $seasonal-carousel-margins 0;
     @extend %section-side-padding;
 }
 .goals figure{
     display: inline-block;
+    // width: $seasonal-carousel-width;
+}
+
+.goals figcaption{
+    padding: 20px;
 }
 
 .goals figure img{
