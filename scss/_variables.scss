@@ -129,16 +129,22 @@ $form-search-padding-horizontal: 8px; // 1.375, 1.375
 $announcement-text-padding-vertical: 10px; // 1, 1
 $announcement-text-padding-horizontal: 6px; // 1, 1
 $announcement-font-weight: 400; // 
-$announcement-side-padding: 13.5008px; // 
+$announcement-side-margin: 13.5008px; // 
+$announcement-width: 290px; // 1.123, 1.497
+
+// Grid
+$header-column: 45px; // 1.444, 
+$buttons-grid-gap: 10px;
 
 // Logo and Search
-$header-margin: 15px; // 1.33, 2
+$header-margin-vertical: 15px; // 2, 2.667
+$header-margin-horizontal: 15px; // 1.333, 2
 $header-logo-margin: 9px; // 1, 5
 $header-padding-delivery: 7.5008px; // 1.33, 2
-$header-logo-height: 40px; // 
+$header-logo-height: 20px; // 1.8, 1.125
 $header-search-padding-vertical: 12px; // 
 $header-search-padding-horizontal: 8px; //
-$header-search-height: 40px; // 
+$header-search-height: 42px; // 1, 1.143
 
 $search-submit-margin-top: 30px; // 
 $search-submit-padding-vertical: 30px; // 
@@ -148,7 +154,6 @@ $search-button-padding-vertical: 24px; //
 $search-button-padding-horizontal: 8px; // 
 
 // Menu
-$menu-margin-left: -10px; // 1, N/A
 $plain-link: none;
 $action-button-size: 40px; // 
 $header-icon-small: 22px; // 
