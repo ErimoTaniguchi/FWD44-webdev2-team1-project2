@@ -1,4 +1,5 @@
 @use 'variables' as *;
+@use 'placeholders' as *;
 
 .slider-navigation-container {
     display: flex;
@@ -25,3 +26,6 @@
     }
 }
 
+.goals-navigation-container{
+    @extend %slider-styles;
+}
