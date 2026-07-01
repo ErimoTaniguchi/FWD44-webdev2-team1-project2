@@ -11,25 +11,36 @@ const currentDisplay = document.querySelector('.slider-navigation__current');
 const sliderContainer = document.querySelector('.grid-container');
 
 // Functions / Logic
+function getScrollAmount(){
+    const item = sliderContainer.querySelector('.grid-container-item');
+    const gap = parseInt(getComputedStyle(sliderContainer).gap) ;
+    return item.offsetWidth + gap;
+};
 
 function updateSlides(){
     currentDisplay.textContent = currentIndex;
     sliderPrev.disabled = (currentIndex === 1);
     sliderNext.disabled = (currentIndex === totalSlides);
+
+    sliderContainer.scrollTo({
+        left: (currentIndex - 1) * getScrollAmount(),
+        behavior: 'smooth'
+    });
 };
 
 function handleSwipe(){
     const diff = touchEndX - touchStartX;
-    if (diff > 50) {
-        if (currentIndex > 1){
-            currentIndex --;
+
+    if (Math.abs(diff) > 50) {
+        if (diff > 50) {
+            currentIndex = Math.max(1, currentIndex - 1);
+        } else if (diff < -50) {
+            currentIndex = Math.min(totalSlides, currentIndex + 1);
         }
-    }else if(diff < -50){
-        if (currentIndex < totalSlides){
-            currentIndex ++;
-        }
+        updateSlides();
+    } else {
+        updateSlides();
     }
-    updateSlides();
 };
 
 
