@@ -53,7 +53,13 @@ function updateSlides(carouselName){
         }
         
         goal.sliderPrev.disabled = (goal.currentIndex === 1);
-        goal.sliderNext.disabled = (goal.currentIndex === totalSlides);
+        if(mq.matches){
+            goal.sliderNext.disabled = (goal.currentIndex === totalSlides);
+        }
+        else{
+            goal.sliderNext.disabled = (goal.currentIndex === 3);
+        }
+        
 
         goal.sliderContainer.scrollTo({
             left: (goal.currentIndex - 1) * getScrollAmount(carouselName),
