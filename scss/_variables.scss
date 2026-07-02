@@ -3,12 +3,10 @@ $font-family: "IBM Plex Mono", monospace;
 
 // Body Font
 $body-font-size: 14px; // 1.071, 1.143
-$body-font-weight: 500;
 $body-font-bold: 600;
 
 // Line Height
 $body-font-height: 1;
-$heading-font-height: 1.5;
 
 // Mobile Menu
 $mobile-heading-font-size: 19px; // 
@@ -63,7 +61,6 @@ $submenu-header-background: #f6f6f6;
 $font-color: #1d1d1d;
 $black-btn-font-color: #ffffff; // added by Jade for text color on black buttons
 $h2-font-color: #000000;
-$footer-font-color: #000000;
 
 // Media Query Breakpoints
 $large:64em;
@@ -74,14 +71,12 @@ $medium:48em;
 
 // Links -- added by Jes 19/06/26
 // Link State
-$link-hover-selector: '&:hover, &:focus, &:active';
 
 // Underlined Links - Line Weight, Padding Below, Margin Below
 $link-underlined-weight: 1px; // 1, 1
 
 $link-underlined-padding: 1px; // 1, 1
 
-$link-underlined-margin: 5px; // 1, 1
 
 // Sizing Variables -- added by Jes 18/06/26
 
@@ -90,7 +85,6 @@ $border-weight: 1px; // borders are only ever 1px
 
 $button-radius: 30px; // also used for search bar
 $card-radius: 10px;
-$form-radius: 5px;
 
 // Use the first value for mobile, then get use the two commented numbers for tablet and desktop values: calc($variable-name * [number])
 // Example: $side-padding: 15px; // 2, 2.5
@@ -105,24 +99,14 @@ $form-radius: 5px;
 $side-padding: 15px; // 2, 2.667
 
 // Card Sides
-$card-padding-left: 40px; // 1, 1.5
-$card-padding-right: 40px; // 0.625, 0.875
 
 // Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
-$card-button-padding-vertical: 32px; // 1.25, 1.4375
-$card-button-padding-horizontal: 12px; // 1, 1.25
 
 $seasonal-button-padding-vertical: 24px; // 1.5, 1.5
 $seasonal-button-padding-horizontal: 8px; // 1.375, 1.375
 
 // Forms - "horizontal" as in "horizontal sides" (long)
-$form-email-padding-left: 8px; // 1.5, 1.5
-$form-email-padding-right: 40px; // 1, 1
-$form-email-padding-horizontal: 9px; // 1.33, 1.33
 
-$form-search-padding-left: 43px; // 1, 1.232
-$form-search-padding-right: 24px; // 1.5, 1.5
-$form-search-padding-horizontal: 8px; // 1.375, 1.375
 
 // Header
 // Announcement
@@ -135,12 +119,15 @@ $announcement-width: 290px; // 1.123, 1.497
 // Grid
 $header-column: 45px; // 1.444, 
 $buttons-grid-gap: 10px;
+$header-row-gap: 15px; // 1.333, 2
+$header-grid-margin: 15px; // 1.333, 2
 
 // Logo and Search
-$header-margin-vertical: 15px; // 2, 2.667
-$header-margin-horizontal: 15px; // 1.333, 2
-$header-logo-margin: 9px; // 1, 5
-$header-padding-delivery: 7.5008px; // 1.33, 2
+$header-padding-vertical: 15px; // 2, 2.667
+$header-padding-horizontal: 15px; // 1.333, 2
+$header-logo-padding: 24px; // 1, 5
+$header-padding-delivery-horizontal: 7.5px; // 1.33, 2
+$header-padding-delivery-vertical: 10px; // 2, 2.667
 $header-logo-height: 20px; // 1.8, 1.125
 $header-search-padding-vertical: 12px; // 
 $header-search-padding-horizontal: 8px; //
@@ -179,14 +166,10 @@ $delivery-padding-right: 40px; //
 
 // Cards
 // Margins - Below
-$card-heading-margin: 16px; // 1, 1
-$card-text-margin: 12px; // 1, 1
 
 // Margins - Above
-$card-button-margin: 22px; // 1.091, 1.182
 
 // Text Section Width
-$card-text-width: 320px; // 1.225, 1.6
 
 // Seasonal
 // Margins - Section - Top
@@ -198,12 +181,8 @@ $seasonal-body-margin: 10px; //
 $seasonal-paragraph-margin: 20px; // 
 
 // Margins - Product Cards - Bottom
-$seasonal-price-margin: 17px; // 
-$seasonal-name-margin: 14.8752px; // 
-$seasonal-name-negative: -8.1808px; // 
 
 // Margins - Vertical - Icon Carousel
-$seasonal-carousel-margins: 9.2496px; //
 
 // Margins - Icon Carousel - Controls
 $seasonal-carousel-controls-top: 10px; // 
@@ -211,7 +190,6 @@ $seasonal-carousel-controls-botton: -12px; //
 
 // Padding - Product Cards
 $seasonal-padding-vertical: 15px; // 2, 2.67
-$seasonal-padding-horizontal: 15px; // 
 
 // Width & Grid Row Gap - Product Cards
 $seasonal-card-width: 290px; // 
@@ -227,8 +205,6 @@ $footer-padding-sides: 15px; //2, 2.67
 $footer-padding-top: 40px; //1, 1.5
 $footer-grid-gap: 32px; //1, 1.5
 $footer-text-margin: 16px;
-$footer-form-padding: 0.5em;
 $footer-form-border-radius: 5px;
-$footer-copy-padding-sides: 15px; //2, 2.67
 $footer-copy-padding-top: 15px; //1, 1.33
 

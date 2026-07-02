@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Plant Lady Juice Co | Home</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- favicon for the website -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -89,8 +89,8 @@
         </h1>
 
         <!-- action buttons -->
-        <div class="btn-header btn-search">
-          <svg
+        <div class="action-search">
+        <svg
             focusable="false"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -109,8 +109,7 @@
             type="search"
             name="q"
             id="site-search"
-            aria-label="Search site for content"
-            placeholder="Search for..."/>
+            aria-label="Search site for content"/>
           </form>
           <div class="search-submit">
             <a class="search-button" id="search-button" href="#">
@@ -118,7 +117,7 @@
           </div> 
         </div >
 
-        <a href="#" class="btn-header btn-account">
+        <a href="#" class="action-account">
           <button id="btn-account">
             <svg
               focusable="false"
@@ -141,10 +140,10 @@
           </button>
         </a>
 
-        <a href="#" class="btn-header btn-cart">
+        <a href="#" class="action-cart">
           <button id="btn-cart">
             <svg
-              class="btn-cart-counter"
+              class="action-cart-counter"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -156,7 +155,7 @@
               />
             </svg>
             <svg
-              class="btn-cart-counter-back"
+              class="action-cart-counter-back"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -166,7 +165,7 @@
                 d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22" />
             </svg>
             <svg
-              class="btn-cart-icon"
+              class="action-cart-icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
@@ -178,7 +177,7 @@
               <circle fill="currentColor" cx="7.5" cy="19.5" r="1.5" />
               <circle fill="currentColor" cx="17.5" cy="19.5" r="1.5" />
             </svg>
-            <p class="btn-cart-total">$0.00 (0)</p>
+            <p class="action-cart-total">$0.00 (0)</p>
           </button>
         </a>
 
@@ -203,7 +202,7 @@
             </svg>
           </button>
         
-          <ul class="mobile-menu" id="mobile-menu">
+          <ul class="menu-items" id="mobile-menu">
             <li class="mobile-header">
               <h2>Menu</h2>
               <button id="mobile-menu-close" aria-controls="mobile-menu" aria-label="Menu Close">
@@ -217,23 +216,15 @@
               <ul class="menu-list-section">
                 <li class="header-submenu" id="header-submenu">
                     <button class="submenu-toggle" aria-controls="nav-submenu" aria-label="Sub-Menu Open">
-                    
-                      <!-- mobile submenu -->
-                      <div id="submenu-open">
-                        <p>Sips</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
-                        </svg>
-                      </div>
-                    
-                      <!-- desktop submenu -->
-                      <div id="submenu-desktop">
-                        <p>Sips</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 9l6 6l6-6" />
-                        </svg>
-                      </div>
-                    
+                      <p>Sips</p>
+
+                      <svg class="submenu-mobile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
+                      </svg>  
+
+                      <svg class="submenu-desktop" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6" />
+                      </svg>                   
                     </button>
                   
                   <ul class="mobile-submenu" id="nav-submenu">
@@ -257,7 +248,7 @@
                 <li class="menu-list"><a href="#">Services</a></li>
               
                 <!-- should only display on mobile and tablet -->
-                <li class="menu-list" id="icon-account">
+                <li class="menu-list icon-account" id="icon-account">
                   <a href="#">
                     <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
                       <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0" />
