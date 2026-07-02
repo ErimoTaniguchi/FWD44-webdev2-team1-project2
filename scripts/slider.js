@@ -5,6 +5,7 @@ let touchStartX = 0;
 let touchEndX = 0;
 let tempIndex = 1;
 
+const mq = window.matchMedia("(min-width: 64em)");
 // DOM Elements
 
 //featured collection carousel
@@ -44,7 +45,13 @@ function getScrollAmount(carouselName){
 
 function updateSlides(carouselName){
     if(carouselName == 'goal'){
-        goal.currentDisplay.textContent = goal.currentIndex;
+        if(mq.matches){
+            goal.currentDisplay.textContent = goal.currentIndex;
+        }
+        else{
+            goal.currentDisplay.textContent = tempIndex;
+        }
+        
         goal.sliderPrev.disabled = (goal.currentIndex === 1);
         goal.sliderNext.disabled = (goal.currentIndex === totalSlides);
 
@@ -72,9 +79,22 @@ function handleSwipe(carouselName){
     if(carouselName == 'goal'){
         if (Math.abs(diff) > 50) {
             if (diff > 50) {
-                goal.currentIndex = Math.max(1, goal.currentIndex - 1);
+                if(mq.matches){
+                    goal.currentIndex = Math.max(1, goal.currentIndex - 1);
+                }
+                else{
+                    goal.currentIndex = Math.max(1, goal.currentIndex - 2);
+                    tempIndex = Math.max(1, tempIndex - 1);
+                }
             } else if (diff < -50) {
-                goal.currentIndex = Math.min(totalSlides, goal.currentIndex + 1);
+                if(mq.matches){
+                    goal.currentIndex = Math.min(totalSlides, goal.currentIndex + 1);
+                }
+                else{
+                    goal.currentIndex = Math.min(totalSlides + 2, goal.currentIndex + 2);
+                    tempIndex = Math.min(totalSlides, tempIndex + 1);
+                }
+                
             }
             updateSlides(carouselName);
         } else {
@@ -109,7 +129,14 @@ sliderPrevArray.forEach(slider => {
     slider.addEventListener('click',()=>{
         if(slider.className.includes('goal')){
             if(goal.currentIndex > 1){
-                goal.currentIndex --;
+                if(mq.matches){
+                    goal.currentIndex --;
+                }
+                else{
+                    goal.currentIndex -=2;
+                    tempIndex --;
+                }
+                
                 updateSlides('goal');
             }
         }
@@ -126,7 +153,13 @@ sliderNextArray.forEach(slider => {
     slider.addEventListener('click',()=>{
         if(slider.className.includes('goal')){
             if (goal.currentIndex < totalSlides){
-                goal.currentIndex ++;
+                if(mq.matches){
+                    goal.currentIndex ++;
+                }
+                else{
+                    goal.currentIndex +=2;
+                    tempIndex++;
+                }
                 updateSlides('goal');
             }
         }
