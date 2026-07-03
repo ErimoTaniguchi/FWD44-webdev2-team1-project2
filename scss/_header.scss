@@ -432,6 +432,16 @@
     grid-area: b;
     margin: $delivery-text-margin-top 0 0;
     padding-bottom: $delivery-text-padding-bottom;
+    width: fit-content;
+    background-image: linear-gradient($font-color, $font-color);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 1px;             
+    transition: background-size 0.3s ease; 
+    &:hover{
+        position: relative;
+        background-size: 100% 1px;
+    }
 }
 
 .menu-items {
@@ -550,6 +560,22 @@
     margin: 0;
 }
 
+.submenu-list a{
+    @include mq($large){
+        width: fit-content;
+        background-image: linear-gradient($font-color, $font-color);
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 0% 1px;             
+        transition: background-size 0.3s ease; 
+        &:hover{
+            position: relative;
+            background-size: 100% 1px;
+        }
+    }
+
+}
+
 .icon-account {
     @include mq($large) {
         display: none;
@@ -608,9 +634,19 @@
     font-size: $mobile-list-font-size;
     font-weight: $mobile-list-font-weight;
     line-height: $mobile-list-line-height;
+    width: fit-content;
+    background-image: linear-gradient($font-color, $font-color);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 0% 1px;             
+    transition: background-size 0.3s ease;
 
     @include mq($large) {
         font-weight: $body-font-bold;
+    }
+    &:hover{
+        position: relative;
+        background-size: 100% 1px;
     }
 }
 
@@ -647,6 +683,16 @@
 
     @include mq($large) {
         font-weight: $body-font-bold;
+        width: fit-content;
+        background-image: linear-gradient($font-color, $font-color);
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 0% 1px;             
+        transition: background-size 0.3s ease; 
+        &:hover{
+            position: relative;
+            background-size: 100% 1px;
+        }
     }
 }
 
