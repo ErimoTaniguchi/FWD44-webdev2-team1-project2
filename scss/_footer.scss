@@ -1,89 +1,129 @@
 @use 'variables' as *;
+@use 'mixins' as *;
 
+@mixin footer-responsive-font($base-size) {
+    font-size: $base-size;
+    @include mq($medium) { font-size: $base-size * $scale-medium; }
+    @include mq($large) { font-size: $base-size * $scale-large; }
+}
 
 .footer {
+    &-inner {
+        border-top: 1px solid $footer-border;
+        border-bottom: 1px solid $footer-border;
+        margin-top: $footer-margin-top;
+        padding: $footer-padding-top $footer-padding-sides;
+        display: grid;
+        grid-gap: $footer-grid-gap;
 
-    &__inner{
-    border-top: 1px solid $footer-border;
-    border-bottom: 1px solid $footer-border;
-    margin-top: $footer-margin-top;
-    padding: $footer-padding-top $footer-padding-sides;
-    display: grid;
-    grid-gap: $footer-grid-gap;
-    }
-
-    &__title{
-        font-size: $h2-footer-font-size;
-        margin-bottom: $footer-text-margin;
-    }
-
-    &__tagline{
-        margin-top: 0;
-        margin-bottom: $footer-text-margin;
-        font-size: $h2-footer-text-font-size;
-    }
-    
-    &__social-link{
-        color: $footer-svg-color;
-    }
-
-    &__form{
-        border: $border-weight solid rgba(29, 29, 29, 0.3);
-        border-radius: $footer-form-border-radius;
-        padding: $footer-form-padding;
-        display: flex; 
-        align-items: center;
-    }
-
-    &__input{
-        border: none;
-        outline: none;
-    }
-
-    &__submit{
-        border: none;  
-        background: none;       
-        cursor: pointer;
-        svg{
-            stroke: $footer-svg-color;
+        @include mq($medium) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: $footer-grid-gap;
+            
+        }
+        @include mq($large) {
+            grid-gap: calc($footer-grid-gap * 1.5);
+            padding: calc($footer-padding-top * 1.5) calc($footer-padding-sides * 2.67);
         }
     }
 
-    &__list{
+    &-title {
+        font-size: $h2-footer-heading-font-size;
+        margin-bottom: $footer-text-margin;
+
+        @include mq($large) {
+            font-size: calc($h2-footer-heading-font-size * 1.17);
+        }
+    }
+
+    &-tagline {
+        margin-top: 0;
+        margin-bottom: $footer-text-margin;
+        color: $h2-font-color;
+        @include footer-responsive-font($h2-footer-text-font-size);
+    }
+
+    &-social-link {
+        color: $footer-svg-color;
+        transition: all 100ms linear;
+        &:hover { color: $footer-hover-color; }
+    }
+
+    &-form {
+        border: $border-weight solid #1d1d1d4d;
+        opacity: 0.66;
+        border-radius: $footer-form-border-radius;
+        position: relative;
+    }
+
+    &-input {
+        outline: none;
+        font-size: $footer-newsletter-font-size;
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    &-submit {
+        position: absolute;
+        right: 0;
+        top: 9px;
+        height: calc(100% - 9px);
+        width: 50px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        padding: 0;
+        opacity: .66;
+        transition: all .1s linear;
+        svg {
+            stroke: $footer-svg-color;
+            pointer-events: none;
+            width: 32.5px;
+            height: 22.42px;
+        }
+
+        &:hover { opacity: 1; }
+    }
+
+    &-list {
         list-style: none;
         padding: 0;
         margin: 0;
-
-        li{
+        li {
             margin-bottom: 5px;
         }
-        a{
-
+        a {
+            display: inline;
+            line-height: 1.5;
+            padding-bottom: 1px;
             text-decoration: none;
-            display: inline-block;
-            color: $font-color;
-            font-size: $h2-footer-text-font-size;
-            border-bottom: $border-weight solid $font-color;
-            
+            color: $h2-font-color;
+            border-bottom: $border-weight solid;
+            transition: all 100ms linear;
+            @include footer-responsive-font($h2-footer-text-font-size);
+            &:hover {color: $footer-hover-color;}
         }
     }
 
-    &__bottom{
+    &-bottom {
         padding: $footer-padding-sides;
         margin: 0;
-
-        p{
+        color: $h2-font-color;
+        p {
             margin: 0;
-            font-size: $h2-footer-text-font-size;
-            font-weight:$h2-footer-text-font-weight;
+            font-weight: $h2-footer-text-font-weight;
+            @include footer-responsive-font($h2-footer-text-font-size);
         }
-
-        a{
+        a {
             color: $font-color;
+            transition: all .1s linear;
+            &:hover { color: $footer-hover-color; }
         }
+        @include mq($medium) {
+            padding: $footer-copy-padding-top calc($footer-padding-sides * 2);
+        }
+        @include mq($large) {
+            padding: calc($footer-copy-padding-top * 1.33) calc($footer-padding-sides * 2.67);
+        }
+    }
 }
-}
-
-
-
-

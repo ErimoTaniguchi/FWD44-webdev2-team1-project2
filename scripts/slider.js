@@ -3,59 +3,201 @@ let currentIndex = 1;
 const totalSlides = 2;
 let touchStartX = 0;
 let touchEndX = 0;
+let tempIndex = 1;
 
+const mq = window.matchMedia("(min-width: 64em)");
 // DOM Elements
-const sliderPrev = document.getElementById('slider-prev');
-const sliderNext = document.getElementById('slider-next');
-const currentDisplay = document.querySelector('.slider-navigation__current');
-const sliderContainer = document.querySelector('.grid-container');
+
+//featured collection carousel
+const featured = {
+    sliderPrev: document.getElementById('slider-prev'),
+    sliderNext: document.getElementById('slider-next'),
+    currentDisplay: document.querySelector('.slider-navigation-current'),
+    sliderContainer: document.querySelector('.grid-container'),
+    currentIndex: 1
+}
+
+//goals carousel
+const goal = {
+    sliderPrev: document.getElementById('goal-slider-prev'),
+    sliderNext: document.getElementById('goal-slider-next'),
+    currentDisplay: document.querySelector('.goal-slider-navigation-current'),
+    sliderContainer: document.querySelector('.goals'),
+    currentIndex: 1
+}
+
 
 // Functions / Logic
+function getScrollAmount(carouselName){
+    var item = featured.sliderContainer.querySelector('.grid-container-item');
+    var gap = parseInt(getComputedStyle(featured.sliderContainer).gap) || 0;
+    if(carouselName =='goal'){
+        item = goal.sliderContainer.querySelector('figure');
+        gap = parseInt(getComputedStyle(featured.sliderContainer).gap) || 0;
+    }
+    else if(carouselName == 'featured'){
+        item = featured.sliderContainer.querySelector('.grid-container-item');
+        gap = parseInt(getComputedStyle(featured.sliderContainer).gap) || 0;
+    }
 
-function updateSlides(){
-    currentDisplay.textContent = currentIndex;
-    sliderPrev.disabled = (currentIndex === 1);
-    sliderNext.disabled = (currentIndex === totalSlides);
+    return item.offsetWidth + gap;
 };
 
-function handleSwipe(){
-    const diff = touchEndX - touchStartX;
-    if (diff > 50) {
-        if (currentIndex > 1){
-            currentIndex --;
+function updateSlides(carouselName){
+    if(carouselName == 'goal'){
+        if(mq.matches){
+            goal.currentDisplay.textContent = goal.currentIndex;
         }
-    }else if(diff < -50){
-        if (currentIndex < totalSlides){
-            currentIndex ++;
+        else{
+            goal.currentDisplay.textContent = tempIndex;
+        }
+        
+        goal.sliderPrev.disabled = (goal.currentIndex === 1);
+        if(mq.matches){
+            goal.sliderNext.disabled = (goal.currentIndex === totalSlides);
+        }
+        else{
+            goal.sliderNext.disabled = (goal.currentIndex === 3);
+        }
+        
+
+        goal.sliderContainer.scrollTo({
+            left: (goal.currentIndex - 1) * getScrollAmount(carouselName),
+            behavior: 'smooth'
+        });
+    }
+
+    else if(carouselName =='featured'){
+        featured.currentDisplay.textContent = featured.currentIndex;
+        featured.sliderPrev.disabled = (featured.currentIndex === 1);
+        featured.sliderNext.disabled = (featured.currentIndex === totalSlides);
+
+        featured.sliderContainer.scrollTo({
+            left: (featured.currentIndex - 1) * getScrollAmount(carouselName),
+            behavior: 'smooth'
+        });
+    }
+
+};
+
+function handleSwipe(carouselName){
+    const diff = touchEndX - touchStartX;
+    if(carouselName == 'goal'){
+        if (Math.abs(diff) > 50) {
+            if (diff > 50) {
+                if(mq.matches){
+                    goal.currentIndex = Math.max(1, goal.currentIndex - 1);
+                }
+                else{
+                    goal.currentIndex = Math.max(1, goal.currentIndex - 2);
+                    tempIndex = Math.max(1, tempIndex - 1);
+                }
+            } else if (diff < -50) {
+                if(mq.matches){
+                    goal.currentIndex = Math.min(totalSlides, goal.currentIndex + 1);
+                }
+                else{
+                    goal.currentIndex = Math.min(totalSlides + 2, goal.currentIndex + 2);
+                    tempIndex = Math.min(totalSlides, tempIndex + 1);
+                }
+                
+            }
+            updateSlides(carouselName);
+        } else {
+            updateSlides(carouselName);
         }
     }
-    updateSlides();
+
+    else if(carouselName == 'featured'){
+         if (Math.abs(diff) > 50) {
+            if (diff > 50) {
+                featured.currentIndex = Math.max(1, featured.currentIndex - 1);
+            } else if (diff < -50) {
+                featured.currentIndex = Math.min(totalSlides, featured.currentIndex + 1);
+            }
+            updateSlides(carouselName);
+        } else {
+            updateSlides(carouselName);
+        }       
+    }
+
+
 };
+
 
 
 // Event Listeners
-sliderPrev.addEventListener('click',()=>{
-    if (currentIndex > 1) {
-        currentIndex --;
-        updateSlides();
-    }
+const sliderPrevArray = [featured.sliderPrev, goal.sliderPrev];
+const sliderNextArray = [featured.sliderNext, goal.sliderNext];
+const sliderContainerArray = [featured.sliderContainer, goal.sliderContainer];
+
+sliderPrevArray.forEach(slider => {
+    slider.addEventListener('click',()=>{
+        if(slider.className.includes('goal')){
+            if(goal.currentIndex > 1){
+                if(mq.matches){
+                    goal.currentIndex --;
+                }
+                else{
+                    goal.currentIndex -=2;
+                    tempIndex --;
+                }
+                
+                updateSlides('goal');
+            }
+        }
+        else{
+            if(featured.currentIndex > 1){
+                featured.currentIndex --;
+                updateSlides('featured');
+            }
+        }
+    });
 });
 
-sliderNext.addEventListener('click',()=>{
-    if (currentIndex < totalSlides) {
-        currentIndex ++;
-        updateSlides();
-    }
+sliderNextArray.forEach(slider => {
+    slider.addEventListener('click',()=>{
+        if(slider.className.includes('goal')){
+            if (goal.currentIndex < totalSlides){
+                if(mq.matches){
+                    goal.currentIndex ++;
+                }
+                else{
+                    goal.currentIndex +=2;
+                    tempIndex++;
+                }
+                updateSlides('goal');
+            }
+        }
+        else{
+            if (featured.currentIndex < totalSlides){
+                featured.currentIndex ++;
+                updateSlides('featured');
+            }
+        }
+    });
 });
 
-sliderContainer.addEventListener('touchstart', (e)=>{
-    touchStartX = e.touches[0].clientX;
+sliderContainerArray.forEach(slider => {
+    slider.addEventListener('touchstart', (e)=>{
+        touchStartX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e)=>{
+        touchEndX = e.changedTouches[0].clientX;
+        if(slider.className.includes('goal')){
+            handleSwipe('goal');
+        }
+        else{
+            handleSwipe('featured');
+        }
+    });
 });
 
-sliderContainer.addEventListener('touchend', (e)=>{
-    touchEndX = e.changedTouches[0].clientX;
-    handleSwipe();
-});
+
+
+
+
 
 
 

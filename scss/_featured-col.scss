@@ -8,7 +8,7 @@
     padding: 0 $side-padding;
     overflow: hidden;
     
-    &__header {
+    &-header {
         
         h3 {
             margin: 0;
@@ -16,6 +16,7 @@
             font-size: $h3-font-size;
             font-weight: $h3-font-weight;
             padding-right: 29px; 
+            color: $h2-font-color;
             
             @include mq ($large) { 
                 font-size: calc($h3-font-size * 1.75); 
@@ -64,15 +65,19 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     margin-top: $seasonal-paragraph-margin;
-    
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar { display: none; }
 
     
-    &__item {
+    &-item {
         display: flex;
         text-decoration: none;
         border: solid 1px $border;
         border-radius: $card-radius;
         overflow: hidden; 
+        scroll-snap-align: start;
+        width: 100%;
         
         article {
             width: 100%;
@@ -99,7 +104,8 @@
                 color: $font-color;
                 font-size: $h3-card-font-size;
                 font-weight: $h3-card-font-weight;
-                display: inline-block; 
+                display: inline;
+                line-height: 1.2;
 
                 width: fit-content;    
                 position: relative;
@@ -135,7 +141,16 @@
 
     @include mq (475px) {
         grid-auto-columns: calc((100% - $seasonal-card-gap)/3);
+        .slider-navigation-container {
+            display: none;
+        }
     }
 
+}
+
+.featured-section .slider-navigation-container {
+    @include mq(475px) {
+        display: none ; 
+    }
 }
 

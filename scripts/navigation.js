@@ -7,22 +7,24 @@ const button = document.getElementById('menu-toggle');
 const menu = document.getElementById('mobile-menu');
 const closeButton = document.getElementById('mobile-menu-close');
 
-const submenuOpen = document.getElementById('submenu-open');
+
+const submenuToggles = document.querySelectorAll('.submenu-toggle');
 const submenuClose = document.getElementById('submenu-close');
-const submenuDesktop = document.getElementById('submenu-desktop');
-const navSubmenu = document.getElementById('nav-submenu');
-const menuListSection = document.querySelector('.menu-list-section');
-const BREAKPOINT = 1024;
 
 function closeMainMenu() {
     if (!siteNavigation || !button) return;
     siteNavigation.classList.remove('toggled');
+    closeSubmenu();
 }
 
 if (button) {
     button.addEventListener('click', function(event) {
         event.stopPropagation();
-        siteNavigation.classList.toggle('toggled');
+        const isOpen = siteNavigation.classList.toggle('toggled');
+        if (isOpen) {
+            // ensure submenus start closed whenever the main menu opens
+            closeSubmenu();
+        }
     });
 }
 
@@ -33,58 +35,46 @@ if (closeButton) {
     });
 }
 
-function getSubmenuWrapper() {
-    return submenuOpen?.closest('.submenu-toggle')
-        || submenuOpen?.closest('.header-submenu')
-        || submenuOpen?.parentElement;
+function getSubmenuWrapper(toggleEl) {
+    return toggleEl?.closest('.header-submenu') || toggleEl?.parentElement;
 }
 
-function updateMobileSubmenuState(isOpen) {
-    if (!submenuOpen) return;
+function updateMobileSubmenuState(toggleEl, isOpen) {
+    if (!toggleEl) return;
+    const wrapper = getSubmenuWrapper(toggleEl);
 
-    const wrapper = getSubmenuWrapper();
+    // Apply `toggled` to the `.submenu-toggle` itself to match SCSS
+    toggleEl.classList.toggle('toggled', isOpen);
+
+    // Add a focus state to the wrapper and submenu for accessibility
     if (wrapper) {
-        wrapper.classList.toggle('toggled', isOpen);
+        wrapper.classList.toggle('focus', isOpen);
     }
 
-    const submenu = submenuOpen.closest('.header-submenu');
+    const submenu = wrapper?.querySelector('.mobile-submenu');
     if (submenu) {
         submenu.classList.toggle('focus', isOpen);
     }
-
-    adjustMenuListForSubmenu(isOpen && window.innerWidth < BREAKPOINT);
 }
 
-function openSubmenu() {
-    updateMobileSubmenuState(true);
+function openSubmenu(toggleEl) {
+    updateMobileSubmenuState(toggleEl, true);
 }
 
 function closeSubmenu() {
-    updateMobileSubmenuState(false);
+    // close all submenus: remove toggled from toggles and focus from wrappers/submenus
+    document.querySelectorAll('.submenu-toggle').forEach(el => el.classList.remove('toggled'));
+    document.querySelectorAll('.header-submenu').forEach(el => el.classList.remove('focus'));
+    document.querySelectorAll('.mobile-submenu').forEach(el => el.classList.remove('focus'));
 }
 
-function adjustMenuListForSubmenu(isNavSubmenuVisible) {
-    const wide = window.innerWidth >= BREAKPOINT;
-    if (!menuListSection) return;
-
-    const items = Array.from(menuListSection.querySelectorAll('li'));
-    const lastFour = items.slice(-4);
-
-    if (!wide && isNavSubmenuVisible) {
-        if (submenuOpen) submenuOpen.style.display = 'none';
-        lastFour.forEach(li => { li.style.display = 'none'; });
-    } else {
-        if (submenuOpen) submenuOpen.style.display = wide ? 'none' : '';
-        lastFour.forEach(li => { li.style.display = ''; });
-    }
-}
-
-if (submenuOpen) {
-    submenuOpen.addEventListener('click', function(event) {
-        event.stopPropagation();
-        const wrapper = getSubmenuWrapper();
-        const isOpen = wrapper?.classList.contains('toggled');
-        isOpen ? closeSubmenu() : openSubmenu();
+if (submenuToggles.length) {
+    submenuToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(event) {
+            event.stopPropagation();
+            const isOpen = toggle.classList.contains('toggled');
+            isOpen ? closeSubmenu() : openSubmenu(toggle);
+        });
     });
 }
 
@@ -96,41 +86,8 @@ if (submenuClose) {
 }
 
 function isMobileSubmenuOpen() {
-    const wrapper = getSubmenuWrapper();
-    return !!wrapper?.classList.contains('toggled');
+    return !!document.querySelector('.submenu-toggle.toggled');
 }
-
-function updateSubmenuVisibility() {
-    const wide = window.innerWidth >= BREAKPOINT;
-
-    if (submenuDesktop) {
-        submenuDesktop.style.display = wide ? '' : 'none';
-    }
-
-    if (submenuOpen) {
-        submenuOpen.style.display = wide ? 'none' : '';
-    }
-
-    if (submenuClose) {
-        submenuClose.style.display = wide ? 'none' : '';
-    }
-
-    if (navSubmenu && wide) {
-        navSubmenu.style.display = 'none';
-    } else if (navSubmenu && !wide) {
-        navSubmenu.style.display = '';
-    }
-
-    if (wide) {
-        closeSubmenu();
-    }
-
-    const submenuActive = !wide && isMobileSubmenuOpen();
-    adjustMenuListForSubmenu(submenuActive);
-}
-
-updateSubmenuVisibility();
-window.addEventListener('resize', updateSubmenuVisibility);
 
 document.addEventListener('click', function(event) {
     const target = event.target;

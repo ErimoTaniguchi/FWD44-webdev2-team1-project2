@@ -1,187 +1,174 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Plant Lady Juice Co | Home</title>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- favicon for the website -->
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <!-- adding IBM Plex Mono from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet">
 
     <!-- calling JavaScript -->
     <script src="scripts/navigation.js" defer></script>
     <script src="scripts/slider.js" defer></script>
     <script src="scripts/search.js" defer></script>
-    <script src="scripts/gallery.js" defer></script>
   </head>
 
   <body id="site-home">
     <a class="screen-reader-text" href="#">Skip to content</a>
     <!-- Jes -->
-    <header>
+    <header class="header-wrapper">
       <div class="header-announcements">
-        <button
-          class="btn-announcement"
-          aria-controls="btn-announcement-left"
-          aria-label="Announcement Controls Left"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+        <div class="announcements-wrapper">
+          <button
+            class="btn-announcement"
+            aria-controls="btn-announcement-left"
+            aria-label="Announcement Controls Left"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="m15 6l-6 6l6 6"
-            />
-          </svg>
-        </button>
-
-        <p>
-          🌿 Local Farm Pickup Now Available | Pick up at the farm between 11AM
-          - 7PM
-        </p>
-
-        <button
-          class="btn-announcement"
-          aria-controls="btn-announcement-right"
-          aria-label="Announcement Controls Right"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            class="announcement-nav"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="m15 6l-6 6l6 6" />
+            </svg>
+          </button>
+          
+          <p>
+            🌿 Local Farm Pickup Now Available | Pick up at the farm between 11AM
+            - 7PM
+          </p>
+          
+          <button
+            class="btn-announcement"
+            aria-controls="btn-announcement-right"
+            aria-label="Announcement Controls Right"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="m9 18l6-6l-6-6"
-            />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="announcement-nav"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="m9 18l6-6l-6-6" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div class="site-header">
         <!-- site word-mark image -->
         <h1 class="header-logo">
           <a href="#site-home">
-            <img src="images/logo.webp" alt="Plant Lady Juice Co." />
+            <img src="images/logo.webp" alt="Plant Lady Juice Co.">
           </a>
         </h1>
 
         <!-- action buttons -->
-        <form class="btn-header btn-search" id="btn-search" role="search">
-          <svg
+        <div class="action-search">
+        <svg
             focusable="false"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="22"
             height="22"
-            viewBox="0 0 22 22"
-          >
+            viewBox="0 0 22 22">
             <g fill="none" fill-rule="evenodd">
-              <path
-                d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"
-              />
-              <path
-                fill="currentColor"
-                d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0"
-              />
+              <path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z" />
+              <path fill="currentColor"
+                  d="M10.5 2a8.5 8.5 0 1 0 5.262 15.176l3.652 3.652a1 1 0 0 0 1.414-1.414l-3.652-3.652A8.5 8.5 0 0 0 10.5 2M4 10.5a6.5 6.5 0 1 1 13 0a6.5 6.5 0 0 1-13 0" />
             </g>
           </svg>
 
-          <input
+          <form class="search-form" id="btn-search" role="search">
+            <input
             type="search"
             name="q"
             id="site-search"
-            aria-label="Search site for content"
-            placeholder="Search for..."
-          />
-          <input type="submit" id="search-submit" />
-        </form>
+            aria-label="Search site for content">
+          </form>
+          <div class="search-submit">
+            <a class="search-button" id="search-button" href="#">
+            </a>
+          </div> 
+        </div >
 
-        <button class="btn-header btn-account" id="btn-account">
-          <a href="#">
-            <svg
-              focusable="false"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
-                d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0"
-              />
-            </svg>
-            <p>Account</p>
-          </a>
-        </button>
-
-        <button class="btn-header btn-cart" id="btn-cart">
-          <a href="#">
-            <div class="btn-cart-counter">
+        
+          <button class="action-account" id="btn-account">
               <svg
+                focusable="false"
+                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
+                width="24"
+                height="24"
+                viewBox="0 0 24 24">
                 <path
-                  fill="currentColor"
-                  d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m-1-5h2q.825 0 1.413-.587T15 15V9q0-.825-.587-1.412T13 7h-2q-.825 0-1.412.588T9 9v6q0 .825.588 1.413T11 17m0-8h2v6h-2z"
-                />
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0" />
               </svg>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                />
-              </svg>
-            </div>
+              Account
+          </button>        
+        
+          <button class="action-cart" id="btn-cart">
             <svg
+              class="action-cart-counter"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
+              width="20"
+              height="20"
+              viewBox="0 0 24 24">
               <path
                 fill="currentColor"
-                d="M21.08 7a2 2 0 0 0-1.7-1H6.58L6 3.74A1 1 0 0 0 5 3H3a1 1 0 0 0 0 2h1.24L7 15.26A1 1 0 0 0 8 16h9a1 1 0 0 0 .89-.55l3.28-6.56A2 2 0 0 0 21.08 7m-4.7 7H8.76L7.13 8h12.25Z"
-              />
-              <circle cx="7.5" cy="19.5" r="1.5" />
-              <circle cx="17.5" cy="19.5" r="1.5" />
+                d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22m-1-5h2q.825 0 1.413-.587T15 15V9q0-.825-.587-1.412T13 7h-2q-.825 0-1.412.588T9 9v6q0 .825.588 1.413T11 17m0-8h2v6h-2z" />
             </svg>
-          </a>
-        </button>
+            <svg
+              class="action-cart-counter-back"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22" />
+            </svg>
+            <svg
+              class="action-cart-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24">
+              <path
+                fill="currentColor"
+                d="M21.08 7a2 2 0 0 0-1.7-1H6.58L6 3.74A1 1 0 0 0 5 3H3a1 1 0 0 0 0 2h1.24L7 15.26A1 1 0 0 0 8 16h9a1 1 0 0 0 .89-.55l3.28-6.56A2 2 0 0 0 21.08 7m-4.7 7H8.76L7.13 8h12.25Z" />
+              <circle fill="currentColor" cx="7.5" cy="19.5" r="1.5" />
+              <circle fill="currentColor" cx="17.5" cy="19.5" r="1.5" />
+            </svg>
+            $0.00 (0)
+          </button>        
 
         <!-- header navigation menu -->
         <nav class="site-navigation" id="site-navigation">
@@ -197,14 +184,14 @@
               height="16"
               viewBox="0 0 20 16">
               <g>
-                <path fill="currentColor" d="m0 0h20v2h-20z"></path>
-                <path fill="currentColor" d="m0 7h20v2h-20z"></path>
-                <path fill="currentColor" d="m0 14h20v2h-20z"></path>
+                <path fill="currentColor" d="m0 0h20v2h-20z" />
+                <path fill="currentColor" d="m0 7h20v2h-20z" />
+                <path fill="currentColor" d="m0 14h20v2h-20z" />
               </g>
             </svg>
           </button>
         
-          <ul class="mobile-menu" id="mobile-menu">
+          <ul class="menu-items" id="mobile-menu">
             <li class="mobile-header">
               <h2>Menu</h2>
               <button id="mobile-menu-close" aria-controls="mobile-menu" aria-label="Menu Close">
@@ -218,32 +205,24 @@
               <ul class="menu-list-section">
                 <li class="header-submenu" id="header-submenu">
                     <button class="submenu-toggle" aria-controls="nav-submenu" aria-label="Sub-Menu Open">
-                    
-                      <!-- mobile submenu -->
-                      <div id="submenu-open">
-                        <p>Sips</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
-                        </svg>
-                      </div>
-                    
-                      <!-- desktop submenu -->
-                      <div id="submenu-desktop">
-                        <p>Sips</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                          <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m6 9l6 6l6-6" />
-                        </svg>
-                      </div>
-                    
+                      Sips
+
+                      <svg class="submenu-mobile" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 18l6-6l-6-6" />
+                      </svg>  
+
+                      <svg class="submenu-desktop" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m6 9l6 6l6-6" />
+                      </svg>                   
                     </button>
                   
                   <ul class="mobile-submenu" id="nav-submenu">
                     <li class="submenu-list">
-                      <button id="submenu-close">
+                      <button class="submenu-mobile-close" id="submenu-close">
                         <svg class="submenu-mobile mobile-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                           <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6" />
                         </svg>
-                        <p class="submenu-mobile-close">Back</p>
+                        Back
                       </button>
                     </li>
                     <li class="submenu-list"><a href="#">Juices</a></li>
@@ -258,7 +237,7 @@
                 <li class="menu-list"><a href="#">Services</a></li>
               
                 <!-- should only display on mobile and tablet -->
-                <li class="menu-list" id="icon-account">
+                <li class="menu-list icon-account" id="icon-account">
                   <a href="#">
                     <svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
                       <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7.5a3 3 0 1 1-6 0a3 3 0 0 1 6 0m4.5 13c-.475-9.333-14.525-9.333-15 0" />
@@ -296,11 +275,9 @@
                 stroke-width="1.0"
               >
                 <path
-                  d="M5 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0m10 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0"
-                />
+                  d="M5 17a2 2 0 1 0 4 0a2 2 0 1 0-4 0m10 0a2 2 0 1 0 4 0a2 2 0 1 0-4 0" />
                 <path
-                  d="M5 17H3v-4M2 5h11v12m-4 0h6m4 0h2v-6h-8m0-5h5l3 5M3 9h4"
-                />
+                  d="M5 17H3v-4M2 5h11v12m-4 0h6m4 0h2v-6h-8m0-5h5l3 5M3 9h4" />
               </g>
             </svg>
             <p>Delivery + Shipping Guidelines</p>
@@ -311,49 +288,79 @@
     <!-- End of Jes part -->
 
     <main>
-      <!-- Jade -->
-      <!-- Jade -->
+    <!-- Jade -->
+      
+      <div class="cards">
+        <section class="feature-yellow">
+        
+            <div class="feature-text">
+                <h2>Locally sourced in Atlanta, GA</h2>
+        
+                <p>
+                    Plant Lady Juice Co. nurtures wellness from the ground up—growing
+                    ingredients in our garden and sourcing from local Georgia farmers.
+                    From cold-pressed juices to herbal remedies, our offerings are crafted
+                    with care.
+                </p>
+        
+                <a href="#">Shop Now</a>
+            </div>
+        
+            <div class="feature-image">
+                <img
+                    src="images/card-01.webp"
+                    alt="Locally sourced illustration"
+                >
+            </div>
+        
+        </section>
+        
+        <section class="feature-cream">
+        
+            <div class="feature-text">
+                <h2>Deeply Rooted<sup>TM</sup></h2>
+        
+                <p>
+                    Roots are the lifeline of plants. Roots absorb vital nutrients which
+                    nourish our bodies. In the same respect, Plant Lady Juice Co. knows
+                    that staying deeply rooted harmonizes the journey to self-actualization.
+                </p>
+        
+                <a href="#">Our Story</a>
+            </div>
 
-      <section class="feature feature--yellow">
-        <h2>Locally sourced in Atlanta, GA</h2>
-
-        <p>
-          Plant Lady Juice Co. nurtures wellness from the ground up—growing
-          ingredients in our garden and sourcing from local Georgia farmers.
-          From cold-pressed juices to herbal remedies, our offerings are crafted
-          with care.
-        </p>
-
-        <a href="#">Shop Now</a>
-
-        <img src="images/card-01.webp" alt="Locally sourced illustration" />
-      </section>
-
-      <section class="feature feature--cream">
-        <img src="images/card-02.webp" alt="Deeply rooted illustration" />
-        <h2>Deeply Rooted <sup>TM</sup></h2>
-
-        <p>
-          Roots are the lifeline of plants. Roots absorb vital nutrients which
-          nourish our bodies. In the same respect, Plant Lady Juice Co. knows
-          that staying deeply rooted harmonizes the journey to
-          self-actualization.
-        </p>
-
-        <a href="#">Our Story</a>
-      </section>
-      <section class="feature feature--pink">
-        <h2>Where to Shop</h2>
-
-        <p>
-          Order online for nationwide shipping or local delivery within the
-          metro-Atlanta area.
-        </p>
-
-        <a href="#">Learn More</a>
-
-        <img src="images/card-03.webp" alt="Where to shop illustration" />
-      </section>
+                    
+            <div class="feature-image">
+                <img
+                    src="images/card-02.webp"
+                    alt="Deeply rooted illustration"
+                >
+            </div>
+        
+        </section>
+        
+        <section class="feature-pink">
+        
+            <div class="feature-text">
+                <h2>Where to Shop</h2>
+        
+                <p>
+                    Order online for nationwide <strong>shipping</strong> or <strong>local delivery</strong> within the
+                    metro-Atlanta area.
+                </p>
+        
+                <a href="#">Learn More</a>
+            </div>
+        
+            <div class="feature-image">
+                <img
+                    src="images/card-03.webp"
+                    alt="Where to shop illustration"
+                >
+            </div>
+        
+        </section>
+      </div>
 
       <!-- end of jade part -->
       <!-- Alan -->
@@ -368,57 +375,92 @@
           <a href="#">View all products</a>
         </div>
 
-
-        <article>
-          <p>$15.00</p>
-          <h4>Watermelon Juice</h4>
-          <p>(seasonal)</p>
-          <img src="images/seasonal-01.webp" alt="watermelon juice" />
-        </article>
-        <article>
-          <p>$13.00</p>
-          <h4>Okra Water</h4>
-          <p>(seasonal)</p>
-          <img src="images/seasonal-02.webp" alt="okra water" />
-        </article>
-        <article>
-          <p>$15.00</p>
-          <h4>Rose Iced Tea</h4>
-          <p>(seasonal)</p>
-          <img src="images/seasonal-03.webp" alt="rose iced tea" />
-        </article>
-      </section>
-      <section class="goals">
-        <div class="gallery-container">
-          <figure class="gallery-item">
-            <img src="images/icon-01.avif" alt="flower" />
-            <figcaption>Guided by ancestral wisdom</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="images/icon-02.avif" alt="hand with heart in the palm" />
-            <figcaption>Handcrafted with love</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="images/icon-03.avif" alt="dandelion with happy face" />
-            <figcaption>Real ingredients & people</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img src="images/icon-04.avif" alt="picture of origami" />
-            <figcaption>Locally sourced & proudly served</figcaption>
-          </figure>
+        <div class="seasonal-grid">
+          <article>
+            <div class="fav-wrapper">
+              <img src="images/seasonal-01.webp" alt="watermelon juice">
+            </div>
+            <p>$15.00</p>
+            <a class="fav-product" href="#">
+              <h4>Watermelon Juice</h4>
+              <p>(seasonal)</p>
+            </a>
+            <a class="fav-cart" href="#">Add to Cart</a>
+          </article>
+          <article>
+            <div class="fav-wrapper">
+              <img src="images/seasonal-02.webp" alt="okra water">
+            </div>
+            <p>$13.00</p>
+            <a class="fav-product" href="#">
+              <h4>Okra Water</h4>
+              <p>(seasonal)</p>
+            </a>
+            <a class="fav-cart" href="#">Add to Cart</a>
+          </article>
+          <article>
+            <div class="fav-wrapper">
+              <img src="images/seasonal-03.webp" alt="rose iced tea">
+            </div>
+            <p>$15.00</p>
+            <a class="fav-product" href="#">
+              <h4>Rose Iced Tea</h4>
+              <p>(seasonal)</p>
+            </a>
+            <a class="fav-cart" href="#">Add to Cart</a>
+          </article>
         </div>
-        <div class="gallery-controls"></div>
+        
       </section>
+      <div class="goals">
+        <figure>
+          <img src="images/icon-01.avif" alt="flower">
+          <figcaption>Guided by ancestral wisdom</figcaption>
+        </figure>
+        <figure>
+          <img src="images/icon-02.avif" alt="hand with heart in the palm">
+          <figcaption>Handcrafted with love</figcaption>
+        </figure>
+        <figure>
+          <img src="images/icon-03.avif" alt="dandelion with happy face">
+          <figcaption>Real ingredients & people</figcaption>
+        </figure>
+        <figure>
+          <img src="images/icon-04.avif" alt="picture of origami">
+          <figcaption>Locally sourced & proudly served</figcaption>
+        </figure>
+      </div>
+      <nav class="goals-navigation-container" aria-label="Carousel navigation">
+        <button type="button" class="slider-button goal-slider-prev" aria-label="Previous slide" id="goal-slider-prev" disabled>
+            <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M7.91419 1.41431L1.4289 7.89959L0.01468 6.48537L6.49996 0.00009L7.91419 1.41431Z" fill="black"/>
+              <path d="M6.48528 12.9849L0 6.49958L1.41421 5.08537L7.89949 11.5706L6.48528 12.9849Z" fill="black"/>
+            </svg>
+        </button>
+
+        <div class="slider-index-navigation" aria-live="polite" aria-atomic="true">
+          <span class="goal-slider-navigation-current">1</span>
+          <span aria-hidden="true">/</span>
+          <span class="goal-slider-navigation-total">2</span>
+        </div>
+
+        <button type="button" class="slider-button goal-slider-next" aria-label="Next slide" id="goal-slider-next">
+          <svg width="9" height="13" viewBox="0 0 9 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M0.914169 11.5857L7.39945 5.10041L8.81367 6.51463L2.32838 12.9999L0.914169 11.5857Z" fill="black"/>
+            <path d="M2.34307 0.0151367L8.82835 6.50042L7.41414 7.91463L0.928857 1.42935L2.34307 0.0151367Z" fill="black"/>
+          </svg>
+        </button>
+      </nav>
       <!-- end of alan part -->
       <!-- Erimo -->
       <section class="featured-section">
-        <div class="featured-section__header">
+        <div class="featured-section-header">
           <h3>Featured collections</h3>
           <a href="#">View all collections</a>
         </div>
 
         <div class="grid-container">
-          <a class="grid-container__item" href="#">
+          <a class="grid-container-item" href="#">
             <article>
               <div class="image-wrapper">
                 <img src="images/apothecary.webp" alt="apothecary">
@@ -426,7 +468,7 @@
               <h3>Apothecary</h3>
             </article>
           </a>
-          <a  class="grid-container__item" href="#">
+          <a  class="grid-container-item" href="#">
             <article>
               <div class="image-wrapper">
                 <img src="images/cleanses.webp" alt="cleanses">
@@ -434,17 +476,17 @@
                 <h3>Cleanses</h3>
             </article>
           </a>
-          <a class="grid-container__item" href="#">
+          <a class="grid-container-item" href="#">
             <article>
               <div class="image-wrapper">
                 <img src="images/support.webp" alt="support">
               </div>
-              <h3>Support at any level</h3>
+              <h3>Support at any level 🌿</h3>
             </article>
           </a>
         </div>
 
-        <nav class="slider-navigation-container" aria-label="Carousel navigation" role="group">
+        <nav class="slider-navigation-container" aria-label="Carousel navigation">
           <button type="button" class="slider-button slider-prev" aria-label="Previous slide" id="slider-prev" disabled>
               <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M7.91419 1.41431L1.4289 7.89959L0.01468 6.48537L6.49996 0.00009L7.91419 1.41431Z" fill="black"/>
@@ -453,9 +495,9 @@
           </button>
 
           <div class="slider-index-navigation" aria-live="polite" aria-atomic="true">
-            <span class="slider-navigation__current">1</span>
+            <span class="slider-navigation-current">1</span>
             <span aria-hidden="true">/</span>
-            <span class="slider-navigation__total">2</span>
+            <span class="slider-navigation-total">2</span>
           </div>
 
           <button type="button" class="slider-button slider-next" aria-label="Next slide" id="slider-next">
@@ -470,11 +512,11 @@
     </main>
 
     <footer class="footer">
-      <div class="footer__inner">
-        <section class="footer__brand">
-          <h2 class="footer__title">Plant Lady Juice Co.</h2>
-          <p class="footer__tagline">Deeply Rooted &trade;</p>
-          <a href="#" class="footer__social-link" aria-label="Instagram">
+      <div class="footer-inner">
+        <section class="footer-brand">
+          <h2 class="footer-title">Plant Lady Juice Co.</h2>
+          <p class="footer-tagline">Deeply Rooted &trade;</p>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.0">
                 <path d="M3 9.4c0-2.24 0-3.36.436-4.216a4 4 0 0 1 1.748-1.748C6.04 3 7.16 3 9.4 3h5.2c2.24 0 3.36 0 4.216.436a4 4 0 0 1 1.748 1.748C21 6.04 21 7.16 21 9.4v5.2c0 2.24 0 3.36-.436 4.216a4 4 0 0 1-1.748 1.748C17.96 21 16.84 21 14.6 21H9.4c-2.24 0-3.36 0-4.216-.436a4 4 0 0 1-1.748-1.748C3 17.96 3 16.84 3 14.6zm14-2.9h.5" />
@@ -484,12 +526,12 @@
           </a>
         </section>
 
-        <section class="footer__newsletter">
-          <h2 class="footer__title">Sign up for (juicy) news!</h2>
-          <form class="footer__form" action="/subscribe" method="post">
+        <section class="footer-newsletter">
+          <h2 class="footer-title">Sign up for (juicy) news!</h2>
+          <form class="footer-form" action="/subscribe" method="post">
             <label for="newsletter-email" class="sr-only"></label>
-            <input type="email" id="newsletter-email" class="footer__input" placeholder="Enter your email" required />
-            <button type="submit" class="footer__submit" aria-label="Submit email">
+            <input type="email" id="newsletter-email" class="footer-input" placeholder="Enter your email" required>
+            <button type="submit" class="footer-submit" aria-label="Submit email">
               <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M47.5 2.5 22.75 27.25M47.5 2.5l-15.75 45-9-20.25-20.25-9 45-15.75Z" 
                       stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -498,9 +540,9 @@
           </form>
         </section>
 
-        <nav class="footer__nav" aria-labelledby="quick-links-heading">
-          <h2 id="quick-links-heading" class="footer__title">Quick Links</h2>
-          <ul class="footer__list">
+        <nav class="footer-nav" aria-labelledby="quick-links-heading">
+          <h2 class="footer-title">Quick Links</h2>
+          <ul class="footer-list">
             <li><a href="#">About</a></li>
             <li><a href="#">Blog Posts</a></li>
             <li><a href="#">Ordering and Delivery</a></li>
@@ -513,8 +555,8 @@
         </nav>
       </div>
 
-      <div class="footer__bottom">
-        <p class="footer__copyright">
+      <div class="footer-bottom">
+        <p class="footer-copyright">
           Copyright &copy; 2026 <a href="#">Plant Lady Juice Co</a>.
         </p>
       </div>
