@@ -75,6 +75,15 @@ if (submenuToggles.length) {
             const isOpen = toggle.classList.contains('toggled');
             isOpen ? closeSubmenu() : openSubmenu(toggle);
         });
+        toggle.addEventListener('mouseenter', function(event){
+            event.stopPropagation();
+            toggle.classList.contains('toggled');
+            openSubmenu(toggle);
+        })
+        // toggle.addEventListener('mouseleave', function(event) {
+        //     event.stopPropagation();
+        //     closeSubmenu();
+        // });
     });
 }
 
@@ -83,6 +92,7 @@ if (submenuClose) {
         event.stopPropagation();
         closeSubmenu();
     });
+
 }
 
 function isMobileSubmenuOpen() {
