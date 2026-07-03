@@ -98,8 +98,6 @@ $card-radius: 10px;
 // Header, Seasonal, Footer Sides
 $side-padding: 15px; // 2, 2.667
 
-// Card Sides
-
 // Buttons - "vertical" as in "vertical sides" (short) and "horizontal" as in "horizontal sides" (long)
 
 $seasonal-button-padding-vertical: 24px; // 1.5, 1.5
@@ -165,9 +163,39 @@ $delivery-text-padding-bottom: 3px; // 1, 1
 $delivery-padding-right: 40px; // 
 
 // Cards
-// Margins - Below
+// Margins
+$feature-heading-margin-bottom: 16px;
+$feature-text-margin-bottom: 16px; // 1.091
+$feature-button-margin-top: 22px; // 1.091, 1.159
 
-// Margins - Above
+// Padding
+$feature-text-padding: 40px; // 1, 1.5
+$feature-text-padding-left: 25px; // 1.4
+$feature-button-padding-short: 32px; // 1.25, 1.438
+$feature-button-padding-long: 12px; // 1, 1.25
+$feature-image-padding-top: 140%;
+
+// Text
+$feature-button-font-weight: 500;
+$feature-button-line-height: 1.25;
+$feature-button-font-size: 20px;
+$feature-button-text-decoration: none;
+
+$feature-header-font-size: 37px; // 1, 1.324
+$feature-header-font-weight: 700;
+$feature-header-line-height: 1.2; // 1, 1.094
+$feature-header-font-size-small: 30px; // 1, 1.244
+
+$feature-text-font-size: 14.875px; // 1, 1.143
+$feature-text-font-weight: 400;
+$feature-text-line-height: 1.5; // 1, 1.071
+$feature-text-align: start;
+
+// Image
+$feature-image-height: 100%;
+$feature-image-ratio: 1;
+$feature-image-width: 100%;
+
 
 // Text Section Width
 
