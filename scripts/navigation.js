@@ -80,10 +80,6 @@ if (submenuToggles.length) {
             toggle.classList.contains('toggled');
             openSubmenu(toggle);
         })
-        // toggle.addEventListener('mouseleave', function(event) {
-        //     event.stopPropagation();
-        //     closeSubmenu();
-        // });
     });
 }
 
@@ -104,6 +100,16 @@ document.addEventListener('click', function(event) {
     const isClickInside = siteNavigation && siteNavigation.contains(target);
 
     if (!isClickInside) {
+        closeMainMenu();
+        closeSubmenu();
+    }
+});
+
+document.addEventListener('mouseover', function(event) {
+    const target = event.target;
+    const isMouseOverInside = siteNavigation && siteNavigation.contains(target);
+
+    if (!isMouseOverInside) {
         closeMainMenu();
         closeSubmenu();
     }
@@ -139,3 +145,4 @@ function toggleFocus(event) {
         menuItem.classList.toggle('focus');
     }
 }
+
