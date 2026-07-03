@@ -561,16 +561,19 @@
 }
 
 .submenu-list a{
-    width: fit-content;
-    background-image: linear-gradient($font-color, $font-color);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 0% 1px;             
-    transition: background-size 0.3s ease; 
-    &:hover{
-        position: relative;
-        background-size: 100% 1px;
+    @include mq($large){
+        width: fit-content;
+        background-image: linear-gradient($font-color, $font-color);
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 0% 1px;             
+        transition: background-size 0.3s ease; 
+        &:hover{
+            position: relative;
+            background-size: 100% 1px;
+        }
     }
+
 }
 
 .icon-account {
@@ -677,18 +680,19 @@
     justify-content: space-between;
     gap: $header-icon-margin-box;
     height: min-content;
-    width: fit-content;
-    background-image: linear-gradient($font-color, $font-color);
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    background-size: 0% 1px;             
-    transition: background-size 0.3s ease; 
-    &:hover{
-        position: relative;
-        background-size: 100% 1px;
-    }
+
     @include mq($large) {
         font-weight: $body-font-bold;
+        width: fit-content;
+        background-image: linear-gradient($font-color, $font-color);
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 0% 1px;             
+        transition: background-size 0.3s ease; 
+        &:hover{
+            position: relative;
+            background-size: 100% 1px;
+        }
     }
 }
 
